@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,12 +13,14 @@
 		B6BB91F22657354900E67F97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB91F12657354900E67F97 /* AppDelegate.swift */; };
 		B6BB91F42657354900E67F97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB91F32657354900E67F97 /* SceneDelegate.swift */; };
 		B6BB91F62657354900E67F97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB91F52657354900E67F97 /* ViewController.swift */; };
-		B6BB91F92657354900E67F97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BB91F72657354900E67F97 /* Main.storyboard */; };
+		B6BB91F92657354900E67F97 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BB91F72657354900E67F97 /* Login.storyboard */; };
 		B6BB91FC2657354900E67F97 /* Strelitzia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6BB91FA2657354900E67F97 /* Strelitzia.xcdatamodeld */; };
 		B6BB91FE2657354B00E67F97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6BB91FD2657354B00E67F97 /* Assets.xcassets */; };
 		B6BB92012657354B00E67F97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BB91FF2657354B00E67F97 /* LaunchScreen.storyboard */; };
 		B6BB920C2657354B00E67F97 /* StrelitziaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB920B2657354B00E67F97 /* StrelitziaTests.swift */; };
 		B6BB92172657354B00E67F97 /* StrelitziaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB92162657354B00E67F97 /* StrelitziaUITests.swift */; };
+		B6BB9225265810A000E67F97 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB9224265810A000E67F97 /* LoginViewController.swift */; };
+		B6BB9227265811E800E67F97 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6BB9226265811E800E67F97 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +50,7 @@
 		B6BB91F12657354900E67F97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6BB91F32657354900E67F97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B6BB91F52657354900E67F97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B6BB91F82657354900E67F97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B6BB91F82657354900E67F97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		B6BB91FB2657354900E67F97 /* Strelitzia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Strelitzia.xcdatamodel; sourceTree = "<group>"; };
 		B6BB91FD2657354B00E67F97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6BB92002657354B00E67F97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +61,8 @@
 		B6BB92122657354B00E67F97 /* StrelitziaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrelitziaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BB92162657354B00E67F97 /* StrelitziaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrelitziaUITests.swift; sourceTree = "<group>"; };
 		B6BB92182657354B00E67F97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6BB9224265810A000E67F97 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B6BB9226265811E800E67F97 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BB9A2D1E394E42451FEDEADC /* Pods_Strelitzia_StrelitziaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Strelitzia_StrelitziaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAFE755DD6499598DD744874 /* Pods-StrelitziaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrelitziaTests.release.xcconfig"; path = "Target Support Files/Pods-StrelitziaTests/Pods-StrelitziaTests.release.xcconfig"; sourceTree = "<group>"; };
 		E868AAA6D7EDF56783AA168C /* Pods-Strelitzia-StrelitziaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strelitzia-StrelitziaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Strelitzia-StrelitziaUITests/Pods-Strelitzia-StrelitziaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,10 +124,12 @@
 			children = (
 				B6BB91F12657354900E67F97 /* AppDelegate.swift */,
 				B6BB91F32657354900E67F97 /* SceneDelegate.swift */,
+				B6BB9224265810A000E67F97 /* LoginViewController.swift */,
 				B6BB91F52657354900E67F97 /* ViewController.swift */,
-				B6BB91F72657354900E67F97 /* Main.storyboard */,
+				B6BB91F72657354900E67F97 /* Login.storyboard */,
 				B6BB91FD2657354B00E67F97 /* Assets.xcassets */,
 				B6BB91FF2657354B00E67F97 /* LaunchScreen.storyboard */,
+				B6BB9226265811E800E67F97 /* GoogleService-Info.plist */,
 				B6BB92022657354B00E67F97 /* Info.plist */,
 				B6BB91FA2657354900E67F97 /* Strelitzia.xcdatamodeld */,
 			);
@@ -158,7 +164,6 @@
 				8052516F3F8564B999E25DDC /* Pods-StrelitziaTests.debug.xcconfig */,
 				DAFE755DD6499598DD744874 /* Pods-StrelitziaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -184,6 +189,7 @@
 				B6BB91EB2657354900E67F97 /* Frameworks */,
 				B6BB91EC2657354900E67F97 /* Resources */,
 				91B9E5276C1854BD237E9FC5 /* [CP] Embed Pods Frameworks */,
+				3BA975A23E4296ED14FA45AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,6 +228,7 @@
 				B6BB920F2657354B00E67F97 /* Frameworks */,
 				B6BB92102657354B00E67F97 /* Resources */,
 				7B140806F3BE5930744402A8 /* [CP] Embed Pods Frameworks */,
+				39796AFEB9570C9F9A1AAE6B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -281,8 +288,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6BB92012657354B00E67F97 /* LaunchScreen.storyboard in Resources */,
+				B6BB9227265811E800E67F97 /* GoogleService-Info.plist in Resources */,
 				B6BB91FE2657354B00E67F97 /* Assets.xcassets in Resources */,
-				B6BB91F92657354900E67F97 /* Main.storyboard in Resources */,
+				B6BB91F92657354900E67F97 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +311,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		39796AFEB9570C9F9A1AAE6B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Strelitzia-StrelitziaUITests/Pods-Strelitzia-StrelitziaUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Strelitzia-StrelitziaUITests/Pods-Strelitzia-StrelitziaUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Strelitzia-StrelitziaUITests/Pods-Strelitzia-StrelitziaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BA975A23E4296ED14FA45AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Strelitzia/Pods-Strelitzia-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Strelitzia/Pods-Strelitzia-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Strelitzia/Pods-Strelitzia-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5C6D46F6A54C3605623B51E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -413,6 +455,7 @@
 				B6BB91F62657354900E67F97 /* ViewController.swift in Sources */,
 				B6BB91F22657354900E67F97 /* AppDelegate.swift in Sources */,
 				B6BB91FC2657354900E67F97 /* Strelitzia.xcdatamodeld in Sources */,
+				B6BB9225265810A000E67F97 /* LoginViewController.swift in Sources */,
 				B6BB91F42657354900E67F97 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,12 +492,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B6BB91F72657354900E67F97 /* Main.storyboard */ = {
+		B6BB91F72657354900E67F97 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B6BB91F82657354900E67F97 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		B6BB91FF2657354B00E67F97 /* LaunchScreen.storyboard */ = {
