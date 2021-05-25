@@ -17,6 +17,8 @@ class UserMainViewController: UIViewController {
     
     private var userInfo = UserInfo(isAdmin: Bool(), schoolId: "")
     private var userDefaults = UserDefaults.standard
+    
+    fileprivate let refreshCtl = UIRefreshControl()
 
     var historyData = [HistoryData]()
     
@@ -25,6 +27,8 @@ class UserMainViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
+        tableView.refreshControl = refreshCtl
+        refreshCtl.addTarget(self, action: #selector(UserMainViewController.refresh(sender:)), for: .valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,11 +52,17 @@ class UserMainViewController: UIViewController {
     }
     
     func getHistory() {
+        historyData = []
         viewModel.getHistory(schoolId: userInfo.schoolId)
             .subscribe(onNext: { [weak self] response in
                 self?.historyData.append(response)
                 self?.tableView.reloadData()
             }).disposed(by: disposeBag)
+    }
+    
+    @objc func refresh(sender: UIRefreshControl) {
+        getUserInfo()
+        refreshCtl.endRefreshing()
     }
 }
 
