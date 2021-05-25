@@ -15,6 +15,8 @@ class UserModel {
     private var ref = Firestore.firestore()
     private let userId = Auth.auth().currentUser?.uid
     
+    var schoolId = UserDefaults.standard.string(forKey: "schoolId")
+    
     func getUserInfo() -> Observable<UserInfo> {
         return Observable.create { observer in
             let folderRef = self.ref.collection("users").document(self.userId!)
@@ -34,9 +36,9 @@ class UserModel {
         }
     }
     
-    func getHistory() -> Observable<HistoryData> {
+    func getHistory(schoolId: String) -> Observable<HistoryData> {
         return Observable.create { [weak self] observer in
-            let folderRef = self?.ref.collection("survey").whereField("userId", isEqualTo: self?.userId ?? "")
+            let folderRef = self?.ref.collection("school").document(schoolId).collection("survey").whereField("userId", isEqualTo: self?.userId ?? "")
             folderRef?.getDocuments {(snapshot, error) in
                 if error != nil {
                     print("Document does not exist")
@@ -57,9 +59,9 @@ class UserModel {
         }
     }
     
-    func getSurveyData(documentId: String) -> Observable<SurveyData> {
+    func getSurveyData(schoolId: String, documentId: String) -> Observable<SurveyData> {
         return Observable.create { [weak self] observer in
-            let folderRef = self?.ref.collection("survey").document(documentId)
+            let folderRef = self?.ref.collection("school").document(schoolId).collection("survey").document(documentId)
             folderRef?.getDocument {(document, error) in
                 if let document = document, document.exists {
                     let id = document.documentID
@@ -77,7 +79,7 @@ class UserModel {
         }
     }
     
-    func uploadSurveyData(title: String, place: String, details: String, image: UIImage) -> Observable<ResultAlert> {
+    func uploadSurveyData(schoolId: String, title: String, place: String, details: String, image: UIImage) -> Observable<ResultAlert> {
         return Observable.create { [weak self] observer in
             guard let imageData = image.jpegData(compressionQuality: 0.01) else {
                 return ResultAlert(title: "画像の圧縮に失敗しました", text: "時間を空けてもう一度お試しください") as! Disposable
@@ -87,7 +89,6 @@ class UserModel {
             metaData.contentType = "image/ipeg"
             
             let imageID = NSUUID().uuidString // Unique string to reference image
-            let folderRef = Firestore.firestore().collection("survey")
             let imageRef = Storage.storage().reference(forURL: "gs://strelitzia-8e9cf.appspot.com").child(imageID)
             
             DispatchQueue.global(qos: .default).async {
@@ -113,7 +114,7 @@ class UserModel {
                                 "lastModified": Timestamp()
                             ]
                             
-                            folderRef.addDocument(data: newFolder) { error in
+                            self?.ref.collection("school").document(schoolId).collection("survey").addDocument(data: newFolder) { error in
                                 DispatchQueue.main.async {
                                     if error != nil {
                                         let data = ResultAlert(title: "エラーが起きました", text: "時間を空けてもう一度お試しください")
@@ -132,7 +133,7 @@ class UserModel {
         }
     }
     
-    func uploadEditedSurveyData(documentId: String, title: String, place: String, details: String, image: UIImage) -> Observable<ResultAlert> {
+    func uploadEditedSurveyData(schoolId: String, documentId: String, title: String, place: String, details: String, image: UIImage) -> Observable<ResultAlert> {
         return Observable.create { [weak self] observer in
             guard let imageData = image.jpegData(compressionQuality: 0.01) else {
                 return ResultAlert(title: "画像の圧縮に失敗しました", text: "時間を空けてもう一度お試しください") as! Disposable
@@ -142,7 +143,6 @@ class UserModel {
             metaData.contentType = "image/ipeg"
             
             let imageID = NSUUID().uuidString // Unique string to reference image
-            let folderRef = Firestore.firestore().collection("survey").document(documentId)
             let imageRef = Storage.storage().reference(forURL: "gs://strelitzia-8e9cf.appspot.com").child(imageID)
             
             DispatchQueue.global(qos: .default).async {
@@ -168,7 +168,7 @@ class UserModel {
                                 "lastModified": Timestamp()
                             ]
                             
-                            folderRef.setData(newFolder) { error in
+                            self?.ref.collection("school").document(schoolId).collection("survey").document(documentId).setData(newFolder) { error in
                                 DispatchQueue.main.async {
                                     if error != nil {
                                         let data = ResultAlert(title: "エラーが起きました", text: "時間を空けてもう一度お試しください")
@@ -186,7 +186,6 @@ class UserModel {
             return Disposables.create()
         }
     }
-    
 }
 
 

@@ -23,6 +23,8 @@ class SurveyViewController: UIViewController, UINavigationControllerDelegate, UI
     
     let functions = Functions()
     
+    let schoolId = UserDefaults.standard.string(forKey: "schoolId") ?? ""
+    
     var isEditingView = false
     var documentId = ""
     
@@ -41,15 +43,13 @@ class SurveyViewController: UIViewController, UINavigationControllerDelegate, UI
            let image = imageView.image {
             functions.startIndicator(view: self.view)
             if isEditingView {
-                print("1")
-                viewModel.uploadEditedSurveyData(documentId: documentId, title: title, place: place, details: detail, image: image)
+                viewModel.uploadEditedSurveyData(schoolId: schoolId, documentId: documentId, title: title, place: place, details: detail, image: image)
                     .subscribe(onNext: { [weak self] response in
                         self?.showAlert(title: response.title, text: response.text)
                         self?.functions.dismissIndicator(view: (self?.view)!)
                     }).disposed(by: disposeBag)
             } else {
-                print("2")
-                viewModel.uploadSurveyData(title: title, place: place, details: detail, image: image)
+                viewModel.uploadSurveyData(schoolId: schoolId, title: title, place: place, details: detail, image: image)
                     .subscribe(onNext: { [weak self] response in
                         self?.showAlert(title: response.title, text: response.text)
                         self?.functions.dismissIndicator(view: (self?.view)!)
@@ -59,7 +59,7 @@ class SurveyViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     func getSurveyData() {
-        viewModel.getSurveyData(documentId: documentId)
+        viewModel.getSurveyData(schoolId: schoolId, documentId: documentId)
             .subscribe(onNext: { [weak self] response in
                 self?.imageView.loadImageAsynchronously(url: response.imageURL)
                 self?.titleTextField.text = response.title

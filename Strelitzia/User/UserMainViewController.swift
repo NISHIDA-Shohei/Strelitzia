@@ -18,7 +18,6 @@ class UserMainViewController: UIViewController {
     private var userInfo = UserInfo(isAdmin: Bool(), schoolId: "")
     private var userDefaults = UserDefaults.standard
 
-    
     var historyData = [HistoryData]()
     
     override func viewDidLoad() {
@@ -49,7 +48,7 @@ class UserMainViewController: UIViewController {
     }
     
     func getHistory() {
-        viewModel.getHistory()
+        viewModel.getHistory(schoolId: userInfo.schoolId)
             .subscribe(onNext: { [weak self] response in
                 self?.historyData.append(response)
                 self?.tableView.reloadData()
