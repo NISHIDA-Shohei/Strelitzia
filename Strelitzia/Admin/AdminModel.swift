@@ -1,8 +1,8 @@
 //
-//  UserModel.swift
+//  AdminModel.swift
 //  Strelitzia
 //
-//  Created by 西田翔平 on 2021/05/23.
+//  Created by 西田翔平 on 2021/05/26.
 //
 
 import Foundation
@@ -10,7 +10,7 @@ import Firebase
 import RxSwift
 import RxCocoa
 
-class UserModel {
+class AdminModel {
     
     private var ref = Firestore.firestore()
     private let userId = Auth.auth().currentUser?.uid
@@ -38,7 +38,7 @@ class UserModel {
     
     func getHistory(schoolId: String) -> Observable<HistoryData> {
         return Observable.create { [weak self] observer in
-            let folderRef = self?.ref.collection("school").document(schoolId).collection("survey").whereField("userId", isEqualTo: self?.userId ?? "")
+            let folderRef = self?.ref.collection("school").document(schoolId).collection("survey")
             folderRef?.getDocuments {(snapshot, error) in
                 if error != nil {
                     print("Document does not exist")
@@ -74,60 +74,6 @@ class UserModel {
                     observer.onNext(data)
                 } else {
                     print("Document does not exist")
-                }
-            }
-            return Disposables.create()
-        }
-    }
-    
-    func uploadSurveyData(schoolId: String, title: String, place: String, details: String, image: UIImage) -> Observable<ResultAlert> {
-        return Observable.create { [weak self] observer in
-            guard let imageData = image.jpegData(compressionQuality: 0.01) else {
-                return ResultAlert(title: "画像の圧縮に失敗しました", text: "時間を空けてもう一度お試しください") as! Disposable
-            }
-            
-            let metaData = StorageMetadata()
-            metaData.contentType = "image/ipeg"
-            
-            let imageID = NSUUID().uuidString // Unique string to reference image
-            let imageRef = Storage.storage().reference(forURL: "gs://strelitzia-8e9cf.appspot.com").child(imageID)
-            
-            DispatchQueue.global(qos: .default).async {
-                imageRef.putData(imageData, metadata: metaData) { (metaData, error) in
-                    if error != nil {
-                        let data = ResultAlert(title: "画像の保存に失敗しました", text: "時間を空けてもう一度お試しください")
-                        observer.onNext(data)
-                    }
-                    
-                    imageRef.downloadURL { (url, error) in
-                        if error != nil {
-                            let data = ResultAlert(title: "画像の保存に失敗しました", text: "時間を空けてもう一度お試しください")
-                            observer.onNext(data)
-                        } else {
-                            let newFolder: [String: Any] = [
-                                "userId": Auth.auth().currentUser?.uid ?? "",
-                                "title": title,
-                                "place": place,
-                                "details": details,
-                                "imageURL": url?.absoluteString as Any,
-                                "imageReference": imageID,
-                                "isCompleted": false,
-                                "lastModified": Timestamp()
-                            ]
-                            
-                            self?.ref.collection("school").document(schoolId).collection("survey").addDocument(data: newFolder) { error in
-                                DispatchQueue.main.async {
-                                    if error != nil {
-                                        let data = ResultAlert(title: "エラーが起きました", text: "時間を空けてもう一度お試しください")
-                                        observer.onNext(data)
-                                    } else {
-                                        let data = ResultAlert(title: "送信に成功しました", text: "")
-                                        observer.onNext(data)
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
             return Disposables.create()
@@ -186,60 +132,5 @@ class UserModel {
             }
             return Disposables.create()
         }
-    }
-}
-
-
-struct UserInfo {
-    var isAdmin: Bool
-    var schoolId: String
-    
-    init(isAdmin: Bool, schoolId: String) {
-        self.isAdmin = isAdmin
-        self.schoolId = schoolId
-    }
-}
-
-struct HistoryData {
-    var documentId: String
-    var title: String
-    var lastModified: Date
-    var isCompleted: Bool
-    var imageURL: String
-    
-    init(documentId: String, title: String, lastModified: Date, isCompleted: Bool, imageURL: String) {
-        self.documentId = documentId
-        self.title = title
-        self.lastModified = lastModified
-        self.isCompleted = isCompleted
-        self.imageURL = imageURL
-    }
-}
-
-struct SurveyData {
-    var documentId: String
-    var title: String
-    var place: String
-    var details: String
-    var imageURL: String
-    var isCompleted: Bool
-    
-    init(documentId: String, title: String, place: String, details: String, imageURL: String, isCompleted: Bool) {
-        self.documentId = documentId
-        self.title = title
-        self.place = place
-        self.details = details
-        self.imageURL = imageURL
-        self.isCompleted = isCompleted
-    }
-}
-
-struct ResultAlert {
-    var title: String
-    var text: String
-    
-    init(title: String, text: String) {
-        self.title = title
-        self.text = text
     }
 }

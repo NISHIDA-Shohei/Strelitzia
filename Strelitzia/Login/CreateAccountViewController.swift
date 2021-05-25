@@ -43,8 +43,7 @@ class CreateAccountViewController: UIViewController {
                             "schoolId": Functions().randomString(length: 8)
                         ], completion: { error in
                             if let error = error {
-                                // ②が失敗した場合
-                                print("Firestore 新規登録失敗 " + error.localizedDescription)
+                                print("Firestore 新規登録失敗" + error.localizedDescription)
                                 let dialog = UIAlertController(title: "新規登録失敗", message: error.localizedDescription, preferredStyle: .alert)
                                 dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                                 self.present(dialog, animated: true, completion: nil)

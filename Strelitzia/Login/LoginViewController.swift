@@ -50,12 +50,17 @@ class LoginViewController: UIViewController {
     func decideView() {
         viewModel.checkIsAdmin()
             .subscribe(onNext: { [weak self] response in
+                if response {
+                    print("true")
+                }
                 if response == true {
+                    print("admin")
                     let storyboard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
                     let adminMainViewController = storyboard.instantiateViewController(withIdentifier: "AdminMainViewController") as! AdminMainViewController
                     adminMainViewController.modalPresentationStyle = .fullScreen
                     self?.present(adminMainViewController, animated: true, completion: nil)
                 } else {
+                    print("user")
                     let storyboard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
                     let userMainViewController = storyboard.instantiateViewController(withIdentifier: "UserMainViewController") as! UserMainViewController
                     userMainViewController.modalPresentationStyle = .fullScreen

@@ -81,8 +81,8 @@ extension UserMainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.text = historyData[indexPath.item].title
         cell.lastModifiedLabel.text = DateUtils.stringFromDate(date: historyData[indexPath.item].lastModified, dateFormat: "yyyy年MM月dd日")
         cell.thumbnailImage.loadImageAsynchronously(url: historyData[indexPath.item].imageURL)
-        cell.statusLabel.text = historyData[indexPath.item].isCompleated ? "対応済み" : "未対応"
-        cell.statusLabel.textColor = historyData[indexPath.item].isCompleated ? UIColor.green : UIColor.red
+        cell.statusLabel.text = historyData[indexPath.item].isCompleted ? "対応済み" : "未対応"
+        cell.statusLabel.textColor = historyData[indexPath.item].isCompleted ? UIColor.green : UIColor.red
         return cell
     }
     
