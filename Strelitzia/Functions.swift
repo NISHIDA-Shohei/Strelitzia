@@ -10,9 +10,7 @@ import Foundation
 import UIKit
 
 class Functions {
-    
-    let programType = ["shop","stage","exhibition","shop"]
-    
+        
     func startIndicator(view: UIView) {
         let loadingIndicator = UIActivityIndicatorView(style: .whiteLarge)
 

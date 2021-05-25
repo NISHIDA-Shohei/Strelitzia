@@ -22,6 +22,11 @@ class UserMainViewController: UIViewController {
         self.getUserInfo()
     }
     
+    @IBAction func onTapNewSurvey(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
+        let surveyViewController = storyboard.instantiateViewController(withIdentifier: "SurveyViewController") as! SurveyViewController
+        self.present(surveyViewController, animated: true, completion: nil)
+    }
     func getUserInfo() {
         viewModel.getUserInfo()
             .subscribe(onNext: { [weak self] response in

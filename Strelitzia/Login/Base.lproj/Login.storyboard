@@ -23,9 +23,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PuP-cc-v35">
-                                <rect key="frame" x="176" y="697" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PuP-cc-v35">
+                                <rect key="frame" x="10" y="697" width="394" height="30"/>
                                 <state key="normal" title="ログイン"/>
                                 <connections>
                                     <action selector="onTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q6W-Fu-93T"/>
@@ -57,9 +56,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaq-7J-Ya8">
-                                <rect key="frame" x="146" y="758" width="123" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaq-7J-Ya8">
+                                <rect key="frame" x="10" y="758" width="394" height="30"/>
                                 <state key="normal" title="サインアップする"/>
                                 <connections>
                                     <action selector="onTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EOv-Fx-1Xr"/>
@@ -69,6 +67,16 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iaq-7J-Ya8" firstAttribute="top" secondItem="PuP-cc-v35" secondAttribute="bottom" constant="31" id="1Wj-vx-XKm"/>
+                            <constraint firstItem="PuP-cc-v35" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="474-wq-IfD"/>
+                            <constraint firstItem="PuP-cc-v35" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kpg-GG-e59"/>
+                            <constraint firstItem="iaq-7J-Ya8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OzC-vF-LHv"/>
+                            <constraint firstItem="iaq-7J-Ya8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="You-Y5-fhO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iaq-7J-Ya8" secondAttribute="trailing" constant="10" id="ZjB-Nn-H6n"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PuP-cc-v35" secondAttribute="trailing" constant="10" id="yZD-1B-Jfm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iaq-7J-Ya8" secondAttribute="bottom" constant="74" id="zzg-X8-XuN"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="8j2-j5-vcg" id="PLr-vg-dAt"/>

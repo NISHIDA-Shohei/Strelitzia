@@ -10,9 +10,9 @@
 		1AECD4FB834D27BC6EA92EB7 /* Pods_StrelitziaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96988137C46E960CFD6C583E /* Pods_StrelitziaTests.framework */; };
 		79943E94DF4F701D2729E0C3 /* Pods_Strelitzia_StrelitziaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9A2D1E394E42451FEDEADC /* Pods_Strelitzia_StrelitziaUITests.framework */; };
 		8CFEBECCA4B4CD282BB06281 /* Pods_Strelitzia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEBDBDBDAFB85B6AE2F2312 /* Pods_Strelitzia.framework */; };
+		B66D2D54265CD7A200862FA1 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D53265CD7A200862FA1 /* SurveyViewController.swift */; };
 		B69F0C67265A1092001B1831 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69F0C66265A1092001B1831 /* User.storyboard */; };
 		B69F0C6A265A10EA001B1831 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C69265A10EA001B1831 /* UserMainViewController.swift */; };
-		B69F0C6C265A110F001B1831 /* SelectUserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C6B265A110F001B1831 /* SelectUserTypeViewController.swift */; };
 		B69F0C6E265A1AA1001B1831 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C6D265A1AA1001B1831 /* UserModel.swift */; };
 		B69F0C70265A1ABD001B1831 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C6F265A1ABD001B1831 /* UserViewModel.swift */; };
 		B69F0C72265A384E001B1831 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C71265A384E001B1831 /* Functions.swift */; };
@@ -54,9 +54,9 @@
 		6026D1C9FE2B4263668E87B1 /* Pods-Strelitzia-StrelitziaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strelitzia-StrelitziaUITests.release.xcconfig"; path = "Target Support Files/Pods-Strelitzia-StrelitziaUITests/Pods-Strelitzia-StrelitziaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8052516F3F8564B999E25DDC /* Pods-StrelitziaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrelitziaTests.debug.xcconfig"; path = "Target Support Files/Pods-StrelitziaTests/Pods-StrelitziaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		96988137C46E960CFD6C583E /* Pods_StrelitziaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StrelitziaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B66D2D53265CD7A200862FA1 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		B69F0C66265A1092001B1831 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		B69F0C69265A10EA001B1831 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
-		B69F0C6B265A110F001B1831 /* SelectUserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserTypeViewController.swift; sourceTree = "<group>"; };
 		B69F0C6D265A1AA1001B1831 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B69F0C6F265A1ABD001B1831 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		B69F0C71265A384E001B1831 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 				B69F0C69265A10EA001B1831 /* UserMainViewController.swift */,
 				B69F0C6F265A1ABD001B1831 /* UserViewModel.swift */,
 				B69F0C6D265A1AA1001B1831 /* UserModel.swift */,
-				B69F0C6B265A110F001B1831 /* SelectUserTypeViewController.swift */,
+				B66D2D53265CD7A200862FA1 /* SurveyViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -500,10 +500,10 @@
 				B69F0C72265A384E001B1831 /* Functions.swift in Sources */,
 				B69F0C6A265A10EA001B1831 /* UserMainViewController.swift in Sources */,
 				B69F0C77265A46A4001B1831 /* SetSchoolCodeViewController.swift in Sources */,
-				B69F0C6C265A110F001B1831 /* SelectUserTypeViewController.swift in Sources */,
 				B6BB91FC2657354900E67F97 /* Strelitzia.xcdatamodeld in Sources */,
 				B6BB9225265810A000E67F97 /* LoginViewController.swift in Sources */,
 				B69F0C70265A1ABD001B1831 /* UserViewModel.swift in Sources */,
+				B66D2D54265CD7A200862FA1 /* SurveyViewController.swift in Sources */,
 				B6BB91F42657354900E67F97 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
