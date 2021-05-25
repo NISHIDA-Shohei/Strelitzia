@@ -18,4 +18,8 @@ class UserViewModel {
     func getHistory() -> Observable<HistoryData> {
         return model.getHistory().asObservable()
     }
+    
+    func uploadSurveyData(title: String, place: String, details: String, image: UIImage) -> Observable<ResultAlert> {
+        return model.uploadSurveyData(title: title, place: place, details: details, image: image).asObservable()
+    }
 }
