@@ -22,4 +22,8 @@ class UserViewModel {
     func uploadSurveyData(title: String, place: String, details: String, image: UIImage) -> Observable<ResultAlert> {
         return model.uploadSurveyData(title: title, place: place, details: details, image: image).asObservable()
     }
+    
+    func getSurveyData(documentId: String) -> Observable<SurveyData> {
+        return model.getSurveyData(documentId: documentId).asObservable()
+    }
 }

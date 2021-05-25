@@ -14,7 +14,7 @@ class UserModel {
     
     private var ref = Firestore.firestore()
     private let userId = Auth.auth().currentUser?.uid
-
+    
     func getUserInfo() -> Observable<UserInfo> {
         return Observable.create { observer in
             let folderRef = self.ref.collection("users").document(self.userId!)
@@ -25,7 +25,7 @@ class UserModel {
                     
                     let userInfo = UserInfo(isAdmin: isAdmin!, schoolId: schoolId)
                     observer.onNext(userInfo)
-
+                    
                 } else {
                     print("Document does not exist")
                 }
@@ -57,6 +57,26 @@ class UserModel {
         }
     }
     
+    func getSurveyData(documentId: String) -> Observable<SurveyData> {
+        return Observable.create { [weak self] observer in
+            let folderRef = self?.ref.collection("survey").document(documentId)
+            folderRef?.getDocument {(document, error) in
+                if let document = document, document.exists {
+                    let id = document.documentID
+                    guard let title = document.data()?["title"] as? String else { return }
+                    guard let place = document.data()?["place"] as? String else { return }
+                    guard let details = document.data()?["details"] as? String else { return }
+                    guard let imageURL = document.data()?["imageURL"] as? String else { return }
+                    let data = SurveyData(documentId: id, title: title, place: place, details: details, imageURL: imageURL)
+                    observer.onNext(data)
+                } else {
+                    print("Document does not exist")
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
     func uploadSurveyData(title: String, place: String, details: String, image: UIImage) -> Observable<ResultAlert> {
         return Observable.create { [weak self] observer in
             guard let imageData = image.jpegData(compressionQuality: 0.01) else {
@@ -76,7 +96,7 @@ class UserModel {
                         let data = ResultAlert(title: "画像の保存に失敗しました", text: "時間を空けてもう一度お試しください")
                         observer.onNext(data)
                     }
-            
+                    
                     imageRef.downloadURL { (url, error) in
                         if error != nil {
                             let data = ResultAlert(title: "画像の保存に失敗しました", text: "時間を空けてもう一度お試しください")
@@ -136,6 +156,22 @@ struct HistoryData {
         self.title = title
         self.lastModified = lastModified
         self.isCompleated = isCompleated
+        self.imageURL = imageURL
+    }
+}
+
+struct SurveyData {
+    var documentId: String
+    var title: String
+    var place: String
+    var details: String
+    var imageURL: String
+    
+    init(documentId: String, title: String, place: String, details: String, imageURL: String) {
+        self.documentId = documentId
+        self.title = title
+        self.place = place
+        self.details = details
         self.imageURL = imageURL
     }
 }

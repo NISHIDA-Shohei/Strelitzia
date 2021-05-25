@@ -23,9 +23,13 @@ class SurveyViewController: UIViewController, UINavigationControllerDelegate, UI
     
     let functions = Functions()
     
+    var isEditingView = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if isEditing {
+            
+        }
     }
     
     @IBAction func onTapSelectImage(_ sender: Any) {
@@ -44,6 +48,16 @@ class SurveyViewController: UIViewController, UINavigationControllerDelegate, UI
                     self?.functions.dismissIndicator(view: (self?.view)!)
                 }).disposed(by: disposeBag)
         }
+    }
+    
+    func getSurveyData(documentId: String) {
+        viewModel.getSurveyData(documentId: documentId)
+            .subscribe(onNext: { [weak self] response in
+                self?.imageView.loadImageAsynchronously(url: response.imageURL)
+                self?.titleTextField.text = response.title
+                self?.placeTextField.text = response.place
+                self?.detailsTextView.text = response.details
+            }).disposed(by: disposeBag)
     }
 }
 

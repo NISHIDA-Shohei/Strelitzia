@@ -75,9 +75,9 @@ extension UserMainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let selectedId = userDefaults.string(forKey: "selectedId") else { return }
-//        let detailViewController = UINib(nibName: "ProgramDetailViewController", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! ProgramDetailViewController
-//        detailViewController.getDetailProgram(festivalId: selectedId, programId: programData[indexPath.row].id, type: type)
-//        self.present(detailViewController, animated: true, completion: nil)
+        let storyboard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
+        let surveyViewController = storyboard.instantiateViewController(withIdentifier: "SurveyViewController") as! SurveyViewController
+        surveyViewController.getSurveyData(documentId: historyData[indexPath.item].documentId)
+        self.present(surveyViewController, animated: true, completion: nil)
     }
 }
