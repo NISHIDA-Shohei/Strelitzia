@@ -24,12 +24,10 @@ class SurveyViewController: UIViewController, UINavigationControllerDelegate, UI
     let functions = Functions()
     
     var isEditingView = false
+    var documentId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if isEditing {
-            
-        }
     }
     
     @IBAction func onTapSelectImage(_ sender: Any) {
@@ -42,15 +40,25 @@ class SurveyViewController: UIViewController, UINavigationControllerDelegate, UI
            let detail = detailsTextView.text,
            let image = imageView.image {
             functions.startIndicator(view: self.view)
-            viewModel.uploadSurveyData(title: title, place: place, details: detail, image: image)
-                .subscribe(onNext: { [weak self] response in
-                    self?.showAlert(title: response.title, text: response.text)
-                    self?.functions.dismissIndicator(view: (self?.view)!)
-                }).disposed(by: disposeBag)
+            if isEditingView {
+                print("1")
+                viewModel.uploadEditedSurveyData(documentId: documentId, title: title, place: place, details: detail, image: image)
+                    .subscribe(onNext: { [weak self] response in
+                        self?.showAlert(title: response.title, text: response.text)
+                        self?.functions.dismissIndicator(view: (self?.view)!)
+                    }).disposed(by: disposeBag)
+            } else {
+                print("2")
+                viewModel.uploadSurveyData(title: title, place: place, details: detail, image: image)
+                    .subscribe(onNext: { [weak self] response in
+                        self?.showAlert(title: response.title, text: response.text)
+                        self?.functions.dismissIndicator(view: (self?.view)!)
+                    }).disposed(by: disposeBag)
+            }
         }
     }
     
-    func getSurveyData(documentId: String) {
+    func getSurveyData() {
         viewModel.getSurveyData(documentId: documentId)
             .subscribe(onNext: { [weak self] response in
                 self?.imageView.loadImageAsynchronously(url: response.imageURL)

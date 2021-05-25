@@ -16,6 +16,8 @@ class UserMainViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     private var userInfo = UserInfo(isAdmin: Bool(), schoolId: "")
+    private var userDefaults = UserDefaults.standard
+
     
     var historyData = [HistoryData]()
     
@@ -41,6 +43,7 @@ class UserMainViewController: UIViewController {
             .subscribe(onNext: { [weak self] response in
                 self?.userInfo.schoolId = response.schoolId
                 self?.userInfo.isAdmin = response.isAdmin
+                self?.userDefaults.setValue(response.schoolId, forKey: "schoolId")
                 self?.getHistory()
             }).disposed(by: disposeBag)
     }
@@ -77,7 +80,10 @@ extension UserMainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
         let surveyViewController = storyboard.instantiateViewController(withIdentifier: "SurveyViewController") as! SurveyViewController
-        surveyViewController.getSurveyData(documentId: historyData[indexPath.item].documentId)
+        surveyViewController.isEditingView = true
+        surveyViewController.documentId = historyData[indexPath.item].documentId
+        surveyViewController.getSurveyData()
+        
         self.present(surveyViewController, animated: true, completion: nil)
     }
 }

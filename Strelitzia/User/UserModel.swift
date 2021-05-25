@@ -131,6 +131,62 @@ class UserModel {
             return Disposables.create()
         }
     }
+    
+    func uploadEditedSurveyData(documentId: String, title: String, place: String, details: String, image: UIImage) -> Observable<ResultAlert> {
+        return Observable.create { [weak self] observer in
+            guard let imageData = image.jpegData(compressionQuality: 0.01) else {
+                return ResultAlert(title: "画像の圧縮に失敗しました", text: "時間を空けてもう一度お試しください") as! Disposable
+            }
+            
+            let metaData = StorageMetadata()
+            metaData.contentType = "image/ipeg"
+            
+            let imageID = NSUUID().uuidString // Unique string to reference image
+            let folderRef = Firestore.firestore().collection("survey").document(documentId)
+            let imageRef = Storage.storage().reference(forURL: "gs://strelitzia-8e9cf.appspot.com").child(imageID)
+            
+            DispatchQueue.global(qos: .default).async {
+                imageRef.putData(imageData, metadata: metaData) { (metaData, error) in
+                    if error != nil {
+                        let data = ResultAlert(title: "画像の保存に失敗しました", text: "時間を空けてもう一度お試しください")
+                        observer.onNext(data)
+                    }
+                    
+                    imageRef.downloadURL { (url, error) in
+                        if error != nil {
+                            let data = ResultAlert(title: "画像の保存に失敗しました", text: "時間を空けてもう一度お試しください")
+                            observer.onNext(data)
+                        } else {
+                            let newFolder: [String: Any] = [
+                                "userId": Auth.auth().currentUser?.uid ?? "",
+                                "title": title,
+                                "place": place,
+                                "details": details,
+                                "imageURL": url?.absoluteString as Any,
+                                "imageReference": imageID,
+                                "isCompleated": false,
+                                "lastModified": Timestamp()
+                            ]
+                            
+                            folderRef.setData(newFolder) { error in
+                                DispatchQueue.main.async {
+                                    if error != nil {
+                                        let data = ResultAlert(title: "エラーが起きました", text: "時間を空けてもう一度お試しください")
+                                        observer.onNext(data)
+                                    } else {
+                                        let data = ResultAlert(title: "送信に成功しました", text: "")
+                                        observer.onNext(data)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
 }
 
 
