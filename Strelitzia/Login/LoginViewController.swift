@@ -8,11 +8,16 @@
 import UIKit
 import Firebase
 import FirebaseUI
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
     
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
+    
+    private let viewModel = LoginViewModel()
+    private let disposeBag = DisposeBag()
     
     var functions = Functions()
     
@@ -33,16 +38,31 @@ class LoginViewController: UIViewController {
                 guard let self = self else { return }
                 DispatchQueue.main.async {
                     if (result?.user) != nil {
-                        let storyboard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
-                        let userMainViewController = storyboard.instantiateViewController(withIdentifier: "UserMainViewController") as! UserMainViewController
-                        userMainViewController.modalPresentationStyle = .fullScreen
-                        self.present(userMainViewController, animated: true, completion: nil)
+                        self.decideView()
                     }
                     self.functions.dismissIndicator(view: self.view)
                 }
                 self.showErrorIfNeeded(error)
             }
         }
+    }
+    
+    func decideView() {
+        viewModel.checkIsAdmin()
+            .subscribe(onNext: { [weak self] response in
+                if response == true {
+                    let storyboard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
+                    let adminMainViewController = storyboard.instantiateViewController(withIdentifier: "AdminMainViewController") as! AdminMainViewController
+                    adminMainViewController.modalPresentationStyle = .fullScreen
+                    self?.present(adminMainViewController, animated: true, completion: nil)
+                } else {
+                    let storyboard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
+                    let userMainViewController = storyboard.instantiateViewController(withIdentifier: "UserMainViewController") as! UserMainViewController
+                    userMainViewController.modalPresentationStyle = .fullScreen
+                    self?.present(userMainViewController, animated: true, completion: nil)
+                }
+                
+            }).disposed(by: disposeBag)
     }
     
     private func showErrorIfNeeded(_ errorOrNil: Error?) {

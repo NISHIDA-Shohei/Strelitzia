@@ -36,7 +36,7 @@ class SurveyViewController: UIViewController, UINavigationControllerDelegate, UI
         selectImage()
     }
     
-    @IBAction func onTapUploadSurvey(_ senger: Any) {
+    @IBAction func onTapUploadSurvey(_ sender: Any) {
         if let title = titleTextField.text,
            let place = placeTextField.text,
            let detail = detailsTextView.text,

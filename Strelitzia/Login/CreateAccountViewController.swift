@@ -36,28 +36,42 @@ class CreateAccountViewController: UIViewController {
             // ①FirebaseAuthにemailとpasswordでアカウントを作成する
             Auth.auth().createUser(withEmail: email, password: password, completion: { (result, error) in
                 if let user = result?.user {
-                    print("ユーザー作成完了 uid:" + user.uid)
-                    // ②FirestoreのUsersコレクションにdocumentID = ログインしたuidでデータを作成する
-                    Firestore.firestore().collection("users").document(user.uid).setData([
-                        "isAdmin": self.isAdmin
-                    ], completion: { error in
-                        if let error = error {
-                            // ②が失敗した場合
-                            print("Firestore 新規登録失敗 " + error.localizedDescription)
-                            let dialog = UIAlertController(title: "新規登録失敗", message: error.localizedDescription, preferredStyle: .alert)
-                            dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                            self.present(dialog, animated: true, completion: nil)
-                        } else {
-                            if self.isAdmin {
-                                
+                    
+                    if self.isAdmin {
+                        Firestore.firestore().collection("users").document(user.uid).setData([
+                            "isAdmin": self.isAdmin,
+                            "schoolId": Functions().randomString(length: 8)
+                        ], completion: { error in
+                            if let error = error {
+                                // ②が失敗した場合
+                                print("Firestore 新規登録失敗 " + error.localizedDescription)
+                                let dialog = UIAlertController(title: "新規登録失敗", message: error.localizedDescription, preferredStyle: .alert)
+                                dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                                self.present(dialog, animated: true, completion: nil)
+                            } else {
+                                let storyboard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
+                                let adminMainViewController = storyboard.instantiateViewController(withIdentifier: "AdminMainViewController") as! AdminMainViewController
+                                adminMainViewController.modalPresentationStyle = .fullScreen
+                                self.present(adminMainViewController, animated: true, completion: nil)
+                            }
+                        })
+                    } else {
+                        Firestore.firestore().collection("users").document(user.uid).setData([
+                            "isAdmin": self.isAdmin
+                        ], completion: { error in
+                            if let error = error {
+                                print("Firestore 新規登録失敗 " + error.localizedDescription)
+                                let dialog = UIAlertController(title: "新規登録失敗", message: error.localizedDescription, preferredStyle: .alert)
+                                dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                                self.present(dialog, animated: true, completion: nil)
                             } else {
                                 let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
                                 let setSchoolCodeViewController = storyboard.instantiateViewController(withIdentifier: "SetSchoolCodeViewController") as! SetSchoolCodeViewController
                                 setSchoolCodeViewController.modalPresentationStyle = .fullScreen
                                 self.present(setSchoolCodeViewController, animated: true, completion: nil)
                             }
-                        }
-                    })
+                        })
+                    }
                 } else if let error = error {
                     // ①が失敗した場合
                     print("Firebase Auth 新規登録失敗 " + error.localizedDescription)
