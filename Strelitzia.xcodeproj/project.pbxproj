@@ -11,6 +11,9 @@
 		79943E94DF4F701D2729E0C3 /* Pods_Strelitzia_StrelitziaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9A2D1E394E42451FEDEADC /* Pods_Strelitzia_StrelitziaUITests.framework */; };
 		8CFEBECCA4B4CD282BB06281 /* Pods_Strelitzia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEBDBDBDAFB85B6AE2F2312 /* Pods_Strelitzia.framework */; };
 		B66D2D54265CD7A200862FA1 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D53265CD7A200862FA1 /* SurveyViewController.swift */; };
+		B66D2D58265CEE2A00862FA1 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D56265CEE2A00862FA1 /* UserTableViewCell.swift */; };
+		B66D2D59265CEE2A00862FA1 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66D2D57265CEE2A00862FA1 /* UserTableViewCell.xib */; };
+		B66D2D5B265CFFDC00862FA1 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D5A265CFFDC00862FA1 /* DateUtils.swift */; };
 		B69F0C67265A1092001B1831 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69F0C66265A1092001B1831 /* User.storyboard */; };
 		B69F0C6A265A10EA001B1831 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C69265A10EA001B1831 /* UserMainViewController.swift */; };
 		B69F0C6E265A1AA1001B1831 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C6D265A1AA1001B1831 /* UserModel.swift */; };
@@ -55,6 +58,9 @@
 		8052516F3F8564B999E25DDC /* Pods-StrelitziaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrelitziaTests.debug.xcconfig"; path = "Target Support Files/Pods-StrelitziaTests/Pods-StrelitziaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		96988137C46E960CFD6C583E /* Pods_StrelitziaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StrelitziaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66D2D53265CD7A200862FA1 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
+		B66D2D56265CEE2A00862FA1 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		B66D2D57265CEE2A00862FA1 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		B66D2D5A265CFFDC00862FA1 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		B69F0C66265A1092001B1831 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		B69F0C69265A10EA001B1831 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
 		B69F0C6D265A1AA1001B1831 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -113,9 +119,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B66D2D55265CEE1300862FA1 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B66D2D56265CEE2A00862FA1 /* UserTableViewCell.swift */,
+				B66D2D57265CEE2A00862FA1 /* UserTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		B69F0C68265A10AD001B1831 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				B66D2D55265CEE1300862FA1 /* TableViewCell */,
 				B69F0C66265A1092001B1831 /* User.storyboard */,
 				B69F0C69265A10EA001B1831 /* UserMainViewController.swift */,
 				B69F0C6F265A1ABD001B1831 /* UserViewModel.swift */,
@@ -169,6 +185,7 @@
 				B6BB91FD2657354B00E67F97 /* Assets.xcassets */,
 				B6BB91FF2657354B00E67F97 /* LaunchScreen.storyboard */,
 				B69F0C71265A384E001B1831 /* Functions.swift */,
+				B66D2D5A265CFFDC00862FA1 /* DateUtils.swift */,
 				B6BB9226265811E800E67F97 /* GoogleService-Info.plist */,
 				B6BB92022657354B00E67F97 /* Info.plist */,
 				B6BB91FA2657354900E67F97 /* Strelitzia.xcdatamodeld */,
@@ -331,6 +348,7 @@
 				B69F0C67265A1092001B1831 /* User.storyboard in Resources */,
 				B6BB9227265811E800E67F97 /* GoogleService-Info.plist in Resources */,
 				B6BB91FE2657354B00E67F97 /* Assets.xcassets in Resources */,
+				B66D2D59265CEE2A00862FA1 /* UserTableViewCell.xib in Resources */,
 				B6BB91F92657354900E67F97 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,12 +515,14 @@
 				B6BB91F22657354900E67F97 /* AppDelegate.swift in Sources */,
 				B69F0C6E265A1AA1001B1831 /* UserModel.swift in Sources */,
 				B69F0C75265A3D05001B1831 /* CreateAccountViewController.swift in Sources */,
+				B66D2D58265CEE2A00862FA1 /* UserTableViewCell.swift in Sources */,
 				B69F0C72265A384E001B1831 /* Functions.swift in Sources */,
 				B69F0C6A265A10EA001B1831 /* UserMainViewController.swift in Sources */,
 				B69F0C77265A46A4001B1831 /* SetSchoolCodeViewController.swift in Sources */,
 				B6BB91FC2657354900E67F97 /* Strelitzia.xcdatamodeld in Sources */,
 				B6BB9225265810A000E67F97 /* LoginViewController.swift in Sources */,
 				B69F0C70265A1ABD001B1831 /* UserViewModel.swift in Sources */,
+				B66D2D5B265CFFDC00862FA1 /* DateUtils.swift in Sources */,
 				B66D2D54265CD7A200862FA1 /* SurveyViewController.swift in Sources */,
 				B6BB91F42657354900E67F97 /* SceneDelegate.swift in Sources */,
 			);

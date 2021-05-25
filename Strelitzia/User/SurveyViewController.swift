@@ -71,7 +71,8 @@ extension SurveyViewController {
                             "details": self.detailsTextView.text!,
                             "imageURL": url?.absoluteString as Any,
                             "imageReference": imageID,
-                            "isCompleated": false
+                            "isCompleated": false,
+                            "lastModified": Timestamp()
                         ]
                         
                         folderRef.addDocument(data: newFolder) { error in

@@ -16,13 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Main" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rH-Iz-rCW">
-                                <rect key="frame" x="189" y="438" width="37" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WE4-6C-bq1">
                                 <rect key="frame" x="131" y="818" width="153" height="30"/>
                                 <state key="normal" title="新しい問題を送信する"/>
@@ -30,19 +23,30 @@
                                     <action selector="onTapNewSurvey:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LqN-a4-M0h"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sqJ-rP-RGC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WE4-6C-bq1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="131" id="29l-Zr-dui"/>
+                            <constraint firstItem="sqJ-rP-RGC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7S3-cj-SX4"/>
+                            <constraint firstItem="sqJ-rP-RGC" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="7TJ-cZ-Clv"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WE4-6C-bq1" secondAttribute="trailing" constant="130" id="Xi5-zJ-nS1"/>
+                            <constraint firstItem="sqJ-rP-RGC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ioA-jE-I6Z"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="WE4-6C-bq1" secondAttribute="bottom" constant="14" id="rqc-Oe-ddy"/>
+                            <constraint firstItem="WE4-6C-bq1" firstAttribute="top" secondItem="sqJ-rP-RGC" secondAttribute="bottom" id="xv2-os-1pf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="sqJ-rP-RGC" id="lof-cn-Xlr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="138"/>
+            <point key="canvasLocation" x="27.536231884057973" y="137.94642857142856"/>
         </scene>
         <!--Survey View Controller-->
         <scene sceneID="bZc-8h-VFr">
