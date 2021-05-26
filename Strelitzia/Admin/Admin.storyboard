@@ -70,6 +70,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題の詳細" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cle-AD-b0n">
+                                <rect key="frame" x="10" y="466" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLACE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRc-EJ-bTF">
                                 <rect key="frame" x="10" y="412" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -85,16 +91,13 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpj-Q5-K6g">
-                                <rect key="frame" x="153" y="809" width="108" height="30"/>
+                                <rect key="frame" x="34" y="806" width="347" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="対応済みにする"/>
+                                <state key="normal" title="未対応"/>
+                                <connections>
+                                    <action selector="onTapStatusButton:" destination="jKY-Vo-31o" eventType="touchUpInside" id="XX4-Wv-o2J"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題の詳細" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cle-AD-b0n">
-                                <rect key="frame" x="10" y="466" width="394" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rbf-US-ltr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -119,6 +122,13 @@
                             <constraint firstItem="3bw-na-SKX" firstAttribute="leading" secondItem="Rbf-US-ltr" secondAttribute="leading" constant="10" id="yNq-Yg-cAF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detailsTextView" destination="scp-ce-3Lr" id="xxE-iA-ajj"/>
+                        <outlet property="imageView" destination="Zvp-cZ-xbi" id="1o0-Xc-rxz"/>
+                        <outlet property="placeLabel" destination="MRc-EJ-bTF" id="QaC-e6-2qg"/>
+                        <outlet property="statusButton" destination="Lpj-Q5-K6g" id="B9h-aM-OOc"/>
+                        <outlet property="titleLabel" destination="3bw-na-SKX" id="qg4-8D-Xam"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emK-ul-dZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -81,12 +81,11 @@ extension AdminMainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
-        let surveyViewController = storyboard.instantiateViewController(withIdentifier: "SurveyViewController") as! SurveyViewController
-        surveyViewController.isEditingView = true
-        surveyViewController.documentId = historyData[indexPath.item].documentId
-        surveyViewController.getSurveyData()
+        let storyboard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
+        let adminSurveyViewController = storyboard.instantiateViewController(withIdentifier: "AdminSurveyViewController") as! AdminSurveyViewController
+        adminSurveyViewController.documentId = historyData[indexPath.item].documentId
+        adminSurveyViewController.getSurveyData()
         
-        self.present(surveyViewController, animated: true, completion: nil)
+        self.present(adminSurveyViewController, animated: true, completion: nil)
     }
 }

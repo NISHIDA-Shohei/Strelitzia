@@ -133,4 +133,23 @@ class AdminModel {
             return Disposables.create()
         }
     }
+    
+    func changeStatus(schoolId: String, documentId: String, isCompleted: Bool) -> Observable<Bool> {
+        return Observable.create { [weak self] observer in
+            let newFolder: [String: Any] = [
+                "isCompleted": !isCompleted
+            ]
+            
+            self?.ref.collection("school").document(schoolId).collection("survey").document(documentId).updateData(newFolder) { error in
+                DispatchQueue.main.async {
+                    if error != nil {
+                        observer.onNext(false) //送信に失敗
+                    } else {
+                        observer.onNext(true) //送信に成功
+                    }
+                }
+            }
+            return Disposables.create()
+        }
+    }
 }

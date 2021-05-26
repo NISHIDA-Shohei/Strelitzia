@@ -26,4 +26,9 @@ class AdminViewModel {
     func uploadEditedSurveyData(schoolId: String, documentId: String, title: String, place: String, details: String, image: UIImage) -> Observable<ResultAlert> {
         return model.uploadEditedSurveyData(schoolId: schoolId, documentId: documentId, title: title, place: place, details: details, image: image).asObservable()
     }
+    
+    func changeStatus(schoolId: String, documentId: String, isCompleted: Bool) -> Observable<Bool> {
+        return model.changeStatus(schoolId: schoolId, documentId: documentId, isCompleted: isCompleted).asObservable()
+    }
+    
 }
