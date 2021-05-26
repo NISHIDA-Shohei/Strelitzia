@@ -31,4 +31,12 @@ class AdminViewModel {
         return model.changeStatus(schoolId: schoolId, documentId: documentId, isCompleted: isCompleted).asObservable()
     }
     
+    func changeSchoolInfo(schoolId: String, schoolName: String) -> Observable<Bool> {
+        return model.changeSchoolInfo(schoolId: schoolId, schoolName: schoolName)
+    }
+    
+    func getSchoolInfo(schoolId: String) -> Observable<SchoolInfo> {
+        return model.getSchoolInfo(schoolId: schoolId)
+    }
+    
 }

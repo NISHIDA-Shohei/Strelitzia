@@ -38,9 +38,10 @@ class CreateAccountViewController: UIViewController {
                 if let user = result?.user {
                     
                     if self.isAdmin {
+                        let schoolId = Functions().randomString(length: 8)
                         Firestore.firestore().collection("users").document(user.uid).setData([
                             "isAdmin": self.isAdmin,
-                            "schoolId": Functions().randomString(length: 8)
+                            "schoolId": schoolId
                         ], completion: { error in
                             if let error = error {
                                 print("Firestore 新規登録失敗" + error.localizedDescription)
@@ -48,10 +49,11 @@ class CreateAccountViewController: UIViewController {
                                 dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                                 self.present(dialog, animated: true, completion: nil)
                             } else {
-                                let storyboard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
-                                let adminMainViewController = storyboard.instantiateViewController(withIdentifier: "AdminMainViewController") as! AdminMainViewController
-                                adminMainViewController.modalPresentationStyle = .fullScreen
-                                self.present(adminMainViewController, animated: true, completion: nil)
+                                let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+                                let adminSetUpViewController = storyboard.instantiateViewController(withIdentifier: "AdminSetUpViewController") as! AdminSetUpViewController
+                                adminSetUpViewController.modalPresentationStyle = .fullScreen
+                                adminSetUpViewController.schoolId = schoolId
+                                self.present(adminSetUpViewController, animated: true, completion: nil)
                             }
                         })
                     } else {

@@ -21,6 +21,8 @@
 		B66D2D66265D65F700862FA1 /* AdminSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D65265D65F700862FA1 /* AdminSurveyViewController.swift */; };
 		B66D2D68265D669200862FA1 /* AdminViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D67265D669200862FA1 /* AdminViewModel.swift */; };
 		B66D2D6A265D66A000862FA1 /* AdminModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D69265D66A000862FA1 /* AdminModel.swift */; };
+		B66D2D6C265E435900862FA1 /* AdminMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D6B265E435900862FA1 /* AdminMenuViewController.swift */; };
+		B66D2D70265E6C9100862FA1 /* AdminSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D6F265E6C9100862FA1 /* AdminSetUpViewController.swift */; };
 		B69F0C67265A1092001B1831 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69F0C66265A1092001B1831 /* User.storyboard */; };
 		B69F0C6A265A10EA001B1831 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C69265A10EA001B1831 /* UserMainViewController.swift */; };
 		B69F0C6E265A1AA1001B1831 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C6D265A1AA1001B1831 /* UserModel.swift */; };
@@ -75,6 +77,8 @@
 		B66D2D65265D65F700862FA1 /* AdminSurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSurveyViewController.swift; sourceTree = "<group>"; };
 		B66D2D67265D669200862FA1 /* AdminViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewModel.swift; sourceTree = "<group>"; };
 		B66D2D69265D66A000862FA1 /* AdminModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminModel.swift; sourceTree = "<group>"; };
+		B66D2D6B265E435900862FA1 /* AdminMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMenuViewController.swift; sourceTree = "<group>"; };
+		B66D2D6F265E6C9100862FA1 /* AdminSetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSetUpViewController.swift; sourceTree = "<group>"; };
 		B69F0C66265A1092001B1831 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		B69F0C69265A10EA001B1831 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
 		B69F0C6D265A1AA1001B1831 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -148,10 +152,27 @@
 				B66D2D61265D53D300862FA1 /* Admin.storyboard */,
 				B66D2D63265D540A00862FA1 /* AdminMainViewController.swift */,
 				B66D2D65265D65F700862FA1 /* AdminSurveyViewController.swift */,
+				B66D2D6B265E435900862FA1 /* AdminMenuViewController.swift */,
 				B66D2D67265D669200862FA1 /* AdminViewModel.swift */,
 				B66D2D69265D66A000862FA1 /* AdminModel.swift */,
 			);
 			path = Admin;
+			sourceTree = "<group>";
+		};
+		B66D2D6D265E6C5900862FA1 /* AdminSetup */ = {
+			isa = PBXGroup;
+			children = (
+				B66D2D6F265E6C9100862FA1 /* AdminSetUpViewController.swift */,
+			);
+			path = AdminSetup;
+			sourceTree = "<group>";
+		};
+		B66D2D6E265E6C6900862FA1 /* UserSetup */ = {
+			isa = PBXGroup;
+			children = (
+				B69F0C76265A46A4001B1831 /* SetSchoolCodeViewController.swift */,
+			);
+			path = UserSetup;
 			sourceTree = "<group>";
 		};
 		B69F0C68265A10AD001B1831 /* User */ = {
@@ -169,10 +190,11 @@
 		B69F0C73265A3CD2001B1831 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				B6BB91F72657354900E67F97 /* Login.storyboard */,
+				B66D2D6E265E6C6900862FA1 /* UserSetup */,
+				B66D2D6D265E6C5900862FA1 /* AdminSetup */,
 				B6BB9224265810A000E67F97 /* LoginViewController.swift */,
 				B69F0C74265A3D05001B1831 /* CreateAccountViewController.swift */,
-				B69F0C76265A46A4001B1831 /* SetSchoolCodeViewController.swift */,
-				B6BB91F72657354900E67F97 /* Login.storyboard */,
 				B66D2D5C265D4AE400862FA1 /* LoginViewModel.swift */,
 				B66D2D5E265D4AFA00862FA1 /* LoginModel.swift */,
 			);
@@ -543,6 +565,7 @@
 			files = (
 				B6BB91F62657354900E67F97 /* ViewController.swift in Sources */,
 				B6BB91F22657354900E67F97 /* AppDelegate.swift in Sources */,
+				B66D2D6C265E435900862FA1 /* AdminMenuViewController.swift in Sources */,
 				B69F0C6E265A1AA1001B1831 /* UserModel.swift in Sources */,
 				B69F0C75265A3D05001B1831 /* CreateAccountViewController.swift in Sources */,
 				B66D2D66265D65F700862FA1 /* AdminSurveyViewController.swift in Sources */,
@@ -556,6 +579,7 @@
 				B6BB9225265810A000E67F97 /* LoginViewController.swift in Sources */,
 				B66D2D6A265D66A000862FA1 /* AdminModel.swift in Sources */,
 				B69F0C70265A1ABD001B1831 /* UserViewModel.swift in Sources */,
+				B66D2D70265E6C9100862FA1 /* AdminSetUpViewController.swift in Sources */,
 				B66D2D5B265CFFDC00862FA1 /* DateUtils.swift in Sources */,
 				B66D2D64265D540A00862FA1 /* AdminMainViewController.swift in Sources */,
 				B66D2D54265CD7A200862FA1 /* SurveyViewController.swift in Sources */,

@@ -14,9 +14,7 @@ class AdminModel {
     
     private var ref = Firestore.firestore()
     private let userId = Auth.auth().currentUser?.uid
-    
-    var schoolId = UserDefaults.standard.string(forKey: "schoolId")
-    
+        
     func getUserInfo() -> Observable<UserInfo> {
         return Observable.create { observer in
             let folderRef = self.ref.collection("users").document(self.userId!)
@@ -24,8 +22,25 @@ class AdminModel {
                 if let document = document, document.exists {
                     let isAdmin = document.get("isAdmin") as? Bool
                     let schoolId = document.get("schoolId") as? String ?? ""
-                    
                     let userInfo = UserInfo(isAdmin: isAdmin!, schoolId: schoolId)
+                    observer.onNext(userInfo)
+                    
+                } else {
+                    print("Document does not exist")
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func getSchoolInfo(schoolId: String) -> Observable<SchoolInfo> {
+        return Observable.create { observer in
+            let folderRef = self.ref.collection("school").document(schoolId)
+            folderRef.getDocument {(document, error) in
+                if let document = document, document.exists {
+                    let schoolName = document.get("schoolName") as? String ?? ""
+                    let schoolId = document.get("schoolId") as? String ?? ""
+                    let userInfo = SchoolInfo(schoolName: schoolName, schoolId: schoolId)
                     observer.onNext(userInfo)
                     
                 } else {
@@ -141,6 +156,25 @@ class AdminModel {
             ]
             
             self?.ref.collection("school").document(schoolId).collection("survey").document(documentId).updateData(newFolder) { error in
+                DispatchQueue.main.async {
+                    if error != nil {
+                        observer.onNext(false) //送信に失敗
+                    } else {
+                        observer.onNext(true) //送信に成功
+                    }
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func changeSchoolInfo(schoolId: String, schoolName: String) -> Observable<Bool> {
+        return Observable.create { [weak self] observer in
+            let newFolder: [String: Any] = [
+                "schoolName": schoolName
+            ]
+            
+            self?.ref.collection("school").document(schoolId).updateData(newFolder) { error in
                 DispatchQueue.main.async {
                     if error != nil {
                         observer.onNext(false) //送信に失敗
