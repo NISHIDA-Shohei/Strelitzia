@@ -12,6 +12,7 @@ import RxCocoa
 class UserMainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var schoolNameLabel: UILabel!
+    @IBOutlet weak var pointLabel: UILabel!
     
     private let viewModel = UserViewModel()
     private let disposeBag = DisposeBag()
@@ -20,8 +21,8 @@ class UserMainViewController: UIViewController {
     private var userDefaults = UserDefaults.standard
     
     fileprivate let refreshCtl = UIRefreshControl()
-
-    var historyData = [HistoryData]()
+    
+    var historyData = [UserHistoryData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,11 @@ class UserMainViewController: UIViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
         let surveyViewController = storyboard.instantiateViewController(withIdentifier: "SurveyViewController") as! SurveyViewController
         self.present(surveyViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func onTapPointReset() {
+        userDefaults.setValue(0, forKey: "point")
+        updatePointLabel()
     }
     
     func getUserInfo() {
@@ -66,9 +72,32 @@ class UserMainViewController: UIViewController {
             .subscribe(onNext: { [weak self] response in
                 self?.historyData.append(response)
                 self?.tableView.reloadData()
+                self?.checkPoint()
             }).disposed(by: disposeBag)
     }
     
+    func checkPoint() {
+        for data in historyData {
+            if data.isCompleted && !data.pointReceived {
+                viewModel.changePointStatus(schoolId: userInfo.schoolId, documentId: data.documentId)
+                    .subscribe(onNext: { [weak self] response in
+                        if response { //ポイント状態の変更に成功
+                            var currentPoint = self?.userDefaults.object(forKey: "point") as? Int ?? 0
+                            currentPoint += 100
+                            self?.userDefaults.setValue(currentPoint, forKey: "point")
+                            self?.updatePointLabel()
+                        }
+                    }).disposed(by: disposeBag)
+            }
+        }
+        updatePointLabel()
+    }
+    
+    func updatePointLabel() {
+        let currentPoint = self.userDefaults.object(forKey: "point") as? Int ?? 0
+        pointLabel.text = String(currentPoint)
+    }
+
     @objc func refresh(sender: UIRefreshControl) {
         getUserInfo()
         refreshCtl.endRefreshing()
@@ -88,7 +117,7 @@ extension UserMainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath as IndexPath) as! UserTableViewCell
         cell.titleLabel.text = historyData[indexPath.item].title
-        cell.lastModifiedLabel.text = DateUtils.stringFromDate(date: historyData[indexPath.item].lastModified, dateFormat: "yyyy年MM月dd日")
+        cell.lastModifiedLabel.text = DateUtils.stringFromDate(date: historyData[indexPath.item].lastModified, dateFormat: "yyyy年MM月dd日 HH時mm分")
         cell.thumbnailImage.loadImageAsynchronously(url: historyData[indexPath.item].imageURL)
         cell.statusLabel.text = historyData[indexPath.item].isCompleted ? "対応済み" : "未対応"
         cell.statusLabel.textColor = historyData[indexPath.item].isCompleted ? UIColor.green : UIColor.red

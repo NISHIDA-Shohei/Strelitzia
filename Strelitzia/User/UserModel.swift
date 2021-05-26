@@ -52,7 +52,7 @@ class UserModel {
         }
     }
     
-    func getHistory(schoolId: String) -> Observable<HistoryData> {
+    func getHistory(schoolId: String) -> Observable<UserHistoryData> {
         return Observable.create { [weak self] observer in
             let folderRef = self?.ref.collection("school").document(schoolId).collection("survey").whereField("userId", isEqualTo: self?.userId ?? "")
             folderRef?.getDocuments {(snapshot, error) in
@@ -65,8 +65,9 @@ class UserModel {
                         guard let lastModifiedTimestamp = document.data()["lastModified"] as? Timestamp else { return }
                         guard let isCompleted = document.data()["isCompleted"] as? Bool else { return }
                         guard let imageURL = document.data()["imageURL"] as? String else { return }
+                        let pointReceived = document.data()["pointReceived"] as? Bool ?? false
                         let lastModified = lastModifiedTimestamp.dateValue()
-                        let data = HistoryData(documentId: id, title: title, lastModified: lastModified, isCompleted: isCompleted, imageURL: imageURL)
+                        let data = UserHistoryData(documentId: id, title: title, lastModified: lastModified, isCompleted: isCompleted, imageURL: imageURL, pointReceived: pointReceived)
                         observer.onNext(data)
                     }
                 }
@@ -128,6 +129,7 @@ class UserModel {
                                 "imageURL": url?.absoluteString as Any,
                                 "imageReference": imageID,
                                 "isCompleted": false,
+                                "pointReceived": false,
                                 "lastModified": Timestamp()
                             ]
                             
@@ -181,11 +183,10 @@ class UserModel {
                                 "details": details,
                                 "imageURL": url?.absoluteString as Any,
                                 "imageReference": imageID,
-                                "isCompleted": false,
                                 "lastModified": Timestamp()
                             ]
                             
-                            self?.ref.collection("school").document(schoolId).collection("survey").document(documentId).setData(newFolder) { error in
+                            self?.ref.collection("school").document(schoolId).collection("survey").document(documentId).updateData(newFolder) { error in
                                 DispatchQueue.main.async {
                                     if error != nil {
                                         let data = ResultAlert(title: "エラーが起きました", text: "時間を空けてもう一度お試しください")
@@ -197,6 +198,25 @@ class UserModel {
                                 }
                             }
                         }
+                    }
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func changePointStatus(schoolId: String, documentId: String) -> Observable<Bool> {
+        return Observable.create { [weak self] observer in
+            let newFolder: [String: Any] = [
+                "pointReceived": true
+            ]
+            
+            self?.ref.collection("school").document(schoolId).collection("survey").document(documentId).updateData(newFolder) { error in
+                DispatchQueue.main.async {
+                    if error != nil {
+                        observer.onNext(false) //送信に失敗
+                    } else {
+                        observer.onNext(true) //送信に成功
                     }
                 }
             }
@@ -221,6 +241,24 @@ struct SchoolInfo {
     init(schoolName: String, schoolId: String) {
         self.schoolName = schoolName
         self.schoolId = schoolId
+    }
+}
+
+struct UserHistoryData {
+    var documentId: String
+    var title: String
+    var lastModified: Date
+    var isCompleted: Bool
+    var imageURL: String
+    var pointReceived: Bool
+    
+    init(documentId: String, title: String, lastModified: Date, isCompleted: Bool, imageURL: String, pointReceived: Bool) {
+        self.documentId = documentId
+        self.title = title
+        self.lastModified = lastModified
+        self.isCompleted = isCompleted
+        self.imageURL = imageURL
+        self.pointReceived = pointReceived
     }
 }
 

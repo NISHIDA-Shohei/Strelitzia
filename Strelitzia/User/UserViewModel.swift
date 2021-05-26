@@ -15,7 +15,7 @@ class UserViewModel {
         return model.getUserInfo().asObservable()
     }
     
-    func getHistory(schoolId: String) -> Observable<HistoryData> {
+    func getHistory(schoolId: String) -> Observable<UserHistoryData> {
         return model.getHistory(schoolId: schoolId).asObservable()
     }
     
@@ -33,5 +33,9 @@ class UserViewModel {
     
     func getSchoolInfo(schoolId: String) -> Observable<SchoolInfo> {
         return model.getSchoolInfo(schoolId: schoolId)
+    }
+    
+    func changePointStatus(schoolId: String, documentId: String) -> Observable<Bool> {
+        return model.changePointStatus(schoolId: schoolId, documentId: documentId)
     }
 }
