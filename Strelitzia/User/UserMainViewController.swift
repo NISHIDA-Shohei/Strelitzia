@@ -8,6 +8,8 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Firebase
+import FirebaseUI
 
 class UserMainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -34,6 +36,12 @@ class UserMainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if Auth.auth().currentUser == nil {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            loginViewController.modalPresentationStyle = .fullScreen
+            self.present(loginViewController, animated: true, completion: nil)
+        }
         getUserInfo()
     }
     
@@ -46,6 +54,18 @@ class UserMainViewController: UIViewController {
     @IBAction func onTapPointReset() {
         userDefaults.setValue(0, forKey: "point")
         updatePointLabel()
+    }
+    
+    @IBAction func onTapLogout() {
+        do {
+            try Auth.auth().signOut()
+            let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            loginViewController.modalPresentationStyle = .fullScreen
+            self.present(loginViewController, animated: true, completion: nil)
+        } catch {
+            print("ログアウトできない")
+        }
     }
     
     func getUserInfo() {
@@ -97,7 +117,7 @@ class UserMainViewController: UIViewController {
         let currentPoint = self.userDefaults.object(forKey: "point") as? Int ?? 0
         pointLabel.text = String(currentPoint)
     }
-
+    
     @objc func refresh(sender: UIRefreshControl) {
         getUserInfo()
         refreshCtl.endRefreshing()

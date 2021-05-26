@@ -180,6 +180,14 @@
                                     <action selector="tapUpdateButton" destination="ke5-Fq-3q3" eventType="touchUpInside" id="Wq8-LX-sky"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAx-TF-T7d">
+                                <rect key="frame" x="153" y="663" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ログアウトする"/>
+                                <connections>
+                                    <action selector="onTapLogoutButton" destination="ke5-Fq-3q3" eventType="touchUpInside" id="Tiq-5i-4nA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qyv-Yt-w9e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

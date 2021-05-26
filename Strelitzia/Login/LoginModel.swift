@@ -13,11 +13,10 @@ import RxCocoa
 class LoginModel {
     
     private var ref = Firestore.firestore()
-    private let userId = Auth.auth().currentUser?.uid
     
-    func checkIsAdmin() -> Observable<Bool> {
+    func checkIsAdmin(userId: String) -> Observable<Bool> {
         return Observable.create { observer in
-            let folderRef = self.ref.collection("users").document(self.userId!)
+            let folderRef = self.ref.collection("users").document(userId)
             folderRef.getDocument {(document, error) in
                 if let document = document, document.exists {
                     let isAdmin = document.get("isAdmin") as? Bool

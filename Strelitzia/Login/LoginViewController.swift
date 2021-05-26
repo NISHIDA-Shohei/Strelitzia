@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
                 guard let self = self else { return }
                 DispatchQueue.main.async {
                     if (result?.user) != nil {
-                        self.decideView()
+                        self.decideView(userId: result!.user.uid)
                     }
                     self.functions.dismissIndicator(view: self.view)
                 }
@@ -47,8 +47,8 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func decideView() {
-        viewModel.checkIsAdmin()
+    func decideView(userId: String) {
+        viewModel.checkIsAdmin(userId: userId)
             .subscribe(onNext: { [weak self] response in
                 if response {
                     print("true")

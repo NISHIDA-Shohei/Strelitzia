@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Firebase
 
 class AdminMenuViewController: UIViewController {
     
@@ -55,6 +56,18 @@ class AdminMenuViewController: UIViewController {
                     self?.showAlert(title: "エラーが起きました", text: "時間を空けてもう一度お試しください")
                 }
             }).disposed(by: disposeBag)
+    }
+    
+    @IBAction func onTapLogoutButton() {
+        do {
+            try Auth.auth().signOut()
+            let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            loginViewController.modalPresentationStyle = .fullScreen
+            self.present(loginViewController, animated: true, completion: nil)
+        } catch {
+            print("ログアウトできない")
+        }
     }
     
     func showAlert(title:String, text: String = "") {

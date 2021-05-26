@@ -12,7 +12,7 @@ import RxCocoa
 class LoginViewModel {
     private let model = LoginModel()
     
-    func checkIsAdmin() -> Observable<Bool> {
-        return model.checkIsAdmin().asObservable()
+    func checkIsAdmin(userId: String) -> Observable<Bool> {
+        return model.checkIsAdmin(userId: userId).asObservable()
     }
 }

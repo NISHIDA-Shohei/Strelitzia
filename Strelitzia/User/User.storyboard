@@ -52,6 +52,13 @@
                                     <action selector="onTapPointReset" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dXE-J5-cdS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrU-Lm-yWo">
+                                <rect key="frame" x="317" y="44" width="77" height="30"/>
+                                <state key="normal" title="ログアウト"/>
+                                <connections>
+                                    <action selector="onTapLogout" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hrd-qi-1E7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -64,7 +71,9 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WE4-6C-bq1" secondAttribute="trailing" constant="130" id="Xi5-zJ-nS1"/>
                             <constraint firstItem="6mf-mj-QbY" firstAttribute="top" secondItem="xuU-l1-n0F" secondAttribute="bottom" constant="10" id="cI0-gt-hSG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xuU-l1-n0F" secondAttribute="trailing" constant="20" id="dLZ-0z-B92"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jrU-Lm-yWo" secondAttribute="trailing" constant="20" id="gvF-gP-wTf"/>
                             <constraint firstItem="sqJ-rP-RGC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ioA-jE-I6Z"/>
+                            <constraint firstItem="jrU-Lm-yWo" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="lzu-xk-oGf"/>
                             <constraint firstItem="xuU-l1-n0F" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="mal-vH-veO"/>
                             <constraint firstItem="wjY-tN-Ybc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="n3h-it-OpL"/>
                             <constraint firstItem="Ft3-EI-29n" firstAttribute="top" secondItem="wjY-tN-Ybc" secondAttribute="bottom" constant="10" id="nbE-Bd-r0E"/>
