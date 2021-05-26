@@ -11,6 +11,7 @@ import RxCocoa
 
 class UserMainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var schoolNameLabel: UILabel!
     
     private let viewModel = UserViewModel()
     private let disposeBag = DisposeBag()
@@ -47,7 +48,15 @@ class UserMainViewController: UIViewController {
                 self?.userInfo.schoolId = response.schoolId
                 self?.userInfo.isAdmin = response.isAdmin
                 self?.userDefaults.setValue(response.schoolId, forKey: "schoolId")
+                self?.getSchoolInfo(schoolId: response.schoolId)
                 self?.getHistory()
+            }).disposed(by: disposeBag)
+    }
+    
+    func getSchoolInfo(schoolId: String) {
+        viewModel.getSchoolInfo(schoolId: schoolId)
+            .subscribe(onNext: { [weak self] response in
+                self?.schoolNameLabel.text = response.schoolName
             }).disposed(by: disposeBag)
     }
     

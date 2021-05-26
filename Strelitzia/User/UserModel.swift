@@ -34,6 +34,24 @@ class UserModel {
         }
     }
     
+    func getSchoolInfo(schoolId: String) -> Observable<SchoolInfo> {
+        return Observable.create { observer in
+            let folderRef = self.ref.collection("school").document(schoolId)
+            folderRef.getDocument {(document, error) in
+                if let document = document, document.exists {
+                    let schoolName = document.get("schoolName") as? String ?? ""
+                    let schoolId = document.get("schoolId") as? String ?? ""
+                    let userInfo = SchoolInfo(schoolName: schoolName, schoolId: schoolId)
+                    observer.onNext(userInfo)
+                    
+                } else {
+                    print("Document does not exist")
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
     func getHistory(schoolId: String) -> Observable<HistoryData> {
         return Observable.create { [weak self] observer in
             let folderRef = self?.ref.collection("school").document(schoolId).collection("survey").whereField("userId", isEqualTo: self?.userId ?? "")

@@ -30,4 +30,8 @@ class UserViewModel {
     func uploadEditedSurveyData(schoolId: String, documentId: String, title: String, place: String, details: String, image: UIImage) -> Observable<ResultAlert> {
         return model.uploadEditedSurveyData(schoolId: schoolId, documentId: documentId, title: title, place: place, details: details, image: image).asObservable()
     }
+    
+    func getSchoolInfo(schoolId: String) -> Observable<SchoolInfo> {
+        return model.getSchoolInfo(schoolId: schoolId)
+    }
 }

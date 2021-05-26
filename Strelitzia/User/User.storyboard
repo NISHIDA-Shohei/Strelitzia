@@ -24,23 +24,33 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sqJ-rP-RGC">
-                                <rect key="frame" x="0.0" y="44" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="75" width="414" height="743"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuU-l1-n0F">
+                                <rect key="frame" x="20" y="44" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WE4-6C-bq1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="131" id="29l-Zr-dui"/>
-                            <constraint firstItem="sqJ-rP-RGC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7S3-cj-SX4"/>
                             <constraint firstItem="sqJ-rP-RGC" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="7TJ-cZ-Clv"/>
+                            <constraint firstItem="xuU-l1-n0F" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Fzl-fp-D9T"/>
+                            <constraint firstItem="sqJ-rP-RGC" firstAttribute="top" secondItem="xuU-l1-n0F" secondAttribute="bottom" constant="10" id="Nea-ef-8xT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WE4-6C-bq1" secondAttribute="trailing" constant="130" id="Xi5-zJ-nS1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xuU-l1-n0F" secondAttribute="trailing" constant="20" id="dLZ-0z-B92"/>
                             <constraint firstItem="sqJ-rP-RGC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ioA-jE-I6Z"/>
+                            <constraint firstItem="xuU-l1-n0F" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="mal-vH-veO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="WE4-6C-bq1" secondAttribute="bottom" constant="14" id="rqc-Oe-ddy"/>
                             <constraint firstItem="WE4-6C-bq1" firstAttribute="top" secondItem="sqJ-rP-RGC" secondAttribute="bottom" id="xv2-os-1pf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="schoolNameLabel" destination="xuU-l1-n0F" id="4M0-Za-UcM"/>
                         <outlet property="tableView" destination="sqJ-rP-RGC" id="lof-cn-Xlr"/>
                     </connections>
                 </viewController>
