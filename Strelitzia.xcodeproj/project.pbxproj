@@ -34,7 +34,6 @@
 		B69F0C77265A46A4001B1831 /* SetSchoolCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C76265A46A4001B1831 /* SetSchoolCodeViewController.swift */; };
 		B6BB91F22657354900E67F97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB91F12657354900E67F97 /* AppDelegate.swift */; };
 		B6BB91F42657354900E67F97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB91F32657354900E67F97 /* SceneDelegate.swift */; };
-		B6BB91F62657354900E67F97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB91F52657354900E67F97 /* ViewController.swift */; };
 		B6BB91F92657354900E67F97 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BB91F72657354900E67F97 /* Login.storyboard */; };
 		B6BB91FC2657354900E67F97 /* Strelitzia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6BB91FA2657354900E67F97 /* Strelitzia.xcdatamodeld */; };
 		B6BB91FE2657354B00E67F97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6BB91FD2657354B00E67F97 /* Assets.xcassets */; };
@@ -93,7 +92,6 @@
 		B6BB91EE2657354900E67F97 /* Strelitzia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Strelitzia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BB91F12657354900E67F97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6BB91F32657354900E67F97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B6BB91F52657354900E67F97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B6BB91F82657354900E67F97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		B6BB91FB2657354900E67F97 /* Strelitzia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Strelitzia.xcdatamodel; sourceTree = "<group>"; };
 		B6BB91FD2657354B00E67F97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -246,7 +244,6 @@
 				B69F0C68265A10AD001B1831 /* User */,
 				B6BB91F12657354900E67F97 /* AppDelegate.swift */,
 				B6BB91F32657354900E67F97 /* SceneDelegate.swift */,
-				B6BB91F52657354900E67F97 /* ViewController.swift */,
 				B6BB91FD2657354B00E67F97 /* Assets.xcassets */,
 				B6BB91FF2657354B00E67F97 /* LaunchScreen.storyboard */,
 				B69F0C71265A384E001B1831 /* Functions.swift */,
@@ -578,7 +575,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6BB91F62657354900E67F97 /* ViewController.swift in Sources */,
 				B6BB91F22657354900E67F97 /* AppDelegate.swift in Sources */,
 				B66D2D6C265E435900862FA1 /* AdminMenuViewController.swift in Sources */,
 				B69F0C6E265A1AA1001B1831 /* UserModel.swift in Sources */,
