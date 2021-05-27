@@ -36,12 +36,6 @@ class UserMainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if Auth.auth().currentUser == nil {
-            let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-            loginViewController.modalPresentationStyle = .fullScreen
-            self.present(loginViewController, animated: true, completion: nil)
-        }
         getUserInfo()
     }
     

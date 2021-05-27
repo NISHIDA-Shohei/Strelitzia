@@ -23,6 +23,8 @@
 		B66D2D6A265D66A000862FA1 /* AdminModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D69265D66A000862FA1 /* AdminModel.swift */; };
 		B66D2D6C265E435900862FA1 /* AdminMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D6B265E435900862FA1 /* AdminMenuViewController.swift */; };
 		B66D2D70265E6C9100862FA1 /* AdminSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D6F265E6C9100862FA1 /* AdminSetUpViewController.swift */; };
+		B66D2D7A265F575700862FA1 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66D2D79265F575700862FA1 /* Splash.storyboard */; };
+		B66D2D7C265F576C00862FA1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D7B265F576C00862FA1 /* SplashViewController.swift */; };
 		B69F0C67265A1092001B1831 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69F0C66265A1092001B1831 /* User.storyboard */; };
 		B69F0C6A265A10EA001B1831 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C69265A10EA001B1831 /* UserMainViewController.swift */; };
 		B69F0C6E265A1AA1001B1831 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C6D265A1AA1001B1831 /* UserModel.swift */; };
@@ -79,6 +81,8 @@
 		B66D2D69265D66A000862FA1 /* AdminModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminModel.swift; sourceTree = "<group>"; };
 		B66D2D6B265E435900862FA1 /* AdminMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMenuViewController.swift; sourceTree = "<group>"; };
 		B66D2D6F265E6C9100862FA1 /* AdminSetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSetUpViewController.swift; sourceTree = "<group>"; };
+		B66D2D79265F575700862FA1 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		B66D2D7B265F576C00862FA1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		B69F0C66265A1092001B1831 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		B69F0C69265A10EA001B1831 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
 		B69F0C6D265A1AA1001B1831 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -175,6 +179,15 @@
 			path = UserSetup;
 			sourceTree = "<group>";
 		};
+		B66D2D78265F572F00862FA1 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				B66D2D79265F575700862FA1 /* Splash.storyboard */,
+				B66D2D7B265F576C00862FA1 /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		B69F0C68265A10AD001B1831 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +239,7 @@
 		B6BB91F02657354900E67F97 /* Strelitzia */ = {
 			isa = PBXGroup;
 			children = (
+				B66D2D78265F572F00862FA1 /* Splash */,
 				B66D2D55265CEE1300862FA1 /* TableViewCell */,
 				B69F0C73265A3CD2001B1831 /* Login */,
 				B66D2D60265D53BE00862FA1 /* Admin */,
@@ -398,6 +412,7 @@
 				B6BB92012657354B00E67F97 /* LaunchScreen.storyboard in Resources */,
 				B66D2D62265D53D300862FA1 /* Admin.storyboard in Resources */,
 				B69F0C67265A1092001B1831 /* User.storyboard in Resources */,
+				B66D2D7A265F575700862FA1 /* Splash.storyboard in Resources */,
 				B6BB9227265811E800E67F97 /* GoogleService-Info.plist in Resources */,
 				B6BB91FE2657354B00E67F97 /* Assets.xcassets in Resources */,
 				B66D2D59265CEE2A00862FA1 /* UserTableViewCell.xib in Resources */,
@@ -571,6 +586,7 @@
 				B66D2D66265D65F700862FA1 /* AdminSurveyViewController.swift in Sources */,
 				B66D2D58265CEE2A00862FA1 /* UserTableViewCell.swift in Sources */,
 				B66D2D5F265D4AFA00862FA1 /* LoginModel.swift in Sources */,
+				B66D2D7C265F576C00862FA1 /* SplashViewController.swift in Sources */,
 				B69F0C72265A384E001B1831 /* Functions.swift in Sources */,
 				B69F0C6A265A10EA001B1831 /* UserMainViewController.swift in Sources */,
 				B69F0C77265A46A4001B1831 /* SetSchoolCodeViewController.swift in Sources */,
