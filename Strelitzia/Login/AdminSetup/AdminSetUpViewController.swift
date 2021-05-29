@@ -39,7 +39,7 @@ class AdminSetUpViewController: UIViewController {
                         let storyboard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
                         let adminMainViewController = storyboard.instantiateViewController(withIdentifier: "AdminMainViewController") as! AdminMainViewController
                         adminMainViewController.modalPresentationStyle = .fullScreen
-                        self.present(adminMainViewController, animated: true, completion: nil)
+                        self.present(adminMainViewController, animated: false, completion: nil)
                     }
                 }
             }

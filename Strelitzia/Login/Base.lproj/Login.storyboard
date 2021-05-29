@@ -165,7 +165,6 @@
         <!--Admin Set Up View Controller-->
         <scene sceneID="Hxh-tp-fWp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DWV-am-9tv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="AdminSetUpViewController" id="RJe-Kb-Fyw" customClass="AdminSetUpViewController" customModule="Strelitzia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7QB-X8-cS2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -200,6 +199,7 @@
                         <outlet property="schoolNameLabel" destination="BM4-4s-j0Z" id="cCd-TZ-5wR"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DWV-am-9tv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1421.7391304347827" y="456.69642857142856"/>
         </scene>

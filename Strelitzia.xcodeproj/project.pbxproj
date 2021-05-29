@@ -10,6 +10,9 @@
 		1AECD4FB834D27BC6EA92EB7 /* Pods_StrelitziaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96988137C46E960CFD6C583E /* Pods_StrelitziaTests.framework */; };
 		79943E94DF4F701D2729E0C3 /* Pods_Strelitzia_StrelitziaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9A2D1E394E42451FEDEADC /* Pods_Strelitzia_StrelitziaUITests.framework */; };
 		8CFEBECCA4B4CD282BB06281 /* Pods_Strelitzia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEBDBDBDAFB85B6AE2F2312 /* Pods_Strelitzia.framework */; };
+		B62499DA2660161B00CD14F8 /* BaseAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62499D82660161B00CD14F8 /* BaseAddButton.swift */; };
+		B62499DB2660161B00CD14F8 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62499D92660161B00CD14F8 /* BaseButton.swift */; };
+		B62499DD2660182C00CD14F8 /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62499DC2660182C00CD14F8 /* ThemeButton.swift */; };
 		B66D2D54265CD7A200862FA1 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D53265CD7A200862FA1 /* SurveyViewController.swift */; };
 		B66D2D58265CEE2A00862FA1 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D56265CEE2A00862FA1 /* UserTableViewCell.swift */; };
 		B66D2D59265CEE2A00862FA1 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66D2D57265CEE2A00862FA1 /* UserTableViewCell.xib */; };
@@ -67,6 +70,9 @@
 		6026D1C9FE2B4263668E87B1 /* Pods-Strelitzia-StrelitziaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strelitzia-StrelitziaUITests.release.xcconfig"; path = "Target Support Files/Pods-Strelitzia-StrelitziaUITests/Pods-Strelitzia-StrelitziaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8052516F3F8564B999E25DDC /* Pods-StrelitziaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrelitziaTests.debug.xcconfig"; path = "Target Support Files/Pods-StrelitziaTests/Pods-StrelitziaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		96988137C46E960CFD6C583E /* Pods_StrelitziaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StrelitziaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B62499D82660161B00CD14F8 /* BaseAddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAddButton.swift; sourceTree = "<group>"; };
+		B62499D92660161B00CD14F8 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		B62499DC2660182C00CD14F8 /* ThemeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
 		B66D2D53265CD7A200862FA1 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		B66D2D56265CEE2A00862FA1 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		B66D2D57265CEE2A00862FA1 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
@@ -139,6 +145,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B62499D72660160700CD14F8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B66D2D55265CEE1300862FA1 /* TableViewCell */,
+				B62499D82660161B00CD14F8 /* BaseAddButton.swift */,
+				B62499D92660161B00CD14F8 /* BaseButton.swift */,
+				B62499DC2660182C00CD14F8 /* ThemeButton.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		B66D2D55265CEE1300862FA1 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,8 +254,8 @@
 		B6BB91F02657354900E67F97 /* Strelitzia */ = {
 			isa = PBXGroup;
 			children = (
+				B62499D72660160700CD14F8 /* Base */,
 				B66D2D78265F572F00862FA1 /* Splash */,
-				B66D2D55265CEE1300862FA1 /* TableViewCell */,
 				B69F0C73265A3CD2001B1831 /* Login */,
 				B66D2D60265D53BE00862FA1 /* Admin */,
 				B69F0C68265A10AD001B1831 /* User */,
@@ -579,12 +596,14 @@
 				B66D2D6C265E435900862FA1 /* AdminMenuViewController.swift in Sources */,
 				B69F0C6E265A1AA1001B1831 /* UserModel.swift in Sources */,
 				B69F0C75265A3D05001B1831 /* CreateAccountViewController.swift in Sources */,
+				B62499DD2660182C00CD14F8 /* ThemeButton.swift in Sources */,
 				B66D2D66265D65F700862FA1 /* AdminSurveyViewController.swift in Sources */,
 				B66D2D58265CEE2A00862FA1 /* UserTableViewCell.swift in Sources */,
 				B66D2D5F265D4AFA00862FA1 /* LoginModel.swift in Sources */,
 				B66D2D7C265F576C00862FA1 /* SplashViewController.swift in Sources */,
 				B69F0C72265A384E001B1831 /* Functions.swift in Sources */,
 				B69F0C6A265A10EA001B1831 /* UserMainViewController.swift in Sources */,
+				B62499DB2660161B00CD14F8 /* BaseButton.swift in Sources */,
 				B69F0C77265A46A4001B1831 /* SetSchoolCodeViewController.swift in Sources */,
 				B66D2D5D265D4AE400862FA1 /* LoginViewModel.swift in Sources */,
 				B6BB91FC2657354900E67F97 /* Strelitzia.xcdatamodeld in Sources */,
@@ -594,6 +613,7 @@
 				B66D2D70265E6C9100862FA1 /* AdminSetUpViewController.swift in Sources */,
 				B66D2D5B265CFFDC00862FA1 /* DateUtils.swift in Sources */,
 				B66D2D64265D540A00862FA1 /* AdminMainViewController.swift in Sources */,
+				B62499DA2660161B00CD14F8 /* BaseAddButton.swift in Sources */,
 				B66D2D54265CD7A200862FA1 /* SurveyViewController.swift in Sources */,
 				B6BB91F42657354900E67F97 /* SceneDelegate.swift in Sources */,
 				B66D2D68265D669200862FA1 /* AdminViewModel.swift in Sources */,

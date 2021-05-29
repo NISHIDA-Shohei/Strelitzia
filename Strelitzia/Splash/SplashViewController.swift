@@ -15,6 +15,12 @@ class SplashViewController: UIViewController {
     private let viewModel = LoginViewModel()
     private let disposeBag = DisposeBag()
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.indicator.startAnimating()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -23,10 +29,12 @@ class SplashViewController: UIViewController {
             let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
             let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             loginViewController.modalPresentationStyle = .fullScreen
-            self.present(loginViewController, animated: true, completion: nil)
+            self.present(loginViewController, animated: false, completion: nil)
+            self.indicator.stopAnimating()
         } else {
             let userId = Auth.auth().currentUser?.uid
             decideView(userId: userId!)
+            self.indicator.stopAnimating()
         }
     }
     
@@ -38,13 +46,13 @@ class SplashViewController: UIViewController {
                     let storyboard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
                     let adminMainViewController = storyboard.instantiateViewController(withIdentifier: "AdminMainViewController") as! AdminMainViewController
                     adminMainViewController.modalPresentationStyle = .fullScreen
-                    self?.present(adminMainViewController, animated: true, completion: nil)
+                    self?.present(adminMainViewController, animated: false, completion: nil)
                 } else {
                     print("user")
                     let storyboard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
                     let userMainViewController = storyboard.instantiateViewController(withIdentifier: "UserMainViewController") as! UserMainViewController
                     userMainViewController.modalPresentationStyle = .fullScreen
-                    self?.present(userMainViewController, animated: true, completion: nil)
+                    self?.present(userMainViewController, animated: false, completion: nil)
                 }
             }).disposed(by: disposeBag)
     }

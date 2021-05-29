@@ -58,13 +58,13 @@ class LoginViewController: UIViewController {
                     let storyboard: UIStoryboard = UIStoryboard(name: "Admin", bundle: nil)
                     let adminMainViewController = storyboard.instantiateViewController(withIdentifier: "AdminMainViewController") as! AdminMainViewController
                     adminMainViewController.modalPresentationStyle = .fullScreen
-                    self?.present(adminMainViewController, animated: true, completion: nil)
+                    self?.present(adminMainViewController, animated: false, completion: nil)
                 } else {
                     print("user")
                     let storyboard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
                     let userMainViewController = storyboard.instantiateViewController(withIdentifier: "UserMainViewController") as! UserMainViewController
                     userMainViewController.modalPresentationStyle = .fullScreen
-                    self?.present(userMainViewController, animated: true, completion: nil)
+                    self?.present(userMainViewController, animated: false, completion: nil)
                 }
                 
             }).disposed(by: disposeBag)

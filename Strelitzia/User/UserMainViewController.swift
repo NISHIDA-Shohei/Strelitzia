@@ -42,7 +42,7 @@ class UserMainViewController: UIViewController {
     @IBAction func onTapNewSurvey(_ sender: Any) {
         let storyboard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
         let surveyViewController = storyboard.instantiateViewController(withIdentifier: "SurveyViewController") as! SurveyViewController
-        self.present(surveyViewController, animated: true, completion: nil)
+        self.present(surveyViewController, animated: false, completion: nil)
     }
     
     @IBAction func onTapPointReset() {
@@ -56,7 +56,7 @@ class UserMainViewController: UIViewController {
             let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
             let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             loginViewController.modalPresentationStyle = .fullScreen
-            self.present(loginViewController, animated: true, completion: nil)
+            self.present(loginViewController, animated: false, completion: nil)
         } catch {
             print("ログアウトできない")
         }
@@ -121,7 +121,7 @@ class UserMainViewController: UIViewController {
 //MARK: - TableView
 extension UserMainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        return 140
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -134,7 +134,12 @@ extension UserMainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.lastModifiedLabel.text = DateUtils.stringFromDate(date: historyData[indexPath.item].lastModified, dateFormat: "yyyy年MM月dd日 HH時mm分")
         cell.thumbnailImage.loadImageAsynchronously(url: historyData[indexPath.item].imageURL)
         cell.statusLabel.text = historyData[indexPath.item].isCompleted ? "対応済み" : "未対応"
-        cell.statusLabel.textColor = historyData[indexPath.item].isCompleted ? UIColor.green : UIColor.red
+//        cell.statusLabel.textColor = historyData[indexPath.item].isCompleted ? UIColor.green : UIColor.red
+        cell.backgroundImageView.image = historyData[indexPath.item].isCompleted ? UIImage(named: "completeBackground") : UIImage(named: "incompleteBackground")
+
+        cell.startColor = UIColor.init(named: "IncompleteStartColor")!
+        cell.startColor = historyData[indexPath.item].isCompleted ? UIColor.init(named: "CompletedStartColor")! : UIColor.init(named: "IncompleteStartColor")!
+        cell.endColor = historyData[indexPath.item].isCompleted ? UIColor.init(named: "CompletedEndColor")! : UIColor.init(named: "IncompleteEndColor")!
         return cell
     }
     
@@ -145,6 +150,6 @@ extension UserMainViewController: UITableViewDelegate, UITableViewDataSource {
         surveyViewController.documentId = historyData[indexPath.item].documentId
         surveyViewController.getSurveyData()
         
-        self.present(surveyViewController, animated: true, completion: nil)
+        self.present(surveyViewController, animated: false, completion: nil)
     }
 }

@@ -107,3 +107,23 @@ extension UIImageView {
     }
 }
 
+extension UIView{
+    func addGradientBackground(firstColor: UIColor, secondColor: UIColor){
+        clipsToBounds = true
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [firstColor.cgColor, secondColor.cgColor]
+        gradientLayer.frame = self.bounds
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        self.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    func addImage(imageName: String) {
+        let cellImage = UIImageView(image: UIImage(named: imageName))
+        cellImage.frame = self.bounds
+
+        clipsToBounds = true
+        
+    }
+}
+

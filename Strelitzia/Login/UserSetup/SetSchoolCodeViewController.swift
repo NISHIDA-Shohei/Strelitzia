@@ -31,7 +31,7 @@ class SetSchoolCodeViewController: UIViewController {
                     let storyboard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
                     let userMainViewController = storyboard.instantiateViewController(withIdentifier: "UserMainViewController") as! UserMainViewController
                     userMainViewController.modalPresentationStyle = .fullScreen
-                    self.present(userMainViewController, animated: true, completion: nil)
+                    self.present(userMainViewController, animated: false, completion: nil)
                 }
             })
         }

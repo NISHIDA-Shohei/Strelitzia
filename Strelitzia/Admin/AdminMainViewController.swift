@@ -86,6 +86,6 @@ extension AdminMainViewController: UITableViewDelegate, UITableViewDataSource {
         adminSurveyViewController.documentId = historyData[indexPath.item].documentId
         adminSurveyViewController.getSurveyData()
         
-        self.present(adminSurveyViewController, animated: true, completion: nil)
+        self.present(adminSurveyViewController, animated: false, completion: nil)
     }
 }

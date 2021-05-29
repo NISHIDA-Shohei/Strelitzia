@@ -53,7 +53,7 @@ class CreateAccountViewController: UIViewController {
                                 let adminSetUpViewController = storyboard.instantiateViewController(withIdentifier: "AdminSetUpViewController") as! AdminSetUpViewController
                                 adminSetUpViewController.modalPresentationStyle = .fullScreen
                                 adminSetUpViewController.schoolId = schoolId
-                                self.present(adminSetUpViewController, animated: true, completion: nil)
+                                self.present(adminSetUpViewController, animated: false, completion: nil)
                             }
                         })
                     } else {
@@ -69,7 +69,7 @@ class CreateAccountViewController: UIViewController {
                                 let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
                                 let setSchoolCodeViewController = storyboard.instantiateViewController(withIdentifier: "SetSchoolCodeViewController") as! SetSchoolCodeViewController
                                 setSchoolCodeViewController.modalPresentationStyle = .fullScreen
-                                self.present(setSchoolCodeViewController, animated: true, completion: nil)
+                                self.present(setSchoolCodeViewController, animated: false, completion: nil)
                             }
                         })
                     }

@@ -64,7 +64,7 @@ class AdminMenuViewController: UIViewController {
             let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
             let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             loginViewController.modalPresentationStyle = .fullScreen
-            self.present(loginViewController, animated: true, completion: nil)
+            self.present(loginViewController, animated: false, completion: nil)
         } catch {
             print("ログアウトできない")
         }
