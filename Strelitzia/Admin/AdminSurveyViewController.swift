@@ -16,7 +16,7 @@ class AdminSurveyViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var detailsTextView: UITextView!
-    @IBOutlet weak var statusButton: UIButton!
+    @IBOutlet weak var statusButton: ThemeButton!
     
     private let viewModel = AdminViewModel()
     private let disposeBag = DisposeBag()
@@ -34,6 +34,10 @@ class AdminSurveyViewController: UIViewController {
     
     @IBAction func onTapStatusButton(_ sender: Any) {
         changeStatus()
+    }
+
+    @IBAction func onTapClose() {
+        dismiss(animated: true, completion: nil)
     }
     
     func changeStatus() {

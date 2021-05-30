@@ -83,4 +83,8 @@ class CreateAccountViewController: UIViewController {
             })
         }
     }
+
+    @IBAction func onTapClose() {
+        dismiss(animated: true, completion: nil)
+    }
 }

@@ -116,6 +116,10 @@ extension SurveyViewController {
         self.dismiss(animated: true, completion: nil)
         imageView.image = info[.originalImage] as? UIImage
     }
+
+    @IBAction func onTapClose() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 

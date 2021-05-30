@@ -13,8 +13,6 @@ import FirebaseUI
 
 class UserMainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var schoolNameLabel: UILabel!
-    @IBOutlet weak var pointLabel: UILabel!
     
     private let viewModel = UserViewModel()
     private let disposeBag = DisposeBag()
@@ -45,21 +43,10 @@ class UserMainViewController: UIViewController {
         self.present(surveyViewController, animated: false, completion: nil)
     }
     
-    @IBAction func onTapPointReset() {
-        userDefaults.setValue(0, forKey: "point")
-        updatePointLabel()
-    }
-    
-    @IBAction func onTapLogout() {
-        do {
-            try Auth.auth().signOut()
-            let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-            loginViewController.modalPresentationStyle = .fullScreen
-            self.present(loginViewController, animated: false, completion: nil)
-        } catch {
-            print("ログアウトできない")
-        }
+    @IBAction func onTapMenuButton() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
+        let userMenuViewController = storyboard.instantiateViewController(withIdentifier: "UserMenuViewController") as! UserMenuViewController
+        self.present(userMenuViewController, animated: true, completion: nil)
     }
     
     func getUserInfo() {
@@ -68,15 +55,7 @@ class UserMainViewController: UIViewController {
                 self?.userInfo.schoolId = response.schoolId
                 self?.userInfo.isAdmin = response.isAdmin
                 self?.userDefaults.setValue(response.schoolId, forKey: "schoolId")
-                self?.getSchoolInfo(schoolId: response.schoolId)
                 self?.getHistory()
-            }).disposed(by: disposeBag)
-    }
-    
-    func getSchoolInfo(schoolId: String) {
-        viewModel.getSchoolInfo(schoolId: schoolId)
-            .subscribe(onNext: { [weak self] response in
-                self?.schoolNameLabel.text = response.schoolName
             }).disposed(by: disposeBag)
     }
     
@@ -99,17 +78,10 @@ class UserMainViewController: UIViewController {
                             var currentPoint = self?.userDefaults.object(forKey: "point") as? Int ?? 0
                             currentPoint += 100
                             self?.userDefaults.setValue(currentPoint, forKey: "point")
-                            self?.updatePointLabel()
                         }
                     }).disposed(by: disposeBag)
             }
         }
-        updatePointLabel()
-    }
-    
-    func updatePointLabel() {
-        let currentPoint = self.userDefaults.object(forKey: "point") as? Int ?? 0
-        pointLabel.text = String(currentPoint)
     }
     
     @objc func refresh(sender: UIRefreshControl) {
@@ -134,12 +106,7 @@ extension UserMainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.lastModifiedLabel.text = DateUtils.stringFromDate(date: historyData[indexPath.item].lastModified, dateFormat: "yyyy年MM月dd日 HH時mm分")
         cell.thumbnailImage.loadImageAsynchronously(url: historyData[indexPath.item].imageURL)
         cell.statusLabel.text = historyData[indexPath.item].isCompleted ? "対応済み" : "未対応"
-//        cell.statusLabel.textColor = historyData[indexPath.item].isCompleted ? UIColor.green : UIColor.red
-        cell.backgroundImageView.image = historyData[indexPath.item].isCompleted ? UIImage(named: "completeBackground") : UIImage(named: "incompleteBackground")
-
-        cell.startColor = UIColor.init(named: "IncompleteStartColor")!
-        cell.startColor = historyData[indexPath.item].isCompleted ? UIColor.init(named: "CompletedStartColor")! : UIColor.init(named: "IncompleteStartColor")!
-        cell.endColor = historyData[indexPath.item].isCompleted ? UIColor.init(named: "CompletedEndColor")! : UIColor.init(named: "IncompleteEndColor")!
+        cell.isComplete = historyData[indexPath.item].isCompleted
         return cell
     }
     

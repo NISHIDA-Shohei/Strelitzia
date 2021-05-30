@@ -63,7 +63,7 @@ class AdminMainViewController: UIViewController {
 //MARK: - TableView
 extension AdminMainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        return 140
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,7 +76,7 @@ extension AdminMainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.lastModifiedLabel.text = DateUtils.stringFromDate(date: historyData[indexPath.item].lastModified, dateFormat: "yyyy年MM月dd日 HH時mm分")
         cell.thumbnailImage.loadImageAsynchronously(url: historyData[indexPath.item].imageURL)
         cell.statusLabel.text = historyData[indexPath.item].isCompleted ? "対応済み" : "未対応"
-        cell.statusLabel.textColor = historyData[indexPath.item].isCompleted ? UIColor.green : UIColor.red
+        cell.isComplete = historyData[indexPath.item].isCompleted
         return cell
     }
     
@@ -86,6 +86,6 @@ extension AdminMainViewController: UITableViewDelegate, UITableViewDataSource {
         adminSurveyViewController.documentId = historyData[indexPath.item].documentId
         adminSurveyViewController.getSurveyData()
         
-        self.present(adminSurveyViewController, animated: false, completion: nil)
+        self.present(adminSurveyViewController, animated: true, completion: nil)
     }
 }

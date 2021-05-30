@@ -69,6 +69,10 @@ class AdminMenuViewController: UIViewController {
             print("ログアウトできない")
         }
     }
+
+    @IBAction func onTapClose() {
+        dismiss(animated: true, completion: nil)
+    }
     
     func showAlert(title:String, text: String = "") {
         let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
