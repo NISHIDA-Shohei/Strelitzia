@@ -17,18 +17,16 @@ class AdminMenuViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var sendButton: UIButton!
     
-    
     private let viewModel = AdminViewModel()
     private let disposeBag = DisposeBag()
-    
-    private var userDefaults = UserDefaults.standard
-    
-    fileprivate let refreshCtl = UIRefreshControl()
     
     var historyData = [HistoryData]()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+    }
+    
+    override func viewDidLayoutSubviews() {
         logoutButton.redTheme()
         sendButton.blueTheme()
     }
@@ -51,7 +49,6 @@ class AdminMenuViewController: UIViewController {
                 self?.schoolNameTextField.text = response.schoolName
             }).disposed(by: disposeBag)
     }
-    
     
     @IBAction func tapUpdateButton() {
         viewModel.changeSchoolInfo(schoolId: schoolIdLabel.text!, schoolName: schoolNameTextField.text ?? "")

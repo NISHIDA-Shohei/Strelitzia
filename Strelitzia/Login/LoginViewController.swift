@@ -18,7 +18,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     
-    
     private let viewModel = LoginViewModel()
     private let disposeBag = DisposeBag()
     
@@ -26,13 +25,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.emailTextField.text = "user2@gmail.com"
         self.passwordTextField.text = "user22"
-        
+        self.hideKeyboardWhenTappedAround()
+    }
+    
+    override func viewDidLayoutSubviews() {
         loginButton.blueTheme()
         signupButton.greenTheme()
-        
     }
     
     @IBAction func onTapLogin(_ sender: Any) {
@@ -104,14 +104,5 @@ class LoginViewController: UIViewController {
         default: break
         }
         return message
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }

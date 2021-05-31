@@ -14,9 +14,12 @@ class SetSchoolCodeViewController: UIViewController {
     @IBOutlet weak var setSettingButton: UIButton!
     
     private let userId = Auth.auth().currentUser?.uid
-
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+    }
+    
+    override func viewDidLayoutSubviews() {
         setSettingButton.blueTheme()
     }
     

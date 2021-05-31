@@ -153,11 +153,11 @@ extension UIButton {
         let gradientColors: [CGColor] = [startColor.cgColor, endColor.cgColor]
         let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors
-        gradientLayer.frame = bounds
+        gradientLayer.frame = self.layer.bounds
         gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
         gradientLayer.cornerRadius = 15
-        layer.addSublayer(gradientLayer)
+        layer.insertSublayer(gradientLayer, at: 0)
     }
     
     func setShadow(color: UIColor) {
@@ -192,6 +192,18 @@ extension UIColor {
     
     class var redThemeEndColor: UIColor {
         return UIColor(named: "redThemeEndColor")!
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 

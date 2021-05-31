@@ -129,7 +129,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題を１文で説明してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uH-6o-a9e">
-                                                <rect key="frame" x="20" y="504" width="374" height="21"/>
+                                                <rect key="frame" x="19.999999999999986" y="504" width="242.66666666666663" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -140,7 +140,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題が発見された場所を記入してください。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-lx-LvB">
-                                                <rect key="frame" x="20" y="589" width="374" height="21"/>
+                                                <rect key="frame" x="20" y="589" width="346.66666666666669" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -151,7 +151,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題の詳細を記入してください。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgB-Xw-MNy">
-                                                <rect key="frame" x="20" y="674" width="374" height="21"/>
+                                                <rect key="frame" x="20" y="674" width="260" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -166,14 +166,11 @@
                                             <constraint firstItem="eo6-ic-TyU" firstAttribute="leading" secondItem="xOs-IM-RZP" secondAttribute="leading" constant="20" id="F1X-lB-z06"/>
                                             <constraint firstItem="JRQ-66-4ul" firstAttribute="top" secondItem="jYe-ID-hby" secondAttribute="bottom" constant="10" id="FmT-7a-Jl7"/>
                                             <constraint firstItem="KgB-Xw-MNy" firstAttribute="top" secondItem="Qme-Vl-kTP" secondAttribute="bottom" constant="20" id="G8V-DZ-GZ2"/>
-                                            <constraint firstAttribute="trailing" secondItem="KgB-Xw-MNy" secondAttribute="trailing" constant="20" id="IcJ-1n-hqi"/>
                                             <constraint firstItem="hOl-lx-LvB" firstAttribute="leading" secondItem="xOs-IM-RZP" secondAttribute="leading" constant="20" id="OeI-kl-Vgq"/>
-                                            <constraint firstAttribute="trailing" secondItem="hOl-lx-LvB" secondAttribute="trailing" constant="20" id="Qt0-Sl-ZTT"/>
                                             <constraint firstAttribute="trailing" secondItem="jYe-ID-hby" secondAttribute="trailing" constant="20" id="Vz7-5l-go1"/>
                                             <constraint firstItem="eo6-ic-TyU" firstAttribute="top" secondItem="9uH-6o-a9e" secondAttribute="bottom" constant="10" id="XqA-EX-2Jb"/>
                                             <constraint firstAttribute="trailing" secondItem="JRQ-66-4ul" secondAttribute="trailing" constant="20" id="Zl6-40-vT4"/>
                                             <constraint firstItem="JRQ-66-4ul" firstAttribute="leading" secondItem="xOs-IM-RZP" secondAttribute="leading" constant="20" id="aa1-J9-KkN"/>
-                                            <constraint firstAttribute="trailing" secondItem="9uH-6o-a9e" secondAttribute="trailing" constant="20" id="aso-Us-Hb6"/>
                                             <constraint firstItem="9uH-6o-a9e" firstAttribute="top" secondItem="JRQ-66-4ul" secondAttribute="bottom" constant="40" id="dyI-RS-XbV"/>
                                             <constraint firstItem="Qme-Vl-kTP" firstAttribute="leading" secondItem="xOs-IM-RZP" secondAttribute="leading" constant="20" id="fvf-7c-6sd"/>
                                             <constraint firstItem="KgB-Xw-MNy" firstAttribute="leading" secondItem="xOs-IM-RZP" secondAttribute="leading" constant="20" id="gpt-Dc-AML"/>

@@ -28,16 +28,16 @@ class UserMenuViewController: UIViewController {
     var historyData = [UserHistoryData]()
     var schoolId = ""
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        logoutButton.redTheme()
-        resetPointButton.redTheme()
-    }
-
     override func viewWillAppear(_ animated: Bool) {
         getUserInfo()
         updatePointLabel()
         checkPoint()
+        self.hideKeyboardWhenTappedAround()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        logoutButton.redTheme()
+        resetPointButton.redTheme()
     }
 
     @IBAction func onTapResetPointButton() {

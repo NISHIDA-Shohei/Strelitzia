@@ -33,9 +33,13 @@ class SurveyViewController: UIViewController, UINavigationControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.layer.cornerRadius = 20
+        self.hideKeyboardWhenTappedAround()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         selectButton.blueTheme()
         sendButton.blueTheme()
-        imageView.layer.cornerRadius = 20
     }
     
     @IBAction func onTapSelectImage(_ sender: Any) {
@@ -122,7 +126,7 @@ extension SurveyViewController {
         self.dismiss(animated: true, completion: nil)
         imageView.image = info[.originalImage] as? UIImage
     }
-
+    
     @IBAction func onTapClose() {
         dismiss(animated: true, completion: nil)
     }

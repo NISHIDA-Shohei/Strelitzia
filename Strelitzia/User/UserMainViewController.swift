@@ -36,6 +36,9 @@ class UserMainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         getUserInfo()
+    }
+    
+    override func viewDidLayoutSubviews() {
         newSurveyButton.blueTheme()
     }
     

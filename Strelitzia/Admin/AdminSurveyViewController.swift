@@ -34,6 +34,7 @@ class AdminSurveyViewController: UIViewController {
         statusLabel.textColor = UIColor.white
         statusLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         imageView.layer.cornerRadius = 20
+        detailsTextView.isEditable = false
     }
     
     @IBAction func onTapStatusButton(_ sender: Any) {
@@ -72,14 +73,9 @@ class AdminSurveyViewController: UIViewController {
         if self.isCompleted {
             self.statusButton.greenTheme()
             self.statusLabel.text = "対応済み"
-//            self.statusButton.setTitle("対応済み", for: .normal)
-            
         } else {
-//            self.statusButton.setTitle("未対応", for: .normal)
             self.statusButton.redTheme()
             self.statusLabel.text = "未対応"
-
-
         }
     }
     

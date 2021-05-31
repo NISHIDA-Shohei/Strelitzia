@@ -17,7 +17,10 @@ class CreateAccountViewController: UIViewController {
     var isAdmin = false
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+    }
+    
+    override func viewDidLayoutSubviews() {
         createAccountButton.greenTheme()
     }
     
