@@ -149,6 +149,20 @@ extension UIButton {
         self.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
     }
     
+    func statusRedTheme() {
+        addGradientSublayer(startColor: .redThemeStartColor, endColor: .redThemeEndColor)
+        setShadow(color: .redThemeStartColor)
+        self.setTitleColor(.white, for: .normal)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+    }
+    
+    func statusGreenTheme() {
+        addGradientSublayer(startColor: .greenThemeStartColor, endColor: .greenThemeEndColor)
+        setShadow(color: .greenThemeStartColor)
+        self.setTitleColor(.white, for: .normal)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+    }
+    
     private func addGradientBackground(startColor: UIColor, endColor: UIColor) {
         let gradientColors: [CGColor] = [startColor.cgColor, endColor.cgColor]
         let gradientLayer: CAGradientLayer = CAGradientLayer()
@@ -158,6 +172,17 @@ extension UIButton {
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
         gradientLayer.cornerRadius = 15
         layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    private func addGradientSublayer(startColor: UIColor, endColor: UIColor) {
+        let gradientColors: [CGColor] = [startColor.cgColor, endColor.cgColor]
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientColors
+        gradientLayer.frame = self.layer.bounds
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.cornerRadius = 15
+        layer.addSublayer(gradientLayer)
     }
     
     func setShadow(color: UIColor) {

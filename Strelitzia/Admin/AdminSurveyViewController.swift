@@ -71,10 +71,10 @@ class AdminSurveyViewController: UIViewController {
     
     func changeStatusButton() {
         if self.isCompleted {
-            self.statusButton.greenTheme()
+            self.statusButton.statusGreenTheme()
             self.statusLabel.text = "対応済み"
         } else {
-            self.statusButton.redTheme()
+            self.statusButton.statusRedTheme()
             self.statusLabel.text = "未対応"
         }
     }

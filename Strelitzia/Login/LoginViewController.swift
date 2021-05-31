@@ -25,8 +25,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.emailTextField.text = "user2@gmail.com"
-        self.passwordTextField.text = "user22"
         self.hideKeyboardWhenTappedAround()
     }
     

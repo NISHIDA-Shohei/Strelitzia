@@ -23,10 +23,6 @@
                                     <constraint firstAttribute="height" constant="140" id="6a0-Wk-3mG"/>
                                 </constraints>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="d9X-ZT-wLa">
-                                <rect key="frame" x="197" y="568" width="20" height="20"/>
-                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="GuardaBackgroud"/>
@@ -34,14 +30,9 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="svY-T1-vLB" secondAttribute="trailing" constant="60" id="01q-sD-30t"/>
                             <constraint firstItem="svY-T1-vLB" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="0QJ-rm-vCP"/>
                             <constraint firstItem="svY-T1-vLB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="60" id="5Qg-hn-LpD"/>
-                            <constraint firstItem="d9X-ZT-wLa" firstAttribute="top" secondItem="svY-T1-vLB" secondAttribute="bottom" constant="50" id="BZl-6l-Ik3"/>
-                            <constraint firstItem="d9X-ZT-wLa" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="a0P-VA-bHT"/>
                             <constraint firstItem="svY-T1-vLB" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="qjO-cP-QLH"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="indicator" destination="d9X-ZT-wLa" id="p2q-b5-yU8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

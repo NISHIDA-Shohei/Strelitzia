@@ -14,12 +14,7 @@ class SplashViewController: UIViewController {
     
     private let viewModel = LoginViewModel()
     private let disposeBag = DisposeBag()
-    
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.indicator.startAnimating()
-    }
+        
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -30,11 +25,9 @@ class SplashViewController: UIViewController {
             let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             loginViewController.modalPresentationStyle = .fullScreen
             self.present(loginViewController, animated: false, completion: nil)
-            self.indicator.stopAnimating()
         } else {
             let userId = Auth.auth().currentUser?.uid
             decideView(userId: userId!)
-            self.indicator.stopAnimating()
         }
     }
     
