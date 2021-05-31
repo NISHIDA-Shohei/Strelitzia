@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1AECD4FB834D27BC6EA92EB7 /* Pods_StrelitziaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96988137C46E960CFD6C583E /* Pods_StrelitziaTests.framework */; };
-		4A9761252663570D002386C9 /* アプリ用ロゴ.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9761242663570D002386C9 /* アプリ用ロゴ.png */; };
-		4A97612A26635757002386C9 /* アートボード 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A97612926635757002386C9 /* アートボード 2.png */; };
-		4A97612F26635764002386C9 /* アートボード 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A97612E26635764002386C9 /* アートボード 8.png */; };
 		4A97613426635A95002386C9 /* UserMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A97613326635A95002386C9 /* UserMenuViewController.swift */; };
 		79943E94DF4F701D2729E0C3 /* Pods_Strelitzia_StrelitziaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9A2D1E394E42451FEDEADC /* Pods_Strelitzia_StrelitziaUITests.framework */; };
 		8CFEBECCA4B4CD282BB06281 /* Pods_Strelitzia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEBDBDBDAFB85B6AE2F2312 /* Pods_Strelitzia.framework */; };
@@ -71,9 +68,6 @@
 /* Begin PBXFileReference section */
 		3653FA22F85027C97ED74C6B /* Pods-Strelitzia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strelitzia.release.xcconfig"; path = "Target Support Files/Pods-Strelitzia/Pods-Strelitzia.release.xcconfig"; sourceTree = "<group>"; };
 		3BEBDBDBDAFB85B6AE2F2312 /* Pods_Strelitzia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Strelitzia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A9761242663570D002386C9 /* アプリ用ロゴ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "アプリ用ロゴ.png"; sourceTree = "<group>"; };
-		4A97612926635757002386C9 /* アートボード 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "アートボード 2.png"; sourceTree = "<group>"; };
-		4A97612E26635764002386C9 /* アートボード 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "アートボード 8.png"; sourceTree = "<group>"; };
 		4A97613326635A95002386C9 /* UserMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuViewController.swift; sourceTree = "<group>"; };
 		6026D1C9FE2B4263668E87B1 /* Pods-Strelitzia-StrelitziaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strelitzia-StrelitziaUITests.release.xcconfig"; path = "Target Support Files/Pods-Strelitzia-StrelitziaUITests/Pods-Strelitzia-StrelitziaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8052516F3F8564B999E25DDC /* Pods-StrelitziaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrelitziaTests.debug.xcconfig"; path = "Target Support Files/Pods-StrelitziaTests/Pods-StrelitziaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -217,9 +211,9 @@
 				B69F0C66265A1092001B1831 /* User.storyboard */,
 				B69F0C69265A10EA001B1831 /* UserMainViewController.swift */,
 				B66D2D53265CD7A200862FA1 /* SurveyViewController.swift */,
+				4A97613326635A95002386C9 /* UserMenuViewController.swift */,
 				B69F0C6F265A1ABD001B1831 /* UserViewModel.swift */,
 				B69F0C6D265A1AA1001B1831 /* UserModel.swift */,
-				4A97613326635A95002386C9 /* UserMenuViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -277,9 +271,6 @@
 				B6BB9226265811E800E67F97 /* GoogleService-Info.plist */,
 				B6BB92022657354B00E67F97 /* Info.plist */,
 				B6BB91FA2657354900E67F97 /* Strelitzia.xcdatamodeld */,
-				4A97612E26635764002386C9 /* アートボード 8.png */,
-				4A97612926635757002386C9 /* アートボード 2.png */,
-				4A9761242663570D002386C9 /* アプリ用ロゴ.png */,
 			);
 			path = Strelitzia;
 			sourceTree = "<group>";
@@ -439,12 +430,9 @@
 				B66D2D62265D53D300862FA1 /* Admin.storyboard in Resources */,
 				B69F0C67265A1092001B1831 /* User.storyboard in Resources */,
 				B66D2D7A265F575700862FA1 /* Splash.storyboard in Resources */,
-				4A9761252663570D002386C9 /* アプリ用ロゴ.png in Resources */,
 				B6BB9227265811E800E67F97 /* GoogleService-Info.plist in Resources */,
 				B6BB91FE2657354B00E67F97 /* Assets.xcassets in Resources */,
 				B66D2D59265CEE2A00862FA1 /* UserTableViewCell.xib in Resources */,
-				4A97612A26635757002386C9 /* アートボード 2.png in Resources */,
-				4A97612F26635764002386C9 /* アートボード 8.png in Resources */,
 				B6BB91F92657354900E67F97 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

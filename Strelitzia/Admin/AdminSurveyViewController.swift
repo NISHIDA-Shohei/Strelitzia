@@ -16,7 +16,8 @@ class AdminSurveyViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var detailsTextView: UITextView!
-    @IBOutlet weak var statusButton: ThemeButton!
+    @IBOutlet weak var statusButton: UIButton!
+    @IBOutlet weak var statusLabel: UILabel!
     
     private let viewModel = AdminViewModel()
     private let disposeBag = DisposeBag()
@@ -30,6 +31,9 @@ class AdminSurveyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        statusLabel.textColor = UIColor.white
+        statusLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        imageView.layer.cornerRadius = 20
     }
     
     @IBAction func onTapStatusButton(_ sender: Any) {
@@ -66,11 +70,16 @@ class AdminSurveyViewController: UIViewController {
     
     func changeStatusButton() {
         if self.isCompleted {
-            self.statusButton.setTitle("対応済み", for: .normal)
-            self.statusButton.setTitleColor(UIColor.green, for: .normal)
+            self.statusButton.greenTheme()
+            self.statusLabel.text = "対応済み"
+//            self.statusButton.setTitle("対応済み", for: .normal)
+            
         } else {
-            self.statusButton.setTitle("未対応", for: .normal)
-            self.statusButton.setTitleColor(UIColor.red, for: .normal)
+//            self.statusButton.setTitle("未対応", for: .normal)
+            self.statusButton.redTheme()
+            self.statusLabel.text = "未対応"
+
+
         }
     }
     

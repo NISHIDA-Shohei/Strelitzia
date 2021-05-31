@@ -24,19 +24,18 @@ class ThemeButton: UIButton {
         layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    func setShadow() {
-        self.layer.shadowOffset = CGSize(width: 0, height: 5)
-        self.layer.shadowColor = UIColor.systemGreen.cgColor
-        self.layer.shadowOpacity = 0.5
-        self.layer.shadowRadius = 5
-    }
-
-    override func layoutSubviews() {
-        super .layoutSubviews()
-        self.setTitleColor(.white, for: .normal)
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
-        self.setShadow()
-        self.createGradient()
-        
-    }
+//    func setShadow() {
+//        self.layer.shadowOffset = CGSize(width: 0, height: 5)
+//        self.layer.shadowColor = UIColor.systemGreen.cgColor
+//        self.layer.shadowOpacity = 0.5
+//        self.layer.shadowRadius = 5
+//    }
+//
+//    override func layoutSubviews() {
+//        super .layoutSubviews()
+//        self.setTitleColor(.white, for: .normal)
+//        self.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+//        self.setShadow()
+//        self.createGradient()
+//    }
 }

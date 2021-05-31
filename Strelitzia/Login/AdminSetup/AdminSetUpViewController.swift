@@ -11,14 +11,14 @@ import Firebase
 class AdminSetUpViewController: UIViewController {
     
     @IBOutlet weak var schoolNameLabel: UITextField!
+    @IBOutlet weak var setSettingButton: UIButton!
     
     private let userId = Auth.auth().currentUser?.uid
     var schoolId = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setSettingButton.blueTheme()
     }
     
     @IBAction func onTapSetUpButton() {

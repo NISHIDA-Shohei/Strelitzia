@@ -121,9 +121,77 @@ extension UIView{
     func addImage(imageName: String) {
         let cellImage = UIImageView(image: UIImage(named: imageName))
         cellImage.frame = self.bounds
-
         clipsToBounds = true
         
+    }
+}
+
+extension UIButton {
+    func blueTheme() {
+        addGradientBackground(startColor: .blueThemeStartColor, endColor: .blueThemeEndColor)
+        setShadow(color: .blueThemeStartColor)
+        self.setTitleColor(.white, for: .normal)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+    }
+    
+    func redTheme() {
+        addGradientBackground(startColor: .redThemeStartColor, endColor: .redThemeEndColor)
+        setShadow(color: .redThemeStartColor)
+        self.setTitleColor(.white, for: .normal)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+
+    }
+    
+    func greenTheme() {
+        addGradientBackground(startColor: .greenThemeStartColor, endColor: .greenThemeEndColor)
+        setShadow(color: .greenThemeStartColor)
+        self.setTitleColor(.white, for: .normal)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+    }
+    
+    private func addGradientBackground(startColor: UIColor, endColor: UIColor) {
+        let gradientColors: [CGColor] = [startColor.cgColor, endColor.cgColor]
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientColors
+        gradientLayer.frame = bounds
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.cornerRadius = 15
+        layer.addSublayer(gradientLayer)
+    }
+    
+    func setShadow(color: UIColor) {
+        self.layer.shadowOffset = CGSize(width: 0, height: 5)
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowRadius = 5
+    }
+}
+
+extension UIColor {
+    
+    class var blueThemeStartColor: UIColor {
+        return UIColor(named: "blueThemeStartColor")!
+    }
+    
+    class var blueThemeEndColor: UIColor {
+        return UIColor(named: "blueThemeEndColor")!
+    }
+    
+    class var greenThemeStartColor: UIColor {
+        return UIColor(named: "greenThemeStartColor")!
+    }
+    
+    class var greenThemeEndColor: UIColor {
+        return UIColor(named: "greenThemeEndColor")!
+    }
+    
+    class var redThemeStartColor: UIColor {
+        return UIColor(named: "redThemeStartColor")!
+    }
+    
+    class var redThemeEndColor: UIColor {
+        return UIColor(named: "redThemeEndColor")!
     }
 }
 

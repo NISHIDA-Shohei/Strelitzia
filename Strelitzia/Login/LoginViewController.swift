@@ -15,6 +15,9 @@ class LoginViewController: UIViewController {
     
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
+    
     
     private let viewModel = LoginViewModel()
     private let disposeBag = DisposeBag()
@@ -26,6 +29,9 @@ class LoginViewController: UIViewController {
         
         self.emailTextField.text = "user2@gmail.com"
         self.passwordTextField.text = "user22"
+        
+        loginButton.blueTheme()
+        signupButton.greenTheme()
         
     }
     

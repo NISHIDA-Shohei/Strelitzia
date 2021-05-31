@@ -13,10 +13,13 @@ import RxCocoa
 class SurveyViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var placeTextField: UITextField!
     @IBOutlet weak var detailsTextView: UITextView!
+    
+    @IBOutlet weak var selectButton: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
+    
     
     private let viewModel = UserViewModel()
     private let disposeBag = DisposeBag()
@@ -30,6 +33,9 @@ class SurveyViewController: UIViewController, UINavigationControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectButton.blueTheme()
+        sendButton.blueTheme()
+        imageView.layer.cornerRadius = 20
     }
     
     @IBAction func onTapSelectImage(_ sender: Any) {

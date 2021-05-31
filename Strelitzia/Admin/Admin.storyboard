@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -102,12 +102,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpj-Q5-K6g" customClass="ThemeButton" customModule="Strelitzia" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpj-Q5-K6g">
                                 <rect key="frame" x="20" y="792" width="388" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="d13-jk-Vmp"/>
                                 </constraints>
-                                <state key="normal" title="未対応"/>
                                 <connections>
                                     <action selector="onTapStatusButton:" destination="jKY-Vo-31o" eventType="touchUpInside" id="XX4-Wv-o2J"/>
                                 </connections>
@@ -130,6 +129,12 @@
                                     <action selector="onTapClose" destination="jKY-Vo-31o" eventType="touchUpInside" id="zfe-46-3ua"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEv-6e-nGJ">
+                                <rect key="frame" x="193" y="811.66666666666663" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rbf-US-ltr"/>
                         <color key="backgroundColor" name="GuardaBackgroud"/>
@@ -143,6 +148,7 @@
                             <constraint firstItem="Lpj-Q5-K6g" firstAttribute="top" secondItem="scp-ce-3Lr" secondAttribute="bottom" constant="20" id="G4e-QZ-j9a"/>
                             <constraint firstItem="Rbf-US-ltr" firstAttribute="trailing" secondItem="qBu-N1-WX5" secondAttribute="trailing" constant="20" id="GeV-Uv-9Eu"/>
                             <constraint firstItem="qBu-N1-WX5" firstAttribute="centerY" secondItem="3bw-na-SKX" secondAttribute="centerY" id="HN7-of-K92"/>
+                            <constraint firstItem="EEv-6e-nGJ" firstAttribute="centerY" secondItem="Lpj-Q5-K6g" secondAttribute="centerY" id="IZr-vp-IYF"/>
                             <constraint firstItem="Cle-AD-b0n" firstAttribute="top" secondItem="MRc-EJ-bTF" secondAttribute="bottom" constant="20" id="Ly2-qH-uKp"/>
                             <constraint firstItem="qBu-N1-WX5" firstAttribute="leading" secondItem="3bw-na-SKX" secondAttribute="trailing" constant="5" id="UPv-lR-xDL"/>
                             <constraint firstItem="MRc-EJ-bTF" firstAttribute="leading" secondItem="Rbf-US-ltr" secondAttribute="leading" constant="20" id="W3R-PY-HRA"/>
@@ -151,6 +157,7 @@
                             <constraint firstItem="Cle-AD-b0n" firstAttribute="leading" secondItem="Rbf-US-ltr" secondAttribute="leading" constant="20" id="qLk-4Y-gaG"/>
                             <constraint firstItem="Rbf-US-ltr" firstAttribute="trailing" secondItem="Zvp-cZ-xbi" secondAttribute="trailing" constant="20" id="s30-gL-Za5"/>
                             <constraint firstItem="scp-ce-3Lr" firstAttribute="top" secondItem="Cle-AD-b0n" secondAttribute="bottom" id="smK-K6-xbg"/>
+                            <constraint firstItem="EEv-6e-nGJ" firstAttribute="centerX" secondItem="Lpj-Q5-K6g" secondAttribute="centerX" id="uRb-XX-rMO"/>
                             <constraint firstItem="scp-ce-3Lr" firstAttribute="leading" secondItem="Rbf-US-ltr" secondAttribute="leading" constant="20" id="uSl-s6-mg6"/>
                             <constraint firstItem="3bw-na-SKX" firstAttribute="top" secondItem="Rbf-US-ltr" secondAttribute="top" constant="20" id="vqq-hW-uAR"/>
                             <constraint firstItem="Rbf-US-ltr" firstAttribute="bottom" secondItem="Lpj-Q5-K6g" secondAttribute="bottom" constant="40" id="wrk-IW-zPV"/>
@@ -162,6 +169,7 @@
                         <outlet property="imageView" destination="Zvp-cZ-xbi" id="1o0-Xc-rxz"/>
                         <outlet property="placeLabel" destination="MRc-EJ-bTF" id="QaC-e6-2qg"/>
                         <outlet property="statusButton" destination="Lpj-Q5-K6g" id="B9h-aM-OOc"/>
+                        <outlet property="statusLabel" destination="EEv-6e-nGJ" id="W5D-ys-vn8"/>
                         <outlet property="titleLabel" destination="3bw-na-SKX" id="qg4-8D-Xam"/>
                     </connections>
                 </viewController>
@@ -200,7 +208,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9w-FJ-sit" customClass="ThemeButton" customModule="Strelitzia" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9w-FJ-sit">
                                 <rect key="frame" x="20" y="738" width="388" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Qta-cM-qFn"/>
@@ -210,7 +218,7 @@
                                     <action selector="tapUpdateButton" destination="ke5-Fq-3q3" eventType="touchUpInside" id="Wq8-LX-sky"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAx-TF-T7d" customClass="ThemeButton" customModule="Strelitzia" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAx-TF-T7d">
                                 <rect key="frame" x="20" y="638" width="388" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="RjK-CZ-AgJ"/>
@@ -240,7 +248,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qyv-Yt-w9e"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="GuardaBackgroud"/>
                         <constraints>
                             <constraint firstItem="Q9w-FJ-sit" firstAttribute="leading" secondItem="qyv-Yt-w9e" secondAttribute="leading" constant="20" id="2FW-YB-Obq"/>
                             <constraint firstItem="qyv-Yt-w9e" firstAttribute="trailing" secondItem="7ZY-eA-paM" secondAttribute="trailing" constant="20" id="7km-QM-GSy"/>
@@ -264,8 +272,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="logoutButton" destination="zAx-TF-T7d" id="9bG-C5-8a0"/>
                         <outlet property="schoolIdLabel" destination="bUB-ny-TjD" id="NEo-C9-hJ5"/>
                         <outlet property="schoolNameTextField" destination="7ZY-eA-paM" id="Ley-zO-kEQ"/>
+                        <outlet property="sendButton" destination="Q9w-FJ-sit" id="acJ-kg-N42"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N39-n8-MYZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

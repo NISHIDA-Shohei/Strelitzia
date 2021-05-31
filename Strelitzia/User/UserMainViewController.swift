@@ -13,6 +13,7 @@ import FirebaseUI
 
 class UserMainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var newSurveyButton: UIButton!
     
     private let viewModel = UserViewModel()
     private let disposeBag = DisposeBag()
@@ -35,17 +36,21 @@ class UserMainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         getUserInfo()
+        newSurveyButton.blueTheme()
     }
     
     @IBAction func onTapNewSurvey(_ sender: Any) {
         let storyboard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
         let surveyViewController = storyboard.instantiateViewController(withIdentifier: "SurveyViewController") as! SurveyViewController
-        self.present(surveyViewController, animated: false, completion: nil)
+        self.present(surveyViewController, animated: true, completion: nil)
     }
     
     @IBAction func onTapMenuButton() {
         let storyboard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
         let userMenuViewController = storyboard.instantiateViewController(withIdentifier: "UserMenuViewController") as! UserMenuViewController
+        userMenuViewController.historyData = historyData
+        userMenuViewController.userInfo = userInfo
+        userMenuViewController.schoolId = userInfo.schoolId
         self.present(userMenuViewController, animated: true, completion: nil)
     }
     
@@ -65,23 +70,7 @@ class UserMainViewController: UIViewController {
             .subscribe(onNext: { [weak self] response in
                 self?.historyData.append(response)
                 self?.tableView.reloadData()
-                self?.checkPoint()
             }).disposed(by: disposeBag)
-    }
-    
-    func checkPoint() {
-        for data in historyData {
-            if data.isCompleted && !data.pointReceived {
-                viewModel.changePointStatus(schoolId: userInfo.schoolId, documentId: data.documentId)
-                    .subscribe(onNext: { [weak self] response in
-                        if response { //ポイント状態の変更に成功
-                            var currentPoint = self?.userDefaults.object(forKey: "point") as? Int ?? 0
-                            currentPoint += 100
-                            self?.userDefaults.setValue(currentPoint, forKey: "point")
-                        }
-                    }).disposed(by: disposeBag)
-            }
-        }
     }
     
     @objc func refresh(sender: UIRefreshControl) {
@@ -117,6 +106,6 @@ extension UserMainViewController: UITableViewDelegate, UITableViewDataSource {
         surveyViewController.documentId = historyData[indexPath.item].documentId
         surveyViewController.getSurveyData()
         
-        self.present(surveyViewController, animated: false, completion: nil)
+        self.present(surveyViewController, animated: true, completion: nil)
     }
 }

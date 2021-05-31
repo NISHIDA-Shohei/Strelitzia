@@ -11,12 +11,14 @@ import Firebase
 class CreateAccountViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var selectUserTypeSegmentedControl: UISegmentedControl!
     
     var isAdmin = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createAccountButton.greenTheme()
     }
     
     @IBAction func tappedSegmentedControl(_ sender: UISegmentedControl) {

@@ -16,26 +16,32 @@ class UserMenuViewController: UIViewController {
 
     @IBOutlet weak var schoolNameLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
-
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var resetPointButton: UIButton!
+    
     private let viewModel = UserViewModel()
     private let disposeBag = DisposeBag()
 
-    private var userInfo = UserInfo(isAdmin: Bool(), schoolId: "")
+    var userInfo = UserInfo(isAdmin: Bool(), schoolId: "")
     private var userDefaults = UserDefaults.standard
-
+    
+    var historyData = [UserHistoryData]()
+    var schoolId = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        logoutButton.redTheme()
+        resetPointButton.redTheme()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         getUserInfo()
         updatePointLabel()
+        checkPoint()
     }
 
     @IBAction func onTapResetPointButton() {
-        userDefaults.setValue(0, forKey: "point")
+        userDefaults.setValue(0, forKey: "\(schoolId)point")
         updatePointLabel()
     }
 
@@ -66,9 +72,26 @@ class UserMenuViewController: UIViewController {
                 self?.schoolNameLabel.text = response.schoolName
             }).disposed(by: disposeBag)
     }
+    
+    func checkPoint() {
+        for data in historyData {
+            if data.isCompleted && !data.pointReceived {
+                viewModel.changePointStatus(schoolId: userInfo.schoolId, documentId: data.documentId)
+                    .subscribe(onNext: { [weak self] response in
+                        if response { //ポイント状態の変更に成功
+                            var currentPoint = self?.userDefaults.object(forKey: "\(self!.schoolId)point") as? Int ?? 0
+                            print("point added")
+                            currentPoint += 100
+                            self?.userDefaults.setValue(currentPoint, forKey: "\(self!.schoolId)point")
+                            self?.updatePointLabel()
+                        }
+                    }).disposed(by: disposeBag)
+            }
+        }
+    }
 
     func updatePointLabel() {
-        let currentPoint = self.userDefaults.object(forKey: "point") as? Int ?? 0
+        let currentPoint = self.userDefaults.object(forKey: "\(schoolId)point") as? Int ?? 0
         pointLabel.text = String(currentPoint)
     }
 

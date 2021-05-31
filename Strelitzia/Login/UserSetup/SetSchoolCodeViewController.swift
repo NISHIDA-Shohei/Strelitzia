@@ -11,11 +11,13 @@ import Firebase
 class SetSchoolCodeViewController: UIViewController {
     
     @IBOutlet weak var schoolCodeTextField: UITextField!
+    @IBOutlet weak var setSettingButton: UIButton!
     
     private let userId = Auth.auth().currentUser?.uid
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setSettingButton.blueTheme()
     }
     
     @IBAction func tapSetSchoolCode(_ sender: Any) {

@@ -14,6 +14,9 @@ class AdminMenuViewController: UIViewController {
     
     @IBOutlet weak var schoolIdLabel: UILabel!
     @IBOutlet weak var schoolNameTextField: UITextField!
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
+    
     
     private let viewModel = AdminViewModel()
     private let disposeBag = DisposeBag()
@@ -26,7 +29,8 @@ class AdminMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        logoutButton.redTheme()
+        sendButton.blueTheme()
     }
     
     override func viewWillAppear(_ animated: Bool) {

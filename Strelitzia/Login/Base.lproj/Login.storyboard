@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PuP-cc-v35" customClass="ThemeButton" customModule="Strelitzia" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PuP-cc-v35">
                                 <rect key="frame" x="20" y="648" width="374" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="y9D-Iq-YEL"/>
@@ -32,7 +32,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaq-7J-Ya8" customClass="ThemeButton" customModule="Strelitzia" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaq-7J-Ya8">
                                 <rect key="frame" x="20" y="728" width="374" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="NjS-Ns-ao3"/>
@@ -48,7 +48,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="アプリ用ロゴ" translatesAutoresizingMaskIntoConstraints="NO" id="ypZ-61-iVc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="アプリ用ロゴ" translatesAutoresizingMaskIntoConstraints="NO" id="ypZ-61-iVc">
                                 <rect key="frame" x="16" y="217" width="382" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="ySD-tL-Nuw"/>
@@ -56,7 +56,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="GuardaBackgroud"/>
                         <constraints>
                             <constraint firstItem="iaq-7J-Ya8" firstAttribute="top" secondItem="PuP-cc-v35" secondAttribute="bottom" constant="20" id="1Wj-vx-XKm"/>
                             <constraint firstItem="PuP-cc-v35" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="474-wq-IfD"/>
@@ -80,7 +80,9 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="8j2-j5-vcg" id="PLr-vg-dAt"/>
+                        <outlet property="loginButton" destination="PuP-cc-v35" id="LNU-EB-kyB"/>
                         <outlet property="passwordTextField" destination="Za7-UX-PhA" id="oTI-MH-E4T"/>
+                        <outlet property="signupButton" destination="iaq-7J-Ya8" id="UYO-IY-eG3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -95,7 +97,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40I-iZ-3R0" customClass="ThemeButton" customModule="Strelitzia" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40I-iZ-3R0">
                                 <rect key="frame" x="20" y="708" width="374" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="8LE-yK-3sP"/>
@@ -152,7 +154,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TXG-0W-dIm"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="GuardaBackgroud"/>
                         <constraints>
                             <constraint firstItem="Lci-nN-JZd" firstAttribute="centerX" secondItem="GYl-u3-xAf" secondAttribute="centerX" id="5Rs-kA-1n6"/>
                             <constraint firstItem="Lci-nN-JZd" firstAttribute="top" secondItem="8GE-Fx-SrD" secondAttribute="bottom" constant="20" id="6RI-vU-sd7"/>
@@ -176,6 +178,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="createAccountButton" destination="40I-iZ-3R0" id="P4n-bZ-jRb"/>
                         <outlet property="emailTextField" destination="8GE-Fx-SrD" id="0Mg-cI-EE8"/>
                         <outlet property="passwordTextField" destination="Lci-nN-JZd" id="j9f-CF-2nv"/>
                         <outlet property="selectUserTypeSegmentedControl" destination="C1q-ck-4Xk" id="9H1-tr-D6W"/>
@@ -193,33 +196,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学校名を記入してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkL-OF-Aoq">
-                                <rect key="frame" x="20" y="379" width="208" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学校名を記入してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkL-OF-Aoq">
+                                <rect key="frame" x="20" y="400" width="208" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BM4-4s-j0Z">
-                                <rect key="frame" x="20" y="408" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BM4-4s-j0Z">
+                                <rect key="frame" x="20" y="431" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyq-nx-ycE">
-                                <rect key="frame" x="146" y="807" width="123" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyq-nx-ycE">
+                                <rect key="frame" x="20" y="762" width="374" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="uhg-DY-tZg"/>
+                                </constraints>
                                 <state key="normal" title="学校名を設定する"/>
                                 <connections>
                                     <action selector="onTapSetUpButton" destination="RJe-Kb-Fyw" eventType="touchUpInside" id="Tyg-Zn-QCy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アカウントを作成する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="085-oD-LBc">
+                                <rect key="frame" x="20" y="64" width="253.5" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d5F-M2-ifo"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="GuardaBackgroud"/>
+                        <constraints>
+                            <constraint firstItem="Zyq-nx-ycE" firstAttribute="leading" secondItem="d5F-M2-ifo" secondAttribute="leading" constant="20" id="3wm-ND-adV"/>
+                            <constraint firstItem="085-oD-LBc" firstAttribute="leading" secondItem="d5F-M2-ifo" secondAttribute="leading" constant="20" id="Auc-lV-xmQ"/>
+                            <constraint firstItem="BM4-4s-j0Z" firstAttribute="leading" secondItem="d5F-M2-ifo" secondAttribute="leading" constant="20" id="Q6h-sK-ixx"/>
+                            <constraint firstItem="BM4-4s-j0Z" firstAttribute="top" secondItem="mkL-OF-Aoq" secondAttribute="bottom" constant="10" id="VQV-vp-OJa"/>
+                            <constraint firstItem="d5F-M2-ifo" firstAttribute="bottom" secondItem="Zyq-nx-ycE" secondAttribute="bottom" constant="40" id="Xjy-dD-QJP"/>
+                            <constraint firstItem="085-oD-LBc" firstAttribute="top" secondItem="d5F-M2-ifo" secondAttribute="top" constant="20" id="aoG-1B-YF7"/>
+                            <constraint firstItem="BM4-4s-j0Z" firstAttribute="centerY" secondItem="7QB-X8-cS2" secondAttribute="centerY" id="jbK-k0-1nT"/>
+                            <constraint firstItem="mkL-OF-Aoq" firstAttribute="leading" secondItem="d5F-M2-ifo" secondAttribute="leading" constant="20" id="k2U-ac-2rJ"/>
+                            <constraint firstItem="d5F-M2-ifo" firstAttribute="trailing" secondItem="BM4-4s-j0Z" secondAttribute="trailing" constant="20" id="ko9-ou-lRB"/>
+                            <constraint firstItem="d5F-M2-ifo" firstAttribute="trailing" secondItem="Zyq-nx-ycE" secondAttribute="trailing" constant="20" id="ysH-54-gtP"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="schoolNameLabel" destination="BM4-4s-j0Z" id="cCd-TZ-5wR"/>
+                        <outlet property="setSettingButton" destination="Zyq-nx-ycE" id="r1U-MG-5Oz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DWV-am-9tv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -234,33 +256,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtT-IG-cDb">
-                                <rect key="frame" x="131" y="801" width="153" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtT-IG-cDb">
+                                <rect key="frame" x="20" y="762" width="374" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="QOS-M2-eb9"/>
+                                </constraints>
                                 <state key="normal" title="学校コードを設定する"/>
                                 <connections>
                                     <action selector="tapSetSchoolCode:" destination="yTw-QO-7Dh" eventType="touchUpInside" id="qoh-OB-3Ml"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学校コード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxK-67-rhg">
-                                <rect key="frame" x="48" y="417" width="87" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P68-TV-bDF">
+                                <rect key="frame" x="20" y="431" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アカウントを作成する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyL-bg-XUZ">
+                                <rect key="frame" x="20" y="64" width="253.5" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学校コード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxK-67-rhg">
+                                <rect key="frame" x="20" y="400" width="87" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P68-TV-bDF">
-                                <rect key="frame" x="48" y="446" width="319" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="msA-Bv-QdF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="GuardaBackgroud"/>
+                        <constraints>
+                            <constraint firstItem="P68-TV-bDF" firstAttribute="leading" secondItem="msA-Bv-QdF" secondAttribute="leading" constant="20" id="9hh-lJ-ZL7"/>
+                            <constraint firstItem="UxK-67-rhg" firstAttribute="leading" secondItem="msA-Bv-QdF" secondAttribute="leading" constant="20" id="G4m-4b-t7E"/>
+                            <constraint firstItem="TtT-IG-cDb" firstAttribute="leading" secondItem="msA-Bv-QdF" secondAttribute="leading" constant="20" id="GmJ-aO-Fzh"/>
+                            <constraint firstItem="msA-Bv-QdF" firstAttribute="trailing" secondItem="P68-TV-bDF" secondAttribute="trailing" constant="20" id="Lzt-1l-PEG"/>
+                            <constraint firstItem="P68-TV-bDF" firstAttribute="centerY" secondItem="zWK-Jz-uNY" secondAttribute="centerY" id="am3-g0-mqI"/>
+                            <constraint firstItem="msA-Bv-QdF" firstAttribute="bottom" secondItem="TtT-IG-cDb" secondAttribute="bottom" constant="40" id="dvD-2A-2r4"/>
+                            <constraint firstItem="msA-Bv-QdF" firstAttribute="trailing" secondItem="TtT-IG-cDb" secondAttribute="trailing" constant="20" id="iMx-ji-Hig"/>
+                            <constraint firstItem="wyL-bg-XUZ" firstAttribute="leading" secondItem="msA-Bv-QdF" secondAttribute="leading" constant="20" id="ihb-ci-jTw"/>
+                            <constraint firstItem="wyL-bg-XUZ" firstAttribute="top" secondItem="msA-Bv-QdF" secondAttribute="top" constant="20" id="n7A-RE-bJc"/>
+                            <constraint firstItem="P68-TV-bDF" firstAttribute="top" secondItem="UxK-67-rhg" secondAttribute="bottom" constant="10" id="wYo-gB-qVz"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="schoolCodeTextField" destination="P68-TV-bDF" id="gmi-xP-voE"/>
+                        <outlet property="setSettingButton" destination="TtT-IG-cDb" id="X1C-Fp-AtY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMr-rd-pf5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -270,9 +311,9 @@
     </scenes>
     <resources>
         <image name="xmark.circle" catalog="system" width="128" height="121"/>
-        <image name="アプリ用ロゴ" width="2305" height="861"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="アプリ用ロゴ" width="2305" height="861"/>
+        <namedColor name="GuardaBackgroud">
+            <color red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
