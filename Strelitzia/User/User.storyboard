@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sqJ-rP-RGC">
-                                <rect key="frame" x="0.0" y="110" width="428" height="816"/>
+                                <rect key="frame" x="0.0" y="110" width="428" height="697"/>
                                 <color key="backgroundColor" name="GuardaBackgroud"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WE4-6C-bq1">
@@ -57,8 +57,8 @@
                         <constraints>
                             <constraint firstItem="jrU-Lm-yWo" firstAttribute="leading" secondItem="xuU-l1-n0F" secondAttribute="trailing" constant="10" id="0mw-Z6-GfQ"/>
                             <constraint firstItem="WE4-6C-bq1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="29l-Zr-dui"/>
-                            <constraint firstAttribute="bottom" secondItem="sqJ-rP-RGC" secondAttribute="bottom" id="7L0-r6-MJ4"/>
                             <constraint firstItem="sqJ-rP-RGC" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="7TJ-cZ-Clv"/>
+                            <constraint firstItem="WE4-6C-bq1" firstAttribute="top" secondItem="sqJ-rP-RGC" secondAttribute="bottom" constant="10" id="E0r-ap-Xzd"/>
                             <constraint firstItem="xuU-l1-n0F" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="Fzl-fp-D9T"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WE4-6C-bq1" secondAttribute="trailing" constant="15" id="Xi5-zJ-nS1"/>
                             <constraint firstItem="jrU-Lm-yWo" firstAttribute="centerY" secondItem="xuU-l1-n0F" secondAttribute="centerY" id="g7O-Gg-FNq"/>
@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="27.536231884057973" y="137.94642857142856"/>
+            <point key="canvasLocation" x="26.635514018691588" y="137.36501079913609"/>
         </scene>
         <!--Survey View Controller-->
         <scene sceneID="bZc-8h-VFr">

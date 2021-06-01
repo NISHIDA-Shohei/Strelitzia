@@ -47,24 +47,24 @@ class SurveyViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     @IBAction func onTapUploadSurvey(_ sender: Any) {
-        if let title = titleTextField.text,
-           let place = placeTextField.text,
-           let detail = detailsTextView.text,
-           let image = imageView.image {
-            functions.startIndicator(view: self.view)
-            if isEditingView {
-                viewModel.uploadEditedSurveyData(schoolId: schoolId, documentId: documentId, title: title, place: place, details: detail, image: image)
-                    .subscribe(onNext: { [weak self] response in
-                        self?.showAlert(title: response.title, text: response.text)
-                        self?.functions.dismissIndicator(view: (self?.view)!)
-                    }).disposed(by: disposeBag)
-            } else {
-                viewModel.uploadSurveyData(schoolId: schoolId, title: title, place: place, details: detail, image: image)
-                    .subscribe(onNext: { [weak self] response in
-                        self?.showAlert(title: response.title, text: response.text)
-                        self?.functions.dismissIndicator(view: (self?.view)!)
-                    }).disposed(by: disposeBag)
-            }
+        guard let title = titleTextField.text else { return }
+        guard let place = placeTextField.text else { return }
+        guard let detail = detailsTextView.text else { return }
+        guard let image = imageView.image else { return }
+        
+        functions.startIndicator(view: self.view)
+        if isEditingView {
+            viewModel.uploadEditedSurveyData(schoolId: schoolId, documentId: documentId, title: title, place: place, details: detail, image: image)
+                .subscribe(onNext: { [weak self] response in
+                    self?.showAlert(title: response.title, text: response.text)
+                    self?.functions.dismissIndicator(view: (self?.view)!)
+                }).disposed(by: disposeBag)
+        } else {
+            viewModel.uploadSurveyData(schoolId: schoolId, title: title, place: place, details: detail, image: image)
+                .subscribe(onNext: { [weak self] response in
+                    self?.showAlert(title: response.title, text: response.text)
+                    self?.functions.dismissIndicator(view: (self?.view)!)
+                }).disposed(by: disposeBag)
         }
     }
     
@@ -109,6 +109,8 @@ extension SurveyViewController {
         alert.addAction(cameraAction)
         alert.addAction(libraryAction)
         alert.addAction(cancelAction)
+        
+        alert.popoverPresentationController?.sourceView = self.view
         
         present(alert, animated: true, completion: nil)
     }
