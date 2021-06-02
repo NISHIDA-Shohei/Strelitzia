@@ -51,13 +51,14 @@ class AdminModel {
         }
     }
     
-    func getHistory(schoolId: String) -> Observable<HistoryData> {
+    func getHistory(schoolId: String) -> Observable<[HistoryData]> {
         return Observable.create { [weak self] observer in
             let folderRef = self?.ref.collection("school").document(schoolId).collection("survey")
             folderRef?.getDocuments {(snapshot, error) in
                 if error != nil {
                     print("Document does not exist")
                 } else {
+                    var data = [HistoryData]()
                     for document in (snapshot?.documents)! {
                         let id = document.documentID
                         guard let title = document.data()["title"] as? String else { return }
@@ -65,9 +66,9 @@ class AdminModel {
                         guard let isCompleted = document.data()["isCompleted"] as? Bool else { return }
                         guard let imageURL = document.data()["imageURL"] as? String else { return }
                         let lastModified = lastModifiedTimestamp.dateValue()
-                        let data = HistoryData(documentId: id, title: title, lastModified: lastModified, isCompleted: isCompleted, imageURL: imageURL)
-                        observer.onNext(data)
+                        data.append(HistoryData(documentId: id, title: title, lastModified: lastModified, isCompleted: isCompleted, imageURL: imageURL))
                     }
+                    observer.onNext(data)
                 }
             }
             return Disposables.create()

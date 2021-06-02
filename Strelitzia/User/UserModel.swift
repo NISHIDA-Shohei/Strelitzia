@@ -52,13 +52,14 @@ class UserModel {
         }
     }
     
-    func getHistory(schoolId: String) -> Observable<UserHistoryData> {
+    func getHistory(schoolId: String) -> Observable<[UserHistoryData]> {
         return Observable.create { [weak self] observer in
             let folderRef = self?.ref.collection("school").document(schoolId).collection("survey").whereField("userId", isEqualTo: self?.userId ?? "")
             folderRef?.getDocuments {(snapshot, error) in
                 if error != nil {
                     print("Document does not exist")
                 } else {
+                    var data = [UserHistoryData]()
                     for document in (snapshot?.documents)! {
                         let id = document.documentID
                         guard let title = document.data()["title"] as? String else { return }
@@ -67,9 +68,9 @@ class UserModel {
                         guard let imageURL = document.data()["imageURL"] as? String else { return }
                         let pointReceived = document.data()["pointReceived"] as? Bool ?? false
                         let lastModified = lastModifiedTimestamp.dateValue()
-                        let data = UserHistoryData(documentId: id, title: title, lastModified: lastModified, isCompleted: isCompleted, imageURL: imageURL, pointReceived: pointReceived)
-                        observer.onNext(data)
+                        data.append(UserHistoryData(documentId: id, title: title, lastModified: lastModified, isCompleted: isCompleted, imageURL: imageURL, pointReceived: pointReceived))
                     }
+                    observer.onNext(data)
                 }
             }
             return Disposables.create()

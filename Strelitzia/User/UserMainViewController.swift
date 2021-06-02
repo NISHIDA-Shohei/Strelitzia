@@ -68,17 +68,16 @@ class UserMainViewController: UIViewController {
     }
     
     func getHistory() {
-        historyData = []
         viewModel.getHistory(schoolId: userInfo.schoolId)
             .subscribe(onNext: { [weak self] response in
-                self?.historyData.append(response)
+                self?.historyData = response
                 self?.tableView.reloadData()
+                self?.refreshCtl.endRefreshing()
             }).disposed(by: disposeBag)
     }
     
     @objc func refresh(sender: UIRefreshControl) {
         getUserInfo()
-        refreshCtl.endRefreshing()
     }
 }
 

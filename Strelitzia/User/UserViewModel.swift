@@ -15,7 +15,7 @@ class UserViewModel {
         return model.getUserInfo().asObservable()
     }
     
-    func getHistory(schoolId: String) -> Observable<UserHistoryData> {
+    func getHistory(schoolId: String) -> Observable<[UserHistoryData]> {
         return model.getHistory(schoolId: schoolId).asObservable()
     }
     

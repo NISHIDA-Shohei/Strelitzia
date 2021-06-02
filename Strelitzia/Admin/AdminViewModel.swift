@@ -15,7 +15,7 @@ class AdminViewModel {
         return model.getUserInfo().asObservable()
     }
     
-    func getHistory(schoolId: String) -> Observable<HistoryData> {
+    func getHistory(schoolId: String) -> Observable<[HistoryData]> {
         return model.getHistory(schoolId: schoolId).asObservable()
     }
     
