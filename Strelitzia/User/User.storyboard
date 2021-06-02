@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="width" constant="30" id="JOt-Ie-Put"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" backgroundImage="line.horizontal.3" catalog="system"/>
                                 <connections>
                                     <action selector="onTapMenuButton" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hrd-qi-1E7"/>
@@ -209,7 +209,7 @@
                                     <constraint firstAttribute="width" constant="30" id="6v0-fa-5ly"/>
                                     <constraint firstAttribute="height" constant="30" id="YHP-hg-T4h"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" backgroundImage="xmark.circle" catalog="system"/>
                                 <connections>
                                     <action selector="onTapClose" destination="s9z-Zy-FOw" eventType="touchUpInside" id="GDN-l8-0Md"/>
@@ -275,7 +275,7 @@
                                 <rect key="frame" x="20" y="250" width="123" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="所持ポイント">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnP-ey-7cm">
@@ -300,7 +300,7 @@
                                     <constraint firstAttribute="height" constant="30" id="PSS-AZ-Itc"/>
                                     <constraint firstAttribute="width" constant="30" id="QbC-y1-lw3"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" backgroundImage="xmark.circle" catalog="system"/>
                                 <connections>
                                     <action selector="onTapClose" destination="s9z-Zy-FOw" eventType="touchUpInside" id="12I-AC-mu7"/>

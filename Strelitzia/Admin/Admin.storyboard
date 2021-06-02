@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Veq-qL-MPy"/>
                                     <constraint firstAttribute="width" constant="30" id="hMq-CU-vhH"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" backgroundImage="line.horizontal.3" catalog="system"/>
                                 <connections>
                                     <segue destination="ke5-Fq-3q3" kind="showDetail" id="f1k-GV-FA1"/>
@@ -97,7 +97,6 @@
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="scp-ce-3Lr">
                                                 <rect key="frame" x="20" y="526" width="388" height="354"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -169,7 +168,7 @@
                                     <constraint firstAttribute="width" constant="30" id="Nan-j7-O8e"/>
                                     <constraint firstAttribute="height" constant="30" id="mwO-oL-HTT"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" backgroundImage="xmark.circle" catalog="system"/>
                                 <connections>
                                     <action selector="onTapClose" destination="jKY-Vo-31o" eventType="touchUpInside" id="zfe-46-3ua"/>
@@ -268,7 +267,7 @@
                                     <constraint firstAttribute="height" constant="30" id="FJI-4j-pek"/>
                                     <constraint firstAttribute="width" constant="30" id="WxP-7c-Nrd"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" backgroundImage="xmark.circle" catalog="system"/>
                                 <connections>
                                     <action selector="onTapClose" destination="ke5-Fq-3q3" eventType="touchUpInside" id="eAd-7k-INQ"/>
