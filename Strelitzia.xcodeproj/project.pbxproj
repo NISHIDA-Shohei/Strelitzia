@@ -26,6 +26,16 @@
 		B66D2D70265E6C9100862FA1 /* AdminSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D6F265E6C9100862FA1 /* AdminSetUpViewController.swift */; };
 		B66D2D7A265F575700862FA1 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66D2D79265F575700862FA1 /* Splash.storyboard */; };
 		B66D2D7C265F576C00862FA1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D7B265F576C00862FA1 /* SplashViewController.swift */; };
+		B68A2B28266DDD96003B3A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A2B27266DDD96003B3A23 /* AppDelegate.swift */; };
+		B68A2B2A266DDD96003B3A23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A2B29266DDD96003B3A23 /* SceneDelegate.swift */; };
+		B68A2B2C266DDD96003B3A23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A2B2B266DDD96003B3A23 /* ViewController.swift */; };
+		B68A2B2F266DDD96003B3A23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68A2B2D266DDD96003B3A23 /* Main.storyboard */; };
+		B68A2B32266DDD96003B3A23 /* StrelitziaClip.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B68A2B30266DDD96003B3A23 /* StrelitziaClip.xcdatamodeld */; };
+		B68A2B34266DDD97003B3A23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68A2B33266DDD97003B3A23 /* Assets.xcassets */; };
+		B68A2B37266DDD97003B3A23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68A2B35266DDD97003B3A23 /* LaunchScreen.storyboard */; };
+		B68A2B43266DDD98003B3A23 /* StrelitziaClipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A2B42266DDD98003B3A23 /* StrelitziaClipTests.swift */; };
+		B68A2B4E266DDD98003B3A23 /* StrelitziaClipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A2B4D266DDD98003B3A23 /* StrelitziaClipUITests.swift */; };
+		B68A2B52266DDD98003B3A23 /* StrelitziaClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = B68A2B25266DDD96003B3A23 /* StrelitziaClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B69F0C67265A1092001B1831 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69F0C66265A1092001B1831 /* User.storyboard */; };
 		B69F0C6A265A10EA001B1831 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C69265A10EA001B1831 /* UserMainViewController.swift */; };
 		B69F0C6E265A1AA1001B1831 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C6D265A1AA1001B1831 /* UserModel.swift */; };
@@ -46,6 +56,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B68A2B3F266DDD98003B3A23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6BB91E62657354900E67F97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B68A2B24266DDD96003B3A23;
+			remoteInfo = StrelitziaClip;
+		};
+		B68A2B4A266DDD98003B3A23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6BB91E62657354900E67F97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B68A2B24266DDD96003B3A23;
+			remoteInfo = StrelitziaClip;
+		};
+		B68A2B50266DDD98003B3A23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6BB91E62657354900E67F97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B68A2B24266DDD96003B3A23;
+			remoteInfo = StrelitziaClip;
+		};
 		B6BB92082657354B00E67F97 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B6BB91E62657354900E67F97 /* Project object */;
@@ -61,6 +92,20 @@
 			remoteInfo = Strelitzia;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B68A2B53266DDD98003B3A23 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				B68A2B52266DDD98003B3A23 /* StrelitziaClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3653FA22F85027C97ED74C6B /* Pods-Strelitzia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strelitzia.release.xcconfig"; path = "Target Support Files/Pods-Strelitzia/Pods-Strelitzia.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +129,22 @@
 		B66D2D6F265E6C9100862FA1 /* AdminSetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSetUpViewController.swift; sourceTree = "<group>"; };
 		B66D2D79265F575700862FA1 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		B66D2D7B265F576C00862FA1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		B68A2B25266DDD96003B3A23 /* StrelitziaClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrelitziaClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B68A2B27266DDD96003B3A23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B68A2B29266DDD96003B3A23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B68A2B2B266DDD96003B3A23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B68A2B2E266DDD96003B3A23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B68A2B31266DDD96003B3A23 /* StrelitziaClip.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StrelitziaClip.xcdatamodel; sourceTree = "<group>"; };
+		B68A2B33266DDD97003B3A23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B68A2B36266DDD97003B3A23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B68A2B38266DDD97003B3A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B68A2B39266DDD97003B3A23 /* StrelitziaClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StrelitziaClip.entitlements; sourceTree = "<group>"; };
+		B68A2B3E266DDD98003B3A23 /* StrelitziaClipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrelitziaClipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B68A2B42266DDD98003B3A23 /* StrelitziaClipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrelitziaClipTests.swift; sourceTree = "<group>"; };
+		B68A2B44266DDD98003B3A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B68A2B49266DDD98003B3A23 /* StrelitziaClipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrelitziaClipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B68A2B4D266DDD98003B3A23 /* StrelitziaClipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrelitziaClipUITests.swift; sourceTree = "<group>"; };
+		B68A2B4F266DDD98003B3A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B69F0C66265A1092001B1831 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		B69F0C69265A10EA001B1831 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
 		B69F0C6D265A1AA1001B1831 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -114,6 +175,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B68A2B22266DDD96003B3A23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B68A2B3B266DDD98003B3A23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B68A2B46266DDD98003B3A23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6BB91EB2657354900E67F97 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,6 +278,40 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		B68A2B26266DDD96003B3A23 /* StrelitziaClip */ = {
+			isa = PBXGroup;
+			children = (
+				B68A2B27266DDD96003B3A23 /* AppDelegate.swift */,
+				B68A2B29266DDD96003B3A23 /* SceneDelegate.swift */,
+				B68A2B2B266DDD96003B3A23 /* ViewController.swift */,
+				B68A2B2D266DDD96003B3A23 /* Main.storyboard */,
+				B68A2B33266DDD97003B3A23 /* Assets.xcassets */,
+				B68A2B35266DDD97003B3A23 /* LaunchScreen.storyboard */,
+				B68A2B38266DDD97003B3A23 /* Info.plist */,
+				B68A2B39266DDD97003B3A23 /* StrelitziaClip.entitlements */,
+				B68A2B30266DDD96003B3A23 /* StrelitziaClip.xcdatamodeld */,
+			);
+			path = StrelitziaClip;
+			sourceTree = "<group>";
+		};
+		B68A2B41266DDD98003B3A23 /* StrelitziaClipTests */ = {
+			isa = PBXGroup;
+			children = (
+				B68A2B42266DDD98003B3A23 /* StrelitziaClipTests.swift */,
+				B68A2B44266DDD98003B3A23 /* Info.plist */,
+			);
+			path = StrelitziaClipTests;
+			sourceTree = "<group>";
+		};
+		B68A2B4C266DDD98003B3A23 /* StrelitziaClipUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B68A2B4D266DDD98003B3A23 /* StrelitziaClipUITests.swift */,
+				B68A2B4F266DDD98003B3A23 /* Info.plist */,
+			);
+			path = StrelitziaClipUITests;
+			sourceTree = "<group>";
+		};
 		B69F0C68265A10AD001B1831 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +345,9 @@
 				B6BB91F02657354900E67F97 /* Strelitzia */,
 				B6BB920A2657354B00E67F97 /* StrelitziaTests */,
 				B6BB92152657354B00E67F97 /* StrelitziaUITests */,
+				B68A2B26266DDD96003B3A23 /* StrelitziaClip */,
+				B68A2B41266DDD98003B3A23 /* StrelitziaClipTests */,
+				B68A2B4C266DDD98003B3A23 /* StrelitziaClipUITests */,
 				B6BB91EF2657354900E67F97 /* Products */,
 				DB453A04E1ECAAAFCCE14A8D /* Pods */,
 				DBDD9981D2AF4B793C984238 /* Frameworks */,
@@ -241,6 +360,9 @@
 				B6BB91EE2657354900E67F97 /* Strelitzia.app */,
 				B6BB92072657354B00E67F97 /* StrelitziaTests.xctest */,
 				B6BB92122657354B00E67F97 /* StrelitziaUITests.xctest */,
+				B68A2B25266DDD96003B3A23 /* StrelitziaClip.app */,
+				B68A2B3E266DDD98003B3A23 /* StrelitziaClipTests.xctest */,
+				B68A2B49266DDD98003B3A23 /* StrelitziaClipUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -310,6 +432,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B68A2B24266DDD96003B3A23 /* StrelitziaClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B68A2B5A266DDD98003B3A23 /* Build configuration list for PBXNativeTarget "StrelitziaClip" */;
+			buildPhases = (
+				B68A2B21266DDD96003B3A23 /* Sources */,
+				B68A2B22266DDD96003B3A23 /* Frameworks */,
+				B68A2B23266DDD96003B3A23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StrelitziaClip;
+			productName = StrelitziaClip;
+			productReference = B68A2B25266DDD96003B3A23 /* StrelitziaClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
+		B68A2B3D266DDD98003B3A23 /* StrelitziaClipTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B68A2B5B266DDD98003B3A23 /* Build configuration list for PBXNativeTarget "StrelitziaClipTests" */;
+			buildPhases = (
+				B68A2B3A266DDD98003B3A23 /* Sources */,
+				B68A2B3B266DDD98003B3A23 /* Frameworks */,
+				B68A2B3C266DDD98003B3A23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B68A2B40266DDD98003B3A23 /* PBXTargetDependency */,
+			);
+			name = StrelitziaClipTests;
+			productName = StrelitziaClipTests;
+			productReference = B68A2B3E266DDD98003B3A23 /* StrelitziaClipTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B68A2B48266DDD98003B3A23 /* StrelitziaClipUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B68A2B5C266DDD98003B3A23 /* Build configuration list for PBXNativeTarget "StrelitziaClipUITests" */;
+			buildPhases = (
+				B68A2B45266DDD98003B3A23 /* Sources */,
+				B68A2B46266DDD98003B3A23 /* Frameworks */,
+				B68A2B47266DDD98003B3A23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B68A2B4B266DDD98003B3A23 /* PBXTargetDependency */,
+			);
+			name = StrelitziaClipUITests;
+			productName = StrelitziaClipUITests;
+			productReference = B68A2B49266DDD98003B3A23 /* StrelitziaClipUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		B6BB91ED2657354900E67F97 /* Strelitzia */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6BB921B2657354B00E67F97 /* Build configuration list for PBXNativeTarget "Strelitzia" */;
@@ -320,10 +495,12 @@
 				B6BB91EC2657354900E67F97 /* Resources */,
 				91B9E5276C1854BD237E9FC5 /* [CP] Embed Pods Frameworks */,
 				3BA975A23E4296ED14FA45AE /* [CP] Copy Pods Resources */,
+				B68A2B53266DDD98003B3A23 /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B68A2B51266DDD98003B3A23 /* PBXTargetDependency */,
 			);
 			name = Strelitzia;
 			productName = Strelitzia;
@@ -379,6 +556,17 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					B68A2B24266DDD96003B3A23 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					B68A2B3D266DDD98003B3A23 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = B68A2B24266DDD96003B3A23;
+					};
+					B68A2B48266DDD98003B3A23 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = B68A2B24266DDD96003B3A23;
+					};
 					B6BB91ED2657354900E67F97 = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -408,11 +596,38 @@
 				B6BB91ED2657354900E67F97 /* Strelitzia */,
 				B6BB92062657354B00E67F97 /* StrelitziaTests */,
 				B6BB92112657354B00E67F97 /* StrelitziaUITests */,
+				B68A2B24266DDD96003B3A23 /* StrelitziaClip */,
+				B68A2B3D266DDD98003B3A23 /* StrelitziaClipTests */,
+				B68A2B48266DDD98003B3A23 /* StrelitziaClipUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B68A2B23266DDD96003B3A23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B68A2B37266DDD97003B3A23 /* LaunchScreen.storyboard in Resources */,
+				B68A2B34266DDD97003B3A23 /* Assets.xcassets in Resources */,
+				B68A2B2F266DDD96003B3A23 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B68A2B3C266DDD98003B3A23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B68A2B47266DDD98003B3A23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6BB91EC2657354900E67F97 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,6 +797,33 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B68A2B21266DDD96003B3A23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B68A2B2C266DDD96003B3A23 /* ViewController.swift in Sources */,
+				B68A2B28266DDD96003B3A23 /* AppDelegate.swift in Sources */,
+				B68A2B32266DDD96003B3A23 /* StrelitziaClip.xcdatamodeld in Sources */,
+				B68A2B2A266DDD96003B3A23 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B68A2B3A266DDD98003B3A23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B68A2B43266DDD98003B3A23 /* StrelitziaClipTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B68A2B45266DDD98003B3A23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B68A2B4E266DDD98003B3A23 /* StrelitziaClipUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6BB91EA2657354900E67F97 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -631,6 +873,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B68A2B40266DDD98003B3A23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B68A2B24266DDD96003B3A23 /* StrelitziaClip */;
+			targetProxy = B68A2B3F266DDD98003B3A23 /* PBXContainerItemProxy */;
+		};
+		B68A2B4B266DDD98003B3A23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B68A2B24266DDD96003B3A23 /* StrelitziaClip */;
+			targetProxy = B68A2B4A266DDD98003B3A23 /* PBXContainerItemProxy */;
+		};
+		B68A2B51266DDD98003B3A23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B68A2B24266DDD96003B3A23 /* StrelitziaClip */;
+			targetProxy = B68A2B50266DDD98003B3A23 /* PBXContainerItemProxy */;
+		};
 		B6BB92092657354B00E67F97 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B6BB91ED2657354900E67F97 /* Strelitzia */;
@@ -644,6 +901,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B68A2B2D266DDD96003B3A23 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B68A2B2E266DDD96003B3A23 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B68A2B35266DDD97003B3A23 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B68A2B36266DDD97003B3A23 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		B6BB91F72657354900E67F97 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -663,6 +936,134 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B68A2B54266DDD98003B3A23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StrelitziaClip/StrelitziaClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XD5X9TDNNJ;
+				INFOPLIST_FILE = StrelitziaClip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NISHIDA.Shohei.Strelitzia.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B68A2B55266DDD98003B3A23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StrelitziaClip/StrelitziaClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XD5X9TDNNJ;
+				INFOPLIST_FILE = StrelitziaClip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NISHIDA.Shohei.Strelitzia.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B68A2B56266DDD98003B3A23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XD5X9TDNNJ;
+				INFOPLIST_FILE = StrelitziaClipTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NISHIDA.Shohei.Strelitzia.StrelitziaClipTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StrelitziaClip.app/StrelitziaClip";
+			};
+			name = Debug;
+		};
+		B68A2B57266DDD98003B3A23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XD5X9TDNNJ;
+				INFOPLIST_FILE = StrelitziaClipTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NISHIDA.Shohei.Strelitzia.StrelitziaClipTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StrelitziaClip.app/StrelitziaClip";
+			};
+			name = Release;
+		};
+		B68A2B58266DDD98003B3A23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XD5X9TDNNJ;
+				INFOPLIST_FILE = StrelitziaClipUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NISHIDA.Shohei.Strelitzia.StrelitziaClipUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StrelitziaClip;
+			};
+			name = Debug;
+		};
+		B68A2B59266DDD98003B3A23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XD5X9TDNNJ;
+				INFOPLIST_FILE = StrelitziaClipUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NISHIDA.Shohei.Strelitzia.StrelitziaClipUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StrelitziaClip;
+			};
+			name = Release;
+		};
 		B6BB92192657354B00E67F97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -914,6 +1315,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B68A2B5A266DDD98003B3A23 /* Build configuration list for PBXNativeTarget "StrelitziaClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B68A2B54266DDD98003B3A23 /* Debug */,
+				B68A2B55266DDD98003B3A23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B68A2B5B266DDD98003B3A23 /* Build configuration list for PBXNativeTarget "StrelitziaClipTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B68A2B56266DDD98003B3A23 /* Debug */,
+				B68A2B57266DDD98003B3A23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B68A2B5C266DDD98003B3A23 /* Build configuration list for PBXNativeTarget "StrelitziaClipUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B68A2B58266DDD98003B3A23 /* Debug */,
+				B68A2B59266DDD98003B3A23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B6BB91E92657354900E67F97 /* Build configuration list for PBXProject "Strelitzia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -953,6 +1381,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		B68A2B30266DDD96003B3A23 /* StrelitziaClip.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B68A2B31266DDD96003B3A23 /* StrelitziaClip.xcdatamodel */,
+			);
+			currentVersion = B68A2B31266DDD96003B3A23 /* StrelitziaClip.xcdatamodel */;
+			path = StrelitziaClip.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		B6BB91FA2657354900E67F97 /* Strelitzia.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
