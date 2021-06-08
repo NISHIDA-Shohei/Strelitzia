@@ -168,6 +168,7 @@ extension ClipSurveyViewController {
                         ]
 
                         self.ref.collection("school").document(self.schoolId as! String).collection("survey").addDocument(data: newFolder) { error in
+                            //↑バックグラウンドで更新できないバグ　治らない... https://github.com/firebase/firebase-ios-sdk/issues/6211
                             DispatchQueue.main.async {
                                 if error != nil {
                                     self.showAlert(title: "エラーが起きました", text: "時間を空けてもう一度お試しください")
