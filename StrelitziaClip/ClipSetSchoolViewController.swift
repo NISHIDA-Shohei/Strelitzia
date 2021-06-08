@@ -15,6 +15,10 @@ class ClipSetSchoolViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+    }
+
+    override func viewDidLayoutSubviews() {
         setSchoolButton.blueTheme()
     }
     
@@ -22,8 +26,8 @@ class ClipSetSchoolViewController: UIViewController {
         if let schoolId = schoolCodeTextField.text {
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let clipSurveyViewController = storyboard.instantiateViewController(withIdentifier: "ClipSurveyViewController") as! ClipSurveyViewController
-            clipSurveyViewController.schoolId = schoolId
             clipSurveyViewController.modalPresentationStyle = .fullScreen
+            clipSurveyViewController.schoolId = schoolId
             self.present(clipSurveyViewController, animated: true, completion: nil)
         }
     }

@@ -12,7 +12,7 @@
 		1AECD4FB834D27BC6EA92EB7 /* Pods_StrelitziaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96988137C46E960CFD6C583E /* Pods_StrelitziaTests.framework */; };
 		4A75BB1D266F484100810A4F /* ClipSetSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75BB1C266F484100810A4F /* ClipSetSchoolViewController.swift */; };
 		4A75BB1F266F48C300810A4F /* ClipFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75BB1E266F48C300810A4F /* ClipFunctions.swift */; };
-		4A75BB23266F49A200810A4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A75BB22266F49A200810A4F /* GoogleService-Info.plist */; };
+		4A75BB25266F6A4B00810A4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A75BB24266F6A4B00810A4F /* GoogleService-Info.plist */; };
 		4A97613426635A95002386C9 /* UserMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A97613326635A95002386C9 /* UserMenuViewController.swift */; };
 		5CE6EE6B4696AC1244515AAF /* Pods_StrelitziaClip_StrelitziaClipUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C413AA1BE635332547DABC7 /* Pods_StrelitziaClip_StrelitziaClipUITests.framework */; };
 		79943E94DF4F701D2729E0C3 /* Pods_Strelitzia_StrelitziaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9A2D1E394E42451FEDEADC /* Pods_Strelitzia_StrelitziaUITests.framework */; };
@@ -121,7 +121,7 @@
 		3BEBDBDBDAFB85B6AE2F2312 /* Pods_Strelitzia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Strelitzia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A75BB1C266F484100810A4F /* ClipSetSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipSetSchoolViewController.swift; sourceTree = "<group>"; };
 		4A75BB1E266F48C300810A4F /* ClipFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipFunctions.swift; sourceTree = "<group>"; };
-		4A75BB22266F49A200810A4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Strelitzia/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4A75BB24266F6A4B00810A4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A97613326635A95002386C9 /* UserMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuViewController.swift; sourceTree = "<group>"; };
 		58AA87736961DB52CD49A436 /* Pods_StrelitziaClipTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StrelitziaClipTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C08C6C5DD0590BE09596A9 /* Pods-StrelitziaClipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrelitziaClipTests.release.xcconfig"; path = "Target Support Files/Pods-StrelitziaClipTests/Pods-StrelitziaClipTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -310,9 +310,9 @@
 				B68A2B33266DDD97003B3A23 /* Assets.xcassets */,
 				B68A2B35266DDD97003B3A23 /* LaunchScreen.storyboard */,
 				B68A2B38266DDD97003B3A23 /* Info.plist */,
+				4A75BB24266F6A4B00810A4F /* GoogleService-Info.plist */,
 				B68A2B39266DDD97003B3A23 /* StrelitziaClip.entitlements */,
 				B68A2B30266DDD96003B3A23 /* StrelitziaClip.xcdatamodeld */,
-				4A75BB22266F49A200810A4F /* GoogleService-Info.plist */,
 				4A75BB1E266F48C300810A4F /* ClipFunctions.swift */,
 			);
 			path = StrelitziaClip;
@@ -474,6 +474,7 @@
 				B68A2B22266DDD96003B3A23 /* Frameworks */,
 				B68A2B23266DDD96003B3A23 /* Resources */,
 				E63AE1CC5FCA89020B4A8997 /* [CP] Embed Pods Frameworks */,
+				7971176DF64DDA28DD0E10BD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -512,6 +513,7 @@
 				B68A2B46266DDD98003B3A23 /* Frameworks */,
 				B68A2B47266DDD98003B3A23 /* Resources */,
 				AE1634F13680DBAE427FB178 /* [CP] Embed Pods Frameworks */,
+				49245AC715EEBE1DA319B776 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -647,7 +649,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B68A2B37266DDD97003B3A23 /* LaunchScreen.storyboard in Resources */,
-				4A75BB23266F49A200810A4F /* GoogleService-Info.plist in Resources */,
+				4A75BB25266F6A4B00810A4F /* GoogleService-Info.plist in Resources */,
 				B68A2B34266DDD97003B3A23 /* Assets.xcassets in Resources */,
 				B68A2B2F266DDD96003B3A23 /* Main.storyboard in Resources */,
 			);
@@ -733,6 +735,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Strelitzia/Pods-Strelitzia-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		49245AC715EEBE1DA319B776 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrelitziaClip-StrelitziaClipUITests/Pods-StrelitziaClip-StrelitziaClipUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrelitziaClip-StrelitziaClipUITests/Pods-StrelitziaClip-StrelitziaClipUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StrelitziaClip-StrelitziaClipUITests/Pods-StrelitziaClip-StrelitziaClipUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5C6D46F6A54C3605623B51E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -775,6 +794,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7971176DF64DDA28DD0E10BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrelitziaClip/Pods-StrelitziaClip-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrelitziaClip/Pods-StrelitziaClip-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StrelitziaClip/Pods-StrelitziaClip-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7B140806F3BE5930744402A8 /* [CP] Embed Pods Frameworks */ = {
@@ -1125,7 +1161,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0FE35BC377C9EBC8C34D205A /* Pods-StrelitziaClipTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XD5X9TDNNJ;
@@ -1148,7 +1184,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 58C08C6C5DD0590BE09596A9 /* Pods-StrelitziaClipTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XD5X9TDNNJ;
@@ -1171,7 +1207,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E138A838D93E94B5687AB888 /* Pods-StrelitziaClip-StrelitziaClipUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XD5X9TDNNJ;
 				INFOPLIST_FILE = StrelitziaClipUITests/Info.plist;
@@ -1193,7 +1229,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C1397095186C4D91448B806C /* Pods-StrelitziaClip-StrelitziaClipUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XD5X9TDNNJ;
 				INFOPLIST_FILE = StrelitziaClipUITests/Info.plist;

@@ -31,11 +31,12 @@ target 'StrelitziaClip' do
   
   #use_frameworks! :linkage => :static
   use_frameworks!
-
+  pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  pod 'FirebaseUI'
 
   target 'StrelitziaClipTests' do
     inherit! :search_paths

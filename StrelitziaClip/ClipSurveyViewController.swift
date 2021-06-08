@@ -29,8 +29,8 @@ class ClipSurveyViewController: UIViewController, UINavigationControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        schoolId = "HmiKOwU1"
         userId = "clipsUser"
+        self.hideKeyboardWhenTappedAround()
 
         imageView.layer.cornerRadius = 20
         self.hideKeyboardWhenTappedAround()
@@ -52,7 +52,7 @@ class ClipSurveyViewController: UIViewController, UINavigationControllerDelegate
         guard let image = imageView.image else { return }
 
         functions.startIndicator(view: self.view)
-        sendSurvey(title: title, place: place, detail: detail, image: image)
+        loginWithAppClipsUser(title: title, place: place, detail: detail, image: image)
     }
 
     @IBAction func onTapClose() {
@@ -67,6 +67,25 @@ extension ClipSurveyViewController {
         let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion:nil)
+    }
+
+    func loginWithAppClipsUser(title: String, place: String, detail: String, image: UIImage) {
+        let email = "appclips@gmail.com"
+        let password = "Clips23211"
+        functions.startIndicator(view: self.view)
+        DispatchQueue.global(qos: .default).async {
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
+                guard let self = self else { return }
+                DispatchQueue.main.async {
+                    if (result?.user) != nil {
+                        self.sendSurvey(title: title, place: place, detail: detail, image: image)
+                    }
+                    self.functions.dismissIndicator(view: self.view)
+                }
+                self.showAlert(title: "サーバーとの接続に失敗しました", text: "時間を空けてもう一度お試しください")
+                print("ログインエラー",error)
+            }
+        }
     }
 
     //MARK:- 画像を選択する
@@ -111,6 +130,7 @@ extension ClipSurveyViewController {
     }
 
     func sendSurvey(title: String, place: String, detail: String, image: UIImage ) {
+        print(schoolId)
         guard let imageData = image.jpegData(compressionQuality: 0.01) else {
             showAlert(title: "画像の圧縮に失敗しました", text: "時間を空けてもう一度お試しください")
             functions.dismissIndicator(view: self.view)
@@ -147,7 +167,7 @@ extension ClipSurveyViewController {
                             "lastModified": Timestamp()
                         ]
 
-                        self.ref.collection("school").document(self.schoolId).collection("survey").addDocument(data: newFolder) { error in
+                        self.ref.collection("school").document(self.schoolId as! String).collection("survey").addDocument(data: newFolder) { error in
                             DispatchQueue.main.async {
                                 if error != nil {
                                     self.showAlert(title: "エラーが起きました", text: "時間を空けてもう一度お試しください")

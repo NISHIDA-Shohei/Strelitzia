@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>832322424591-ke3ma2lr7rdocfafctlv6udtnmt3fvf8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.832322424591-ke3ma2lr7rdocfafctlv6udtnmt3fvf8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCLyGoCJte_Iy5q2H-xcQr6F-8JvkMLbu0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>832322424591</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>NISHIDA.Shohei.Strelitzia.Clip</string>
+	<key>PROJECT_ID</key>
+	<string>strelitzia-8e9cf</string>
+	<key>STORAGE_BUCKET</key>
+	<string>strelitzia-8e9cf.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:832322424591:ios:10112c28f6c411b53a787a</string>
+</dict>
+</plist>
