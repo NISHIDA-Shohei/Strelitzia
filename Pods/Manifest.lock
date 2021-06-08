@@ -233,8 +233,8 @@ PODS:
     - FBSDKLoginKit/Login (= 9.3.0)
   - FBSDKLoginKit/Login (9.3.0):
     - FBSDKCoreKit (~> 9.3.0)
-  - Firebase (8.1.0):
-    - Firebase/Core (= 8.1.0)
+  - Firebase/Analytics (8.1.0):
+    - Firebase/Core
   - Firebase/Auth (8.1.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 8.1.0)
@@ -439,7 +439,7 @@ PODS:
   - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
-  - Firebase
+  - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
@@ -520,6 +520,6 @@ SPEC CHECKSUMS:
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 7b90183cfe0275718716186f46b64f6b826fca19
+PODFILE CHECKSUM: e8bed5b54129d10d752f663ebd34c807c6a59338
 
 COCOAPODS: 1.10.1

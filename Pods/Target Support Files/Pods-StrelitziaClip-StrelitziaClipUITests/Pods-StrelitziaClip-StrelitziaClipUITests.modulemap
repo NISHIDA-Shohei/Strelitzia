@@ -1,0 +1,6 @@
+framework module Pods_StrelitziaClip_StrelitziaClipUITests {
+  umbrella header "Pods-StrelitziaClip-StrelitziaClipUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

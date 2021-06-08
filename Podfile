@@ -29,9 +29,13 @@ end
 
 target 'StrelitziaClip' do
   
-  use_modular_headers!
-  
-  pod 'Firebase'
+  #use_frameworks! :linkage => :static
+  use_frameworks!
+
+  pod 'Firebase/Core'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
 
   target 'StrelitziaClipTests' do
     inherit! :search_paths

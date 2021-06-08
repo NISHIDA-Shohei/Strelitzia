@@ -359,7 +359,7 @@
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <image name="xmark.circle" catalog="system" width="128" height="121"/>
         <namedColor name="GuardaBackgroud">
-            <color red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94099998474121094" green="0.94099998474121094" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

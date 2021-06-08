@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012C4F565D6EEF50C790B087 /* Pods_StrelitziaClip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8078154FD665540C7EA3B6 /* Pods_StrelitziaClip.framework */; };
+		12E34A747860B07DC7001FB7 /* Pods_StrelitziaClipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AA87736961DB52CD49A436 /* Pods_StrelitziaClipTests.framework */; };
 		1AECD4FB834D27BC6EA92EB7 /* Pods_StrelitziaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96988137C46E960CFD6C583E /* Pods_StrelitziaTests.framework */; };
+		4A75BB1D266F484100810A4F /* ClipSetSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75BB1C266F484100810A4F /* ClipSetSchoolViewController.swift */; };
+		4A75BB1F266F48C300810A4F /* ClipFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A75BB1E266F48C300810A4F /* ClipFunctions.swift */; };
+		4A75BB23266F49A200810A4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A75BB22266F49A200810A4F /* GoogleService-Info.plist */; };
 		4A97613426635A95002386C9 /* UserMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A97613326635A95002386C9 /* UserMenuViewController.swift */; };
-		4EA2F7E0F4619E9E9B05DFFB /* libPods-StrelitziaClip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0ED9E4C073C09FAA9FC459 /* libPods-StrelitziaClip.a */; };
+		5CE6EE6B4696AC1244515AAF /* Pods_StrelitziaClip_StrelitziaClipUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C413AA1BE635332547DABC7 /* Pods_StrelitziaClip_StrelitziaClipUITests.framework */; };
 		79943E94DF4F701D2729E0C3 /* Pods_Strelitzia_StrelitziaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9A2D1E394E42451FEDEADC /* Pods_Strelitzia_StrelitziaUITests.framework */; };
 		8CFEBECCA4B4CD282BB06281 /* Pods_Strelitzia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEBDBDBDAFB85B6AE2F2312 /* Pods_Strelitzia.framework */; };
-		92CEBC08D58DCE6FC5E32612 /* libPods-StrelitziaClipTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 821D191364B4AB87BB8F845E /* libPods-StrelitziaClipTests.a */; };
 		B66D2D54265CD7A200862FA1 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D53265CD7A200862FA1 /* SurveyViewController.swift */; };
 		B66D2D58265CEE2A00862FA1 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D2D56265CEE2A00862FA1 /* UserTableViewCell.swift */; };
 		B66D2D59265CEE2A00862FA1 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66D2D57265CEE2A00862FA1 /* UserTableViewCell.xib */; };
@@ -37,7 +41,7 @@
 		B68A2B43266DDD98003B3A23 /* StrelitziaClipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A2B42266DDD98003B3A23 /* StrelitziaClipTests.swift */; };
 		B68A2B4E266DDD98003B3A23 /* StrelitziaClipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A2B4D266DDD98003B3A23 /* StrelitziaClipUITests.swift */; };
 		B68A2B52266DDD98003B3A23 /* StrelitziaClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = B68A2B25266DDD96003B3A23 /* StrelitziaClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		B68A2B5E266DF453003B3A23 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A2B5D266DF453003B3A23 /* SurveyViewController.swift */; };
+		B68A2B5E266DF453003B3A23 /* ClipSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A2B5D266DF453003B3A23 /* ClipSurveyViewController.swift */; };
 		B69F0C67265A1092001B1831 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69F0C66265A1092001B1831 /* User.storyboard */; };
 		B69F0C6A265A10EA001B1831 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C69265A10EA001B1831 /* UserMainViewController.swift */; };
 		B69F0C6E265A1AA1001B1831 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F0C6D265A1AA1001B1831 /* UserModel.swift */; };
@@ -55,7 +59,6 @@
 		B6BB92172657354B00E67F97 /* StrelitziaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB92162657354B00E67F97 /* StrelitziaUITests.swift */; };
 		B6BB9225265810A000E67F97 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB9224265810A000E67F97 /* LoginViewController.swift */; };
 		B6BB9227265811E800E67F97 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6BB9226265811E800E67F97 /* GoogleService-Info.plist */; };
-		ED19FE6EFCC8CE61D674A650 /* libPods-StrelitziaClip-StrelitziaClipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91216D12BB126C4D721B1A9B /* libPods-StrelitziaClip-StrelitziaClipUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,18 +114,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C413AA1BE635332547DABC7 /* Pods_StrelitziaClip_StrelitziaClipUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StrelitziaClip_StrelitziaClipUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE35BC377C9EBC8C34D205A /* Pods-StrelitziaClipTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrelitziaClipTests.debug.xcconfig"; path = "Target Support Files/Pods-StrelitziaClipTests/Pods-StrelitziaClipTests.debug.xcconfig"; sourceTree = "<group>"; };
 		29F45D7721AA57A116F822F9 /* Pods-StrelitziaClip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrelitziaClip.release.xcconfig"; path = "Target Support Files/Pods-StrelitziaClip/Pods-StrelitziaClip.release.xcconfig"; sourceTree = "<group>"; };
 		3653FA22F85027C97ED74C6B /* Pods-Strelitzia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strelitzia.release.xcconfig"; path = "Target Support Files/Pods-Strelitzia/Pods-Strelitzia.release.xcconfig"; sourceTree = "<group>"; };
 		3BEBDBDBDAFB85B6AE2F2312 /* Pods_Strelitzia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Strelitzia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A75BB1C266F484100810A4F /* ClipSetSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipSetSchoolViewController.swift; sourceTree = "<group>"; };
+		4A75BB1E266F48C300810A4F /* ClipFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipFunctions.swift; sourceTree = "<group>"; };
+		4A75BB22266F49A200810A4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Strelitzia/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4A97613326635A95002386C9 /* UserMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuViewController.swift; sourceTree = "<group>"; };
+		58AA87736961DB52CD49A436 /* Pods_StrelitziaClipTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StrelitziaClipTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C08C6C5DD0590BE09596A9 /* Pods-StrelitziaClipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrelitziaClipTests.release.xcconfig"; path = "Target Support Files/Pods-StrelitziaClipTests/Pods-StrelitziaClipTests.release.xcconfig"; sourceTree = "<group>"; };
 		6026D1C9FE2B4263668E87B1 /* Pods-Strelitzia-StrelitziaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strelitzia-StrelitziaUITests.release.xcconfig"; path = "Target Support Files/Pods-Strelitzia-StrelitziaUITests/Pods-Strelitzia-StrelitziaUITests.release.xcconfig"; sourceTree = "<group>"; };
-		6D0ED9E4C073C09FAA9FC459 /* libPods-StrelitziaClip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StrelitziaClip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78010A507860C5753A97EBBA /* Pods-StrelitziaClip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrelitziaClip.debug.xcconfig"; path = "Target Support Files/Pods-StrelitziaClip/Pods-StrelitziaClip.debug.xcconfig"; sourceTree = "<group>"; };
 		8052516F3F8564B999E25DDC /* Pods-StrelitziaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrelitziaTests.debug.xcconfig"; path = "Target Support Files/Pods-StrelitziaTests/Pods-StrelitziaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		821D191364B4AB87BB8F845E /* libPods-StrelitziaClipTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StrelitziaClipTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		91216D12BB126C4D721B1A9B /* libPods-StrelitziaClip-StrelitziaClipUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StrelitziaClip-StrelitziaClipUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96988137C46E960CFD6C583E /* Pods_StrelitziaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StrelitziaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66D2D53265CD7A200862FA1 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		B66D2D56265CEE2A00862FA1 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -154,7 +159,7 @@
 		B68A2B49266DDD98003B3A23 /* StrelitziaClipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrelitziaClipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68A2B4D266DDD98003B3A23 /* StrelitziaClipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrelitziaClipUITests.swift; sourceTree = "<group>"; };
 		B68A2B4F266DDD98003B3A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B68A2B5D266DF453003B3A23 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
+		B68A2B5D266DF453003B3A23 /* ClipSurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipSurveyViewController.swift; sourceTree = "<group>"; };
 		B69F0C66265A1092001B1831 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		B69F0C69265A10EA001B1831 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
 		B69F0C6D265A1AA1001B1831 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -184,6 +189,7 @@
 		E138A838D93E94B5687AB888 /* Pods-StrelitziaClip-StrelitziaClipUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrelitziaClip-StrelitziaClipUITests.debug.xcconfig"; path = "Target Support Files/Pods-StrelitziaClip-StrelitziaClipUITests/Pods-StrelitziaClip-StrelitziaClipUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E868AAA6D7EDF56783AA168C /* Pods-Strelitzia-StrelitziaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strelitzia-StrelitziaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Strelitzia-StrelitziaUITests/Pods-Strelitzia-StrelitziaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F32EDD511FF1AA332EA21201 /* Pods-Strelitzia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strelitzia.debug.xcconfig"; path = "Target Support Files/Pods-Strelitzia/Pods-Strelitzia.debug.xcconfig"; sourceTree = "<group>"; };
+		FE8078154FD665540C7EA3B6 /* Pods_StrelitziaClip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StrelitziaClip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EA2F7E0F4619E9E9B05DFFB /* libPods-StrelitziaClip.a in Frameworks */,
+				012C4F565D6EEF50C790B087 /* Pods_StrelitziaClip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +205,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92CEBC08D58DCE6FC5E32612 /* libPods-StrelitziaClipTests.a in Frameworks */,
+				12E34A747860B07DC7001FB7 /* Pods_StrelitziaClipTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED19FE6EFCC8CE61D674A650 /* libPods-StrelitziaClip-StrelitziaClipUITests.a in Frameworks */,
+				5CE6EE6B4696AC1244515AAF /* Pods_StrelitziaClip_StrelitziaClipUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,13 +304,16 @@
 			children = (
 				B68A2B27266DDD96003B3A23 /* AppDelegate.swift */,
 				B68A2B29266DDD96003B3A23 /* SceneDelegate.swift */,
+				4A75BB1C266F484100810A4F /* ClipSetSchoolViewController.swift */,
+				B68A2B5D266DF453003B3A23 /* ClipSurveyViewController.swift */,
 				B68A2B2D266DDD96003B3A23 /* Main.storyboard */,
 				B68A2B33266DDD97003B3A23 /* Assets.xcassets */,
 				B68A2B35266DDD97003B3A23 /* LaunchScreen.storyboard */,
 				B68A2B38266DDD97003B3A23 /* Info.plist */,
 				B68A2B39266DDD97003B3A23 /* StrelitziaClip.entitlements */,
 				B68A2B30266DDD96003B3A23 /* StrelitziaClip.xcdatamodeld */,
-				B68A2B5D266DF453003B3A23 /* SurveyViewController.swift */,
+				4A75BB22266F49A200810A4F /* GoogleService-Info.plist */,
+				4A75BB1E266F48C300810A4F /* ClipFunctions.swift */,
 			);
 			path = StrelitziaClip;
 			sourceTree = "<group>";
@@ -446,9 +455,9 @@
 				3BEBDBDBDAFB85B6AE2F2312 /* Pods_Strelitzia.framework */,
 				BB9A2D1E394E42451FEDEADC /* Pods_Strelitzia_StrelitziaUITests.framework */,
 				96988137C46E960CFD6C583E /* Pods_StrelitziaTests.framework */,
-				6D0ED9E4C073C09FAA9FC459 /* libPods-StrelitziaClip.a */,
-				91216D12BB126C4D721B1A9B /* libPods-StrelitziaClip-StrelitziaClipUITests.a */,
-				821D191364B4AB87BB8F845E /* libPods-StrelitziaClipTests.a */,
+				FE8078154FD665540C7EA3B6 /* Pods_StrelitziaClip.framework */,
+				0C413AA1BE635332547DABC7 /* Pods_StrelitziaClip_StrelitziaClipUITests.framework */,
+				58AA87736961DB52CD49A436 /* Pods_StrelitziaClipTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -464,6 +473,7 @@
 				B68A2B21266DDD96003B3A23 /* Sources */,
 				B68A2B22266DDD96003B3A23 /* Frameworks */,
 				B68A2B23266DDD96003B3A23 /* Resources */,
+				E63AE1CC5FCA89020B4A8997 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -501,6 +511,7 @@
 				B68A2B45266DDD98003B3A23 /* Sources */,
 				B68A2B46266DDD98003B3A23 /* Frameworks */,
 				B68A2B47266DDD98003B3A23 /* Resources */,
+				AE1634F13680DBAE427FB178 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -636,6 +647,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B68A2B37266DDD97003B3A23 /* LaunchScreen.storyboard in Resources */,
+				4A75BB23266F49A200810A4F /* GoogleService-Info.plist in Resources */,
 				B68A2B34266DDD97003B3A23 /* Assets.xcassets in Resources */,
 				B68A2B2F266DDD96003B3A23 /* Main.storyboard in Resources */,
 			);
@@ -821,6 +833,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Strelitzia/Pods-Strelitzia-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AE1634F13680DBAE427FB178 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrelitziaClip-StrelitziaClipUITests/Pods-StrelitziaClip-StrelitziaClipUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrelitziaClip-StrelitziaClipUITests/Pods-StrelitziaClip-StrelitziaClipUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StrelitziaClip-StrelitziaClipUITests/Pods-StrelitziaClip-StrelitziaClipUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C80237131A956A1C7CB24F69 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -865,6 +894,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E63AE1CC5FCA89020B4A8997 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrelitziaClip/Pods-StrelitziaClip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrelitziaClip/Pods-StrelitziaClip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StrelitziaClip/Pods-StrelitziaClip-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EE85D483461FB361FAADF68C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -894,9 +940,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A75BB1D266F484100810A4F /* ClipSetSchoolViewController.swift in Sources */,
 				B68A2B28266DDD96003B3A23 /* AppDelegate.swift in Sources */,
 				B68A2B32266DDD96003B3A23 /* StrelitziaClip.xcdatamodeld in Sources */,
-				B68A2B5E266DF453003B3A23 /* SurveyViewController.swift in Sources */,
+				4A75BB1F266F48C300810A4F /* ClipFunctions.swift in Sources */,
+				B68A2B5E266DF453003B3A23 /* ClipSurveyViewController.swift in Sources */,
 				B68A2B2A266DDD96003B3A23 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
